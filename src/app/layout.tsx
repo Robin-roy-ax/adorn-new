@@ -24,7 +24,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Picasso Fusion",
+  title: "Picasso",
   description: "Picasso Fusion is a platform that allows users to create their own digital art.",
 };
 
