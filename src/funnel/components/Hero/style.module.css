@@ -1,0 +1,147 @@
+.heroSection {
+  background: linear-gradient(to bottom, #0d153a, #0d153a68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Lines */
+.linesWrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 72rem;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.lineLeft,
+.lineCenter,
+.lineRight {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lineLeft {
+  left: 0;
+}
+.lineCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lineRight {
+  right: 0;
+}
+
+/* Text + motion */
+.tagline {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fbcfe8, #bbf7d0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  z-index: 1;
+}
+
+.titleCreative {
+  font-style: italic;
+  font-family: serif;
+  font-weight: 200;
+}
+
+.titleStudio {
+  font-weight: 200;
+}
+
+.description {
+  margin-top: 1.5rem;
+  color: #d1d5db;
+  max-width: 40rem;
+  z-index: 1;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  z-index: 1;
+}
+
+.primaryBtn {
+  background: white;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.primaryBtn:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.secondaryBtn:hover {
+  border-color: white;
+}
+
+/* Clients */
+.clients {
+  margin-top: 2.5rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.avatars {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0.75rem;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -0.75rem;
+}
+
+.scrollText {
+  position: relative;
+  margin-top: 7rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  z-index: 1;
+}

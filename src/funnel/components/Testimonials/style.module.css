@@ -1,0 +1,88 @@
+
+
+.section {
+    width: 100%;
+    padding: 6rem 1.5rem; /* py-24 px-6 */
+    background-color: white;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem; /* mb-16 */
+  }
+  
+  .title {
+    font-size: 4rem; /* text-8xl */
+    font-weight: 700;
+    color: #111827; /* gray-900 */
+  }
+  
+  .titleHighlight {
+    font-style: italic;
+    font-family: serif;
+  }
+  
+  .description {
+    margin-top: 1rem;
+    color: #4b5563; /* gray-600 */
+    max-width: 32rem; /* max-w-2xl */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 2rem; /* gap-8 */
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 1rem; /* rounded-2xl */
+    padding: 2rem; /* p-8 */
+    overflow: hidden;
+    border: 1px solid #f3f4f6; /* gray-100 */
+    transition: all 0.5s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .card:hover {
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+  
+  .quote {
+    color: #374151; /* gray-700 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    line-height: 1.75;
+  }
+  
+  .clientInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .avatarWrapper {
+    width: 3rem; /* 12 */
+    height: 3rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    background-color: #e5e7eb; /* gray-200 */
+    position: relative;
+  }
+  
+  .clientName {
+    font-weight: 600;
+    color: #111827; /* gray-900 */
+  }
+  
+  .clientTitle {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* gray-500 */
+  }
+  
