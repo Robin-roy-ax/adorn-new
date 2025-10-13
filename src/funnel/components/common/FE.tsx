@@ -38,17 +38,23 @@ const projects = [
 export default function FeaturedWork() {
   return (
     <section className="w-full py-20 bg-white text-gray-900">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center flex mb-16">
-        <h2 className="text-[96px] font-medium leading-[1.1em] tracking-[-0.05em] text-[#343E56]">
+     <div className="max-w-[1600px] mx-auto px-8 py-24">
+  <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
+    {/* Title */}
+    <h2 className="text-[120px] xl:text-[100px] lg:text-[84px] md:text-[64px] sm:text-[48px] font-medium leading-[1.05em] tracking-[-0.05em] text-[#343E56]">
       Featured{" "}
       <span className="font-['Instrument_Serif'] italic font-normal">
         Work
       </span>
     </h2>
-        </div>
-      </div>
+
+    {/* Description */}
+    <p className="text-[#6F80A8] text-2xl md:text-xl leading-relaxed max-w-xl lg:max-w-2xl">
+      Dive into a world of creativity and inspiration with our portfolio.
+      Explore our work and imagine the possibilities for your brand.
+    </p>
+  </div>
+</div>
 
       {/* Horizontal Scroll Carousel */}
       <HorizontalScrollCarousel />
