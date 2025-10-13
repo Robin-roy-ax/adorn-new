@@ -27,7 +27,7 @@ export const heroSection = {
       { label: "LinkedIn", href: "#" },
       { label: "Instagram", href: "#" },
     ],
-    copyright: "© Adorn 2024. All rights reserved",
+    copyright: "© Picasso Fusion 2024. All rights reserved",
     designedBy: {
       name: "Aalay Rasool",
       href: "#",

@@ -1,6 +1,6 @@
 export const aboutContent = {
     heading: [
-      "Adorn ",
+      "Picasso Fusion ",
       "is a hub of",
       " creativity and innovation. ",
       "We're dedicated to",

@@ -44,7 +44,7 @@ export default function Navbar() {
   aria-label="Scroll to top / Hero section"
 >
   <span className="text-2xl">✻</span>
-  <span className="font-semibold text-lg">Adorn</span>
+  <span className="font-semibold text-lg">Picasso Fusion</span>
 </button>
 
       {/* Middle - Menu Links */}

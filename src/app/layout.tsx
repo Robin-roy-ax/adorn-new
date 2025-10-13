@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import Home from "./page";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -29,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${interSans.variable} ${instrumentSerif.variable} font-sans antialiased`}
       >
-        <Home />
+        {children}
       </body>
     </html>
   );
