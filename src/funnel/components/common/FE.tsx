@@ -31,7 +31,7 @@ const projects = [
     description:
       "Leading the automotive industry with the cutting-edge technology and sustainable innovations",
     tags: ["Concept Art", "3D Design"],
-    image: "	https://framerusercontent.com/images/4vWXJkfkxtU2VxkFCO8Yhkjjj5k.jpg",
+    image: "https://framerusercontent.com/images/4vWXJkfkxtU2VxkFCO8Yhkjjj5k.jpg",
   },
 ];
 
