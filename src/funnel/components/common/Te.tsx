@@ -131,7 +131,7 @@ export default function Testimonials() {
                 viewport={{ once: true }}
                 custom={delay}
               >
-                <p className="text-gray-500 text-[1rem] mb-4 leading-relaxed">
+                <p className="text-gray-400 text-[1rem] mb-4 font-medium leading-relaxed">
                   “{testimonial.quote}”
                 </p>
 
