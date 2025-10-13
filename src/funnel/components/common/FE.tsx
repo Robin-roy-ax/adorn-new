@@ -38,7 +38,11 @@ const projects = [
 export default function FeaturedWork() {
   return (
     <section className="w-full py-20 bg-white text-gray-900">
-     <div className="max-w-[1600px] mx-auto px-8 py-24">
+     <motion.div 
+     className="max-w-[1600px] mx-auto px-8 py-24"
+     initial={{ opacity: 0, y: 40 }}
+     animate={{ opacity: 1, y: 0 }}
+     transition={{ duration: 1 }}>
   <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
     {/* Title */}
     <h2 className="text-[120px] xl:text-[100px] lg:text-[84px] md:text-[64px] sm:text-[48px] font-medium leading-[1.05em] tracking-[-0.05em] text-[#343E56]">
@@ -54,17 +58,21 @@ export default function FeaturedWork() {
       Explore our work and imagine the possibilities for your brand.
     </p>
   </div>
-</div>
+</motion.div>
 
       {/* Horizontal Scroll Carousel */}
       <HorizontalScrollCarousel />
 
       {/* Footer Button */}
-      <div className="text-center mt-16">
+      <motion.div 
+      className="text-center mt-16"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}>
         <button className="border border-gray-300 text-gray-800 hover:bg-gray-100 px-6 py-3 rounded-full transition">
           See more of our work
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }

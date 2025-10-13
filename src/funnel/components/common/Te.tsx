@@ -16,42 +16,42 @@ const testimonials: Testimonial[] = [
       "Adorn took our brand to new heights with their innovative designs and strategic approach. Their team's creativity and attention to detail truly set them apart.",
     name: "John Smith",
     title: "CEO of Bright Ideas Co.",
-    image: "/images/clients/client1.jpg",
+    image: "https://framerusercontent.com/images/iBem3bM7DskP1qLkV8JoHMLH68.jpg?scale-down-to=512",
   },
   {
     quote:
       "Working with Adorn was a game-changer for our business. Their expertise in web design helped us create a stunning online presence that resonated with our audience.",
     name: "Michael Johnson",
     title: "Founder of Tech Trends Inc.",
-    image: "/images/clients/client2.jpg",
+    image: "https://framerusercontent.com/images/9nYExwEqKiZOxikoZuzMhPzlIX8.jpg?scale-down-to=512",
   },
   {
     quote:
       "Adorn's content creation services exceeded our expectations. Their team crafted compelling copy and visuals that perfectly captured our brand's essence.",
     name: "David Brown",
     title: "HR Manager at Sparkle",
-    image: "/images/clients/client3.jpg",
+    image: "https://framerusercontent.com/images/xcVsFcFg7M5SkoOkJX5lUfdBUN4.jpg",
   },
   {
     quote:
       "From branding to digital marketing, Adorn delivered exceptional results every step of the way. Their dedication to our project and creative solutions were unmatched.",
     name: "Alex Thompson",
     title: "CEO of NextGen Solutions",
-    image: "/images/clients/client4.jpg",
+    image: "https://framerusercontent.com/images/mKwxopbnEeNzwo0LzcvyHC5RdMM.jpg",
   },
   {
     quote:
       "Adorn's branding services gave our startup the identity it needed to stand out in a competitive market. Their team's passion and dedication were evident in every aspect of the project.",
     name: "Matthew Miller",
     title: "Co-founder of Bloom",
-    image: "/images/clients/client5.jpg",
+    image: "https://framerusercontent.com/images/a5SO6bWYO9JGc90jHykGK0g78.jpg",
   },
   {
     quote:
       "We were blown away by Adorn's creativity and vision. Their environmental graphics transformed our office space and created a vibrant, inspiring atmosphere.",
     name: "Christopher Harris",
     title: "HR Manager at Evergreen",
-    image: "/images/clients/client6.jpg",
+    image: "https://framerusercontent.com/images/lyyanOkQwdFqEmTN9vhLsdsi0.jpg",
   },
 ];
 
@@ -61,21 +61,27 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-8xl md:text-6xl font-bold text-gray-900">
-            Words From Our <br/><span className="italic font-serif">Partners</span>
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            See what our clients have to say about their experience with Adorn.
-            Their stories speak volumes about the quality of our work and the
-            satisfaction of our clients.
-          </p>
-        </motion.div>
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="mb-28"
+>
+  <h2 className="text-center text-[120px] xl:text-[110px] lg:text-[90px] md:text-[72px] sm:text-[52px] font-normal tracking-[-0.06em] text-[#2D3753] leading-[1.05em]">
+    Words From Our
+    <br />
+    <span className="font-['Instrument_Serif'] italic font-normal">
+      Partners
+    </span>
+  </h2>
+
+  <p className="mt-8 text-center text-[#6F80A8] text-lg md:text-base sm:text-sm leading-relaxed max-w-2xl mx-auto">
+  See what our clients have to say about their experience with{" "}
+  <span className="font-semibold text-[#2D3753]">Picasso Fusion</span>.
+  Their stories speak volumes about the quality of our work and the
+  satisfaction of our clients.
+</p>
+</motion.div>
 
         {/* Testimonials Grid */}
         <motion.div
