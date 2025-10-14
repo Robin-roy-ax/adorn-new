@@ -114,16 +114,16 @@ const Hero = () => {
   className="
     bg-white text-black px-6 py-3 rounded-full font-medium
     transition-all duration-300 ease-in-out
-    hover:bg-[#1d52e5]        /* blue background on hover */
-    hover:text-white          /* text white on hover */
-    hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)] /* drop shadow */
+    hover:bg-[#1d52e5]        
+    hover:text-white         
+    hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)]
     relative
     overflow-hidden
   "
 >
   <span className="relative z-10">Book a discovery call</span>
   {/* Stronger inner shadow at the top */}
-  <span className="absolute inset-0 rounded-full pointer-events-none 
+  <span className="absolute inset-0 rounded-full
                    shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)]"></span>
 </motion.button>
 

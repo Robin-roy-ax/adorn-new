@@ -89,7 +89,7 @@ export default function Services() {
    {/* Services Grid */}
 <section className="w-full py-24">
   <motion.div
-    className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 justify-center max-w-[95rem] mx-auto "
+    className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 justify-center max-w-[95rem] mx-auto"
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
@@ -109,7 +109,8 @@ export default function Services() {
           visible: { opacity: 1, y: 0 },
         }}
         className="relative w-[28rem] h-[28rem] bg-[#111a3b] rounded-3xl overflow-hidden group
-                   text-white p-10 shadow-lg hover:shadow-2xl transition-all duration-700 mx-auto"
+                   text-white p-10 shadow-[0_.78363px_.78363px_-.535714px_#6b7087bd,0_1.91965px_1.91965px_-1.07143px_#6b7087ba,0_3.63745px_3.63745px_-1.60714px_#6b7087b3,0_6.35004px_6.35004px_-2.14286px_#6b7087ab,0_11.0519px_11.0519px_-2.67857px_#6b70879c,0_20.2428px_20.2428px_-3.21429px_#6b708780,0_40px_40px_-3.75px_#6b708740]
+ hover:shadow-2xl transition-all duration-700 mx-auto" 
       >
         {/* Gradient overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-700" />
@@ -134,7 +135,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative z-10 mt-48 text-left"
+          className="relative z-10 mt-55 text-left"
         >
           <motion.h3
             initial={{ opacity: 0, y: 20 }}

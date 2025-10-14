@@ -30,15 +30,15 @@ export default function PricingCard({
     <motion.div
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200 }}
-      className={`relative rounded-2xl shadow-lg overflow-hidden flex flex-col justify-between border p-8 text-left h-[600px]
+      className={`relative rounded-2xl shadow-[0_1.6796px_1.6796px_-.46875px_#64718fbd,0_3.98096px_3.98096px_-.9375px_#64718fba,0_7.26168px_7.26168px_-1.40625px_#64718fb5,0_12.0725px_12.0725px_-1.875px_#64718fb0,0_19.4962px_19.4962px_-2.34375px_#64718fa6,0_31.9133px_31.9133px_-2.8125px_#64718f96,0_54.9525px_54.9525px_-3.28125px_#64718f7a,0_100px_100px_-3.75px_#64718f40] overflow-hidden flex flex-col justify-between p-8 text-left h-[600px]
         ${highlight
-          ? "bg-gradient-to-b from-indigo-900 to-indigo-800 text-white border-indigo-700 z-30"
+          ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] z-30"
           : "bg-gray-100 text-slate-800 border-slate-200"
         }`}
     >
       {/* Badge */}
       {highlight && badge && (
-        <span className="absolute right-5 top-5 bg-gradient-to-r from-indigo-500 to-purple-500 text-xs px-3 py-1 rounded-full font-medium shadow-md">
+        <span className="absolute text-black font-bold right-5 top-5 bg-[linear-gradient(325deg,#fed6ff_7.34456%,#9b8cfa_38.4923%,#8fe1ff_77.5623%,#87ffe3_86.824%)] text-xs px-3 py-1 rounded-full shadow-[0_.796192px_.796192px_-.9375px_#cda9ffba,0_2.41451px_2.41451px_-1.875px_#cda9ffb0,0_6.38265px_6.38265px_-2.8125px_#cda9ff96,0_20px_20px_-3.75px_#cda9ff40]">
           {badge}
         </span>
       )}
@@ -58,7 +58,7 @@ export default function PricingCard({
         <button
           className={`w-full py-3 rounded-full font-semibold transition-all duration-300
             ${highlight
-              ? "bg-white hover:bg-indigo-700 hover:shadow-[inset_0_0_8px_rgba(255,255,255,0.8)] text-black hover:text-white"
+              ? "bg-white hover:bg-[#1d52e5] hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)] relative overflow-hidden text-black hover:text-white shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)] inset-2.5 rounded-full"
               : "bg-gray-100 hover:bg-gray-300 text-slate-800 border-gray-300 border"
             }`}
         >

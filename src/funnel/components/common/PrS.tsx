@@ -61,23 +61,45 @@ export default function PricingSection() {
 
   return (
     <section className="bg-white flex flex-col items-center py-20 px-6 text-center">
-      <motion.h1
+      <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="text-center max-w-5xl mx-auto px-6"
+    >
+      {/* Heading */}
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-5xl md:text-6xl text-gray-900 font-bold mb-4"
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-[9rem] md:text-[7rem] sm:text-[48px] font-medium leading-[1.1em] tracking-[-0.05em] text-[#394560]"
       >
-        Transparent <span className="italic font-light">Pricing</span>
-      </motion.h1>
-      <p className="text-slate-500 mb-16 max-w-xl">
-        Explore our pricing options below and choose the plan that best fits your needs. No hidden fees.
-      </p>
+        Transparent{" "}
+        <span className="font-['Instrument_Serif'] italic font-normal">
+          Pricing
+        </span>
+      </motion.h2>
+
+      {/* Subtext */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="mt-6 text-gray-400 text-md font-semibold md:text-md leading-relaxed"
+      >
+        Explore our pricing options below and choose the plan that best fits your
+        needs.<br />No hidden fees.
+      </motion.p>
+    </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="grid md:grid-cols-3 gap-8 max-w-6xl w-full"
+        className="grid md:grid-cols-3 mt-10 gap-8 max-w-6xl w-full"
       >
         {pricingPlans.map((plan, idx) => (
           <PricingCard key={idx} {...plan} />

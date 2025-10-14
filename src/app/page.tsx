@@ -4,6 +4,8 @@ import Ab from "@/funnel/components/common/Ab";
 import FE from "@/funnel/components/common/FE";
 import Te from "@/funnel/components/common/Te";
 import Se from "@/funnel/components/common/Se";
+import Be from "@/funnel/components/common/Be";
+import PrS from "@/funnel/components/common/PrS";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <FE />
       <Te />
       <Se />
+      <Be />
+      <PrS />
     </>
   );
 }
