@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Plus, X } from "lucide-react";
 
 const faqs = [
   {
@@ -43,61 +44,80 @@ export default function FAQPage() {
     >
       <div className="max-w-4xl w-full">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h1 className="text-7xl font-bold text-slate-900 mb-2 leading-tight">
-            Clearing Up Common
-          </h1>
-          <h2 className="text-6xl italic text-slate-700 mb-8 leading-tight">
-            Queries
-          </h2>
-          <p className="text-base text-slate-500 max-w-2xl mx-auto leading-relaxed">
-            Dive into our FAQ section for insights into our services. We&apos;ve
-            compiled answers to common questions to ensure you&apos;re well-informed.
-          </p>
-        </div>
+        <motion.div
+      className="flex flex-col justify-start items-center text-center"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
+      <h2 className="font-inter text-[105px] font-medium leading-[1.1em] tracking-[-0.05em] text-[rgb(45,55,83)]">
+        Clearing Up Common{" "}
+        <span className="font-['Instrument_Serif'] italic font-normal">
+          Queries
+        </span>
+      </h2>
+    </motion.div>
+    <motion.div
+      className="flex flex-col justify-start items-center text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      viewport={{ once: true }}
+    >
+      <p className="text-gray-400 mt-7 align-middle justify-center text-[1rem] md:text-[1rem] leading-relaxed max-w-3xl">
+        Dive into our FAQ section for insights into our services. We&apos;ve compiled answers to common questions to ensure you&apos;re well-informed.
+      </p>
+    </motion.div>
+    </div>
 
         {/* FAQ Items */}
-        <div className="space-y-8">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div key={index}>
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full justify-between items-center text-left focus:outline-none"
-                >
-                  <span className="text-lg font-semibold text-slate-900">
-                    {faq.question}
-                  </span>
-                  <motion.span
-                    animate={{ rotate: isOpen ? 45 : 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-2xl text-slate-500"
-                  >
-                    {isOpen ? "×" : "+"}
-                  </motion.span>
-                </button>
+        <div className="max-w-3xl mx-auto w-full px-6 py-16">
+      {faqs.map((faq, i) => {
+        const isOpen = openIndex === i;
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="mt-3 text-slate-600 text-sm leading-relaxed max-w-2xl">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+        return (
+          <div key={i} className="mb-3">
+            {/* Question Row */}
+            <motion.button
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3, delay: i * 0.1 }}
+  viewport={{ once: true }}
+  onClick={() => setOpenIndex(isOpen ? null : i)}
+  whileHover={{ scale: 1.05 }} 
+  whileTap={{ scale: 0.98 }}   
+  className="flex w-[100%] justify-between items-center py-4 px-4 rounded-md transition-transform duration-300 ease-out border-b border-gray-200"
+>
+  <p className="text-md font-medium text-[#343E56] text-left">
+    {faq.question}
+  </p>
+  {isOpen ? (
+    <X className="w-7 h-7 text-[#343E56]" />
+  ) : (
+    <Plus className="w-7 h-7 text-[#343E56]" />
+  )}
+</motion.button>
+            {/* Animated Answer */}
+            <AnimatePresence initial={true}>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <p className="text-gray-400 mt-3 px-4 pb-4 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      })}
+    </div>
     </motion.section>
   );
 }

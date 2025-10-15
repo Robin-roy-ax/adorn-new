@@ -76,7 +76,7 @@ export default function PricingCard({
 
       {/* Divider */}
       <hr
-        className={`${highlight ? "border-gray-500" : "border-slate-200"}`}
+        className={`${highlight ? "border-gray-500" : "border-slate-300"}`}
       />
 
       {/* Features */}

@@ -6,6 +6,7 @@ import Te from "@/funnel/components/common/Te";
 import Se from "@/funnel/components/common/Se";
 import Be from "@/funnel/components/common/Be";
 import PrS from "@/funnel/components/common/PrS";
+import Fa from "@/funnel/components/common/Fa";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Se />
       <Be />
       <PrS />
+      <Fa />
     </>
   );
 }
