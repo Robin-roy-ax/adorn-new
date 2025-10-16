@@ -3,31 +3,54 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
+import {
+  FEATURED_WORK_PROJECTS,
+  FEATURED_WORK_TEXT,
+  FEATURED_WORK_ANIMATIONS
+} from "./data";
 import styles from "./style.module.css";
-import { projects, sectionHeader } from "./data";
 
 export default function FeaturedWork() {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        {/* Header */}
-        <div className={styles.header}>
-          <h2 className={styles.title}>
-            {sectionHeader.title} <span className={styles.titleHighlight}>{sectionHeader.highlight}</span>
+    <section className={styles.featuredWorkSection}>
+      <motion.div
+        className={styles.featuredWorkContainer}
+        initial={FEATURED_WORK_ANIMATIONS.section.initial}
+        animate={FEATURED_WORK_ANIMATIONS.section.animate}
+        transition={{ duration: FEATURED_WORK_ANIMATIONS.section.duration }}
+      >
+        <div className={styles.featuredWorkHeader}>
+          {/* Title */}
+          <h2 className={styles.featuredWorkTitle}>
+            {FEATURED_WORK_TEXT.title.part1}{" "}
+            <span className={styles.featuredWorkTitleItalic}>
+              {FEATURED_WORK_TEXT.title.part2}
+            </span>
           </h2>
-          <p className={styles.description}>{sectionHeader.description}</p>
+
+          {/* Description */}
+          <p className={styles.featuredWorkDescription}>
+            {FEATURED_WORK_TEXT.description}
+          </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Horizontal Scroll Carousel */}
       <HorizontalScrollCarousel />
 
       {/* Footer Button */}
-      <div className="text-center mt-16">
-        <button className="border border-gray-300 text-gray-800 hover:bg-gray-100 px-6 py-3 rounded-full transition">
-          See more of our work
+      <motion.div
+        className={styles.featuredWorkFooter}
+        initial={FEATURED_WORK_ANIMATIONS.footerButton.initial}
+        animate={FEATURED_WORK_ANIMATIONS.footerButton.animate}
+        transition={{
+          duration: FEATURED_WORK_ANIMATIONS.footerButton.duration
+        }}
+      >
+        <button className={styles.featuredWorkButton}>
+          {FEATURED_WORK_TEXT.buttonText}
         </button>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -35,50 +58,64 @@ export default function FeaturedWork() {
 function HorizontalScrollCarousel() {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => setMousePos({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <section ref={targetRef} className={styles.carouselWrapper}>
-      <div className={styles.stickyWrapper}>
-        <motion.div style={{ x }} className="flex gap-8 px-8">
-          {projects.map((project, index) => (
+    <section ref={targetRef} className={styles.carouselSection}>
+      <div className={styles.carouselContainer}>
+        <motion.div style={{ x }} className={styles.carouselTrack}>
+          {FEATURED_WORK_PROJECTS.map((project, index) => (
             <motion.div
               key={index}
-              className={styles.projectCard}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className={`${styles.projectCard} group`}
+              initial={FEATURED_WORK_ANIMATIONS.projectCards.initial}
+              whileInView={FEATURED_WORK_ANIMATIONS.projectCards.animate}
+              transition={{
+                duration: FEATURED_WORK_ANIMATIONS.projectCards.duration,
+                delay: index * FEATURED_WORK_ANIMATIONS.projectCards.staggerDelay
+              }}
               viewport={{ once: true }}
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
             >
               {/* Image */}
-              <div className={styles.imageWrapper}>
-                <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div className={styles.projectImageContainer}>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className={styles.projectImage}
+                />
               </div>
 
               {/* Overlay */}
-              <div className={styles.overlay}></div>
+              <div className={styles.projectOverlay} />
 
               {/* Text Content */}
-              <div className={styles.textContent}>
+              <div className={styles.projectContent}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDescription}>{project.description}</p>
+                <p className={styles.projectDescription}>
+                  {project.description}
+                </p>
               </div>
 
               {/* Tags */}
-              <div className={styles.tags}>
+              <div className={styles.projectTags}>
                 {project.tags.map((tag, i) => (
-                  <span key={i} className={styles.tag}>{tag}</span>
+                  <span key={i} className={styles.projectTag}>
+                    {tag}
+                  </span>
                 ))}
               </div>
             </motion.div>
@@ -87,17 +124,17 @@ function HorizontalScrollCarousel() {
 
         {/* Custom Cursor */}
         <motion.div
-          className={styles.cursor}
+          className={`${styles.customCursor} ${hovering ? styles.customCursorVisible : ''}`}
           style={{
             x: mousePos.x - 60,
             y: mousePos.y - 60,
-            width: 120,
-            height: 120,
-            opacity: hovering ? 1 : 0,
           }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
-          View <span className="font-light italic"> Project</span>
+          {FEATURED_WORK_TEXT.cursorText.split(' ')[0]}{" "}
+          <span className={styles.cursorViewText}>
+            {FEATURED_WORK_TEXT.cursorText.split(' ').slice(1).join(' ')}
+          </span>
         </motion.div>
       </div>
     </section>

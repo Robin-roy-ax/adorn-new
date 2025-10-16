@@ -1,0 +1,219 @@
+.heroSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 800px;
+  height: 100vh;
+  width: 100%;
+  padding: 30px 60px;
+  overflow: hidden;
+  background: radial-gradient(100% 100% at 50% 0%, #0f1c3e 0%, #050915 100%);
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+
+.heroDividerLines {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1536px; /* 6xl */
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.dividerLine {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dividerLineLeft {
+  left: 0;
+}
+
+.dividerLineCenter {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dividerLineRight {
+  right: 0;
+}
+
+.heroSubtitle {
+  font-size: 0.875rem; /* text-md */
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 2.5rem; /* mt-10 */
+  background: linear-gradient(to right, rgb(244, 114, 182), rgb(52, 211, 153));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroMainHeading {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17, #fff);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  white-space: pre;
+  font-size: clamp(3rem, 8vw, 9rem);
+  font-style: normal;
+}
+
+@media (min-width: 768px) {
+  .heroMainHeading {
+    font-size: clamp(4rem, 7vw, 10rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroMainHeading {
+    font-size: clamp(5rem, 6vw, 12rem);
+  }
+}
+
+.heroHeadingItalic {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17, rgb(255, 255, 255));
+  letter-spacing: 0em;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .heroHeadingItalic {
+    display: inline;
+  }
+}
+
+.heroHeadingNormal {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  color: #fff;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .heroHeadingNormal {
+    display: inline;
+  }
+}
+
+.heroDescription {
+  margin-top: 1.5rem;
+  color: #a8a9ad;
+  max-width: 42rem; /* max-w-xl */
+  font-size: 1rem;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.heroButtonPrimary {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.heroButtonPrimary:hover {
+  background-color: #1d52e5;
+  color: white;
+  box-shadow: 0 8px 15px rgba(29, 82, 229, 0.4);
+}
+
+.heroButtonPrimary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  box-shadow: inset 0 6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.heroButtonSecondary {
+  border: 1px solid #8592b1;
+  color: #f5f6fa;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  background: transparent;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.heroButtonSecondary:hover {
+  background-color: rgba(107, 114, 128, 0.7);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heroAvatarsSection {
+  margin-top: 3rem;
+  color: #ccd5e8;
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroAvatars {
+  display: flex;
+  margin-bottom: 0.75rem;
+  gap: -1rem; /* -space-x-4 */
+}
+
+.heroAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.heroAvatarImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroClientCount {
+  color: white;
+  font-weight: 500;
+}
+
+.heroClientDescription {
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.heroScrollText {
+  position: absolute;
+  bottom: 0;
+  margin-top: 7rem;
+  color: #8592b1;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}

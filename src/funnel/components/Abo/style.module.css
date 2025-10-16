@@ -1,0 +1,59 @@
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: white;
+  color: rgb(17, 24, 39); /* text-gray-900 */
+}
+
+.aboutTextBlock {
+  max-width: 48rem; /* max-w-3xl */
+  margin: 0 auto;
+}
+
+.aboutMainHeading {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 500;
+  line-height: 1.375; /* leading-snug */
+  color: rgb(17, 24, 39); /* text-gray-900 */
+}
+
+@media (min-width: 768px) {
+  .aboutMainHeading {
+    font-size: 3rem; /* md:text-5xl */
+  }
+}
+
+.aboutTextNormal {
+  color: rgb(17, 24, 39); /* text-gray-900 */
+}
+
+.aboutTextGradient {
+  background: linear-gradient(to right, rgb(156, 163, 175), rgb(156, 163, 175), rgb(156, 163, 175));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aboutButtonContainer {
+  margin-top: 2.5rem; /* mt-10 */
+}
+
+.aboutButton {
+  border: 1px solid rgb(209, 213, 219); /* border-gray-300 */
+  border-radius: 9999px;
+  padding: 0.75rem 2rem; /* px-8 py-3 */
+  color: rgb(55, 65, 81); /* text-gray-700 */
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.aboutButton:hover {
+  background-color: rgb(229, 231, 235); /* hover:bg-gray-200 */
+}

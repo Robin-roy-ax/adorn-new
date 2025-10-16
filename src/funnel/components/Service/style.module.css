@@ -1,0 +1,172 @@
+.section {
+    width: 100%;
+    background-color: white;
+  }
+  
+  .container {
+    max-width: 90.625rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+  
+  .heading {
+    text-align: center;
+    color: #343e56;
+    font-weight: 500;
+    line-height: 1.05em;
+    letter-spacing: -0.05em;
+  }
+  
+  .heading span {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: normal;
+  }
+  
+  @media (min-width: 1280px) {
+    .heading {
+      font-size: 100px;
+    }
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .heading {
+      font-size: 80px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .heading {
+      font-size: 60px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .heading {
+      font-size: 40px;
+    }
+  }
+  
+  .description {
+    text-align: center;
+    color: #6f80a8;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    max-width: 48rem;
+    margin: 2rem auto 0;
+  }
+  
+  .grid {
+    display: grid;
+    gap: 2.5rem;
+    justify-content: center;
+    max-width: 95rem;
+    margin: 0 auto;
+    padding: 6rem 0;
+  }
+  
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card {
+    position: relative;
+    width: 28rem;
+    height: 28rem;
+    background-color: #111a3b;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    color: white;
+    padding: 2.5rem;
+    box-shadow:
+      0 0.78px 0.78px -0.53px #6b7087bd,
+      0 1.9px 1.9px -1.07px #6b7087ba,
+      0 3.63px 3.63px -1.6px #6b7087b3,
+      0 6.35px 6.35px -2.14px #6b7087ab,
+      0 11.05px 11.05px -2.67px #6b70879c,
+      0 20.24px 20.24px -3.21px #6b708780,
+      0 40px 40px -3.75px #6b708740;
+    transition: all 0.7s ease;
+    margin: 0 auto;
+  }
+  
+  .card:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, rgba(37, 99, 235, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.7s ease;
+  }
+  
+  .card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .cardImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15rem;
+    height: 15rem;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  
+  .text {
+    position: relative;
+    z-index: 10;
+    margin-top: 55px;
+    text-align: left;
+  }
+  
+  .cardTitle {
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+  
+  @media (max-width: 1024px) {
+    .cardTitle {
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cardTitle {
+      font-size: 26px;
+    }
+  }
+  
+  .cardDesc {
+    color: #d1d5db;
+    line-height: 1.6;
+    font-size: 1.125rem;
+    max-width: 28rem;
+  }
+  

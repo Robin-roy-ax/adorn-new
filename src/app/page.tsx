@@ -1,25 +1,33 @@
-import Na from "@/funnel/components/common/NA"
-import He from "@/funnel/components/common/He";
-import Ab from "@/funnel/components/common/Ab";
-import FE from "@/funnel/components/common/FE";
-import Te from "@/funnel/components/common/Te";
-import Se from "@/funnel/components/common/Se";
-import Be from "@/funnel/components/common/Be";
-import PrS from "@/funnel/components/common/PrS";
-import Fa from "@/funnel/components/common/Fa";
+
+import Benefit from "@/funnel/components/Benefit/page";
+import Test from "@/funnel/components/Test";
+import FAQPage from "@/funnel/components/FaqPage";
+import Footer from "@/funnel/components/Footer";
+import Nav from "@/funnel/components/Nav/page";
+import Her from "@/funnel/components/Her/page";
+import Abo from "@/funnel/components/Abo/page";
+import FeaturedWork from "@/funnel/components/FeaturedWork/page";
+import Service from "@/funnel/components/Service/page";
+import Pricing from "@/funnel/components/Pricing";
+
+
 
 export default function Home() {
   return (
     <>
-      <Na />
-      <He />
-      <Ab />
-      <FE />
-      <Te />
-      <Se />
-      <Be />
-      <PrS />
-      <Fa />
+    <Nav />
+    
+    <Her />
+    <Abo />
+    <FeaturedWork />
+    <Test />
+    <Service />
+    <Benefit />
+    <Pricing />
+    <FAQPage />
+    <Footer />
+    
+      
     </>
   );
 }
