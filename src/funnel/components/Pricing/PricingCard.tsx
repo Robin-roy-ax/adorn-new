@@ -30,10 +30,11 @@ export default function PricingCard({
     <motion.div
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200 }}
-      className={`relative rounded-2xl shadow-[0_1.6796px_1.6796px_-.46875px_#64718fbd,0_3.98096px_3.98096px_-.9375px_#64718fba,0_7.26168px_7.26168px_-1.40625px_#64718fb5,0_12.0725px_12.0725px_-1.875px_#64718fb0,0_19.4962px_19.4962px_-2.34375px_#64718fa6,0_31.9133px_31.9133px_-2.8125px_#64718f96,0_54.9525px_54.9525px_-3.28125px_#64718f7a,0_100px_100px_-3.75px_#64718f40] overflow-hidden flex flex-col justify-between p-8 text-left h-[570px]
+      className={`relative rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
+ overflow-hidden flex flex-col justify-between p-8 text-left h-[570px]
         ${highlight
-          ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] w-[370px]"
-          : "bg-gray-100 text-slate-800 border-slate-200 z-30 w-[370px]"
+          ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] z-30 w-[370px]"
+          : "bg-gray-100 text-slate-800 border-slate-200 w-[370px] z-20"
         }`}
     >
       {/* Badge */}

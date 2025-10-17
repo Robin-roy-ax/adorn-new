@@ -6,13 +6,15 @@ import { useRef, useState, useEffect } from "react";
 import {
   FEATURED_WORK_PROJECTS,
   FEATURED_WORK_TEXT,
-  FEATURED_WORK_ANIMATIONS
+  FEATURED_WORK_ANIMATIONS,
 } from "./data";
 import styles from "./style.module.css";
+import ViewProjectCursor from "./MousePointer";
 
 export default function FeaturedWork() {
   return (
     <section className={styles.featuredWorkSection}>
+      {/* Header */}
       <motion.div
         className={styles.featuredWorkContainer}
         initial={FEATURED_WORK_ANIMATIONS.section.initial}
@@ -20,7 +22,6 @@ export default function FeaturedWork() {
         transition={{ duration: FEATURED_WORK_ANIMATIONS.section.duration }}
       >
         <div className={styles.featuredWorkHeader}>
-          {/* Title */}
           <h2 className={styles.featuredWorkTitle}>
             {FEATURED_WORK_TEXT.title.part1}{" "}
             <span className={styles.featuredWorkTitleItalic}>
@@ -28,7 +29,6 @@ export default function FeaturedWork() {
             </span>
           </h2>
 
-          {/* Description */}
           <p className={styles.featuredWorkDescription}>
             {FEATURED_WORK_TEXT.description}
           </p>
@@ -44,7 +44,7 @@ export default function FeaturedWork() {
         initial={FEATURED_WORK_ANIMATIONS.footerButton.initial}
         animate={FEATURED_WORK_ANIMATIONS.footerButton.animate}
         transition={{
-          duration: FEATURED_WORK_ANIMATIONS.footerButton.duration
+          duration: FEATURED_WORK_ANIMATIONS.footerButton.duration,
         }}
       >
         <button className={styles.featuredWorkButton}>
@@ -60,8 +60,9 @@ function HorizontalScrollCarousel() {
   const { scrollYProgress } = useScroll({ target: targetRef });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
 
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // 👇 track hover and mouse position
   const [hovering, setHovering] = useState(false);
+  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -83,9 +84,10 @@ function HorizontalScrollCarousel() {
               whileInView={FEATURED_WORK_ANIMATIONS.projectCards.animate}
               transition={{
                 duration: FEATURED_WORK_ANIMATIONS.projectCards.duration,
-                delay: index * FEATURED_WORK_ANIMATIONS.projectCards.staggerDelay
+                delay: index * FEATURED_WORK_ANIMATIONS.projectCards.staggerDelay,
               }}
               viewport={{ once: true }}
+              // 👇 show cursor only while hovering a card
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
             >
@@ -122,20 +124,13 @@ function HorizontalScrollCarousel() {
           ))}
         </motion.div>
 
-        {/* Custom Cursor */}
-        <motion.div
-          className={`${styles.customCursor} ${hovering ? styles.customCursorVisible : ''}`}
-          style={{
-            x: mousePos.x - 60,
-            y: mousePos.y - 60,
-          }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        >
-          {FEATURED_WORK_TEXT.cursorText.split(' ')[0]}{" "}
-          <span className={styles.cursorViewText}>
-            {FEATURED_WORK_TEXT.cursorText.split(' ').slice(1).join(' ')}
-          </span>
-        </motion.div>
+        {/* 👇 MousePointer (only visible when hovering) */}
+        {hovering && mousePos && (
+          <ViewProjectCursor
+            visible={true}
+            mousePos={mousePos}
+          />
+        )}
       </div>
     </section>
   );

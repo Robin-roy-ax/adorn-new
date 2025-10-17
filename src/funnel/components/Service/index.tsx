@@ -7,7 +7,7 @@ import styles from "./style.module.css";
 
 export default function Services() {
   return (
-    <section className={styles.section}>
+    <section id="services" className={styles.section}>
       <div className={styles.container}>
         {/* Header */}
         <motion.h2

@@ -20,6 +20,7 @@ const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: ["400"] }
 export default function Hero() {
   return (
     <motion.section
+      id="hero"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: HERO_ANIMATIONS.container.duration }}
@@ -114,12 +115,6 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: HERO_ANIMATIONS.button2.delay }}
-          whileHover={{
-            backgroundColor: "rgba(107, 114, 128, 0.7)",
-            borderColor: "transparent",
-            color: "#ffffff",
-            boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-          }}
           className={styles.heroButtonSecondary}
         >
           {HERO_BUTTONS.secondary}

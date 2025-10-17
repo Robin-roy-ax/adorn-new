@@ -28,7 +28,7 @@ const cardVariants: Variants = {
 
 export default function Testimonials() {
   return (
-    <section className={styles.testimonialsSection}>
+    <section id="testimonials" className={styles.testimonialsSection}>
       <div className={styles.testimonialsContainer}>
         {/* Header */}
         <motion.div

@@ -145,9 +145,10 @@ const Hero = () => {
     font-medium
     transition-all
     duration-300
+    hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)]
   "
 >
-  See pricing plans
+  {/* See pricing plans */}
 </motion.button>
 
 

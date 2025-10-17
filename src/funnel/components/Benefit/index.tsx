@@ -7,7 +7,7 @@ import styles from "./style.module.css";
 
 export default function Benefits() {
   return (
-    <section className={styles.section}>
+    <section id="benefits" className={styles.section}>
       <motion.div
         className={styles.container}
         initial={{ opacity: 0, y: 40 }}
