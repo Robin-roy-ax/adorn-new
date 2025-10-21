@@ -33,7 +33,7 @@ export default function PricingCard({
       className={`relative rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
  overflow-hidden flex flex-col justify-between p-8 text-left h-[570px]
         ${highlight
-          ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] z-30 w-[370px]"
+          ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] text-white z-30 w-[370px]"
           : "bg-gray-100 text-slate-800 border-slate-200 w-[370px] z-20"
         }`}
     >

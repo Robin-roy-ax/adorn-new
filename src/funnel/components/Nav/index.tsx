@@ -1,127 +1,117 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  MENU_ITEMS,
-  menuVariants,
-  LOGO_TEXT,
-  CTA_BUTTON_TEXT,
-  LOGO_SYMBOL,
-} from "./data";
+import { MENU_ITEMS, LOGO_TEXT, CTA_BUTTON_TEXT, LOGO_SYMBOL } from "./data";
 import styles from "./style.module.css";
 import { useRouter, usePathname } from "next/navigation";
 
-export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+interface NavbarProps {
+  onMenuClick: (id: string) => void;
+  showWorkSection: boolean; // true for work and pricing
+}
+
+export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [inHero, setInHero] = useState(true);
   const router = useRouter();
   const pathname = usePathname();
 
-  // ✅ Scroll detection
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.8);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (showWorkSection) {
+      setInHero(false); // black nav for work & pricing
+      return;
+    }
 
-  // ✅ Scroll to section smoothly
+    const handleScroll = () => {
+      const heroSection = document.getElementById("hero");
+      if (!heroSection) return;
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      setInHero(heroBottom > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showWorkSection]);
+
+  const menuColor = inHero ? "#fff" : "#000";
+  const navbarClass = inHero ? styles.navbarHero : styles.navbarDefault;
+  const logoSectionClass = inHero ? styles.logoSectionHero : styles.logoSectionDefault;
+
+  const desktopButtonClass = inHero
+    ? `${styles.desktopButton} ${styles.heroButton}`
+    : `${styles.desktopButton} ${styles.defaultButton}`;
+
+  const mobileButtonClass = inHero
+    ? `${styles.mobileButtonHero}`
+    : `${styles.mobileButtonDefault}`;
+
   const handleNavigation = (id: string) => {
     setMobileOpen(false);
+    onMenuClick(id);
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    } else {
-      router.push(`/#${id}`);
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+    else router.push(`/#${id}`);
   };
 
-  // ✅ Logo click — scroll to top + refresh
-const handleLogoClick = () => {
-  if (pathname === "/") {
-    // Instant scroll to top
-    window.scrollTo({ top: 0, behavior: "smooth" });
-
-  } else {
-    router.push("/"); // Navigate to homepage if not already
-  }
-};
+  const handleLogoClick = () => {
+    if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+    else router.push("/");
+    onMenuClick("home");
+  };
 
   return (
-    <nav
-      className={`${styles.navbar} ${
-        scrolled ? styles.navbarScrolled : styles.navbarTransparent
-      }`}
-    >
-      {/* ✅ Logo */}
+    <nav className={`${styles.navbar} ${navbarClass}`}>
+      {/* Logo */}
       <div
         onClick={handleLogoClick}
-        className={`${styles.logoSection} ${
-          scrolled ? styles.logoSectionScrolled : styles.logoSectionTransparent
-        }`}
-        style={{ cursor: "pointer" }}
+        className={`${styles.logoSection} ${logoSectionClass}`}
+        style={{ color: menuColor }}
       >
-        <span className={styles.logoSymbol}>{LOGO_SYMBOL}</span>
-        <span className={styles.logoText}>{LOGO_TEXT}</span>
+        <span>{LOGO_SYMBOL}</span>
+        <span>{LOGO_TEXT}</span>
       </div>
 
-      {/* ✅ Desktop Menu */}
+      {/* Desktop Menu */}
       <div className={styles.desktopMenu}>
         {MENU_ITEMS.map((item) => (
           <button
             key={item.id}
             onClick={() => handleNavigation(item.id)}
-            className={`${styles.menuLink} ${
-              scrolled ? styles.menuLinkScrolled : styles.menuLinkTransparent
-            }`}
+            className={styles.menuLink}
+            style={{ color: menuColor }}
           >
             {item.label}
           </button>
         ))}
       </div>
 
-      {/* ✅ Right Section */}
+      {/* CTA + Hamburger */}
       <div className={styles.rightSection}>
-        {/* Desktop Button */}
         <div className={styles.desktopButtonSection}>
-          <button
-            className={`${styles.desktopButton} ${
-              scrolled
-                ? styles.desktopButtonScrolled
-                : styles.desktopButtonTransparent
-            }`}
+          <a
+            href="https://aalayrasool.lemonsqueezy.com/buy/0d653898-9e3c-4899-9612-2b7d950d53f6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={desktopButtonClass}
           >
             {CTA_BUTTON_TEXT}
-          </button>
+          </a>
         </div>
 
-        {/* ✅ Mobile Hamburger */}
         <button
           aria-label="Toggle menu"
           className={styles.mobileHamburger}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          <span
-            className={`${styles.hamburgerLine} ${
-              mobileOpen ? styles.hamburgerLineOpen1 : ""
-            }`}
-          />
-          <span
-            className={`${styles.hamburgerLine} ${
-              mobileOpen ? styles.hamburgerLineOpen2 : ""
-            }`}
-          />
-          <span
-            className={`${styles.hamburgerLine} ${
-              mobileOpen ? styles.hamburgerLineOpen3 : ""
-            }`}
-          />
+          <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.hamburgerLineOpen1 : ""}`} />
+          <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.hamburgerLineOpen2 : ""}`} />
+          <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.hamburgerLineOpen3 : ""}`} />
         </button>
       </div>
 
-      {/* ✅ Mobile Menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -132,34 +122,25 @@ const handleLogoClick = () => {
             transition={{ duration: 0.4 }}
             className={styles.mobileMenu}
           >
-            {MENU_ITEMS.map((item, i) => (
+            {MENU_ITEMS.map((item) => (
               <motion.button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                custom={i}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                variants={menuVariants}
                 className={styles.mobileMenuLink}
+                style={{ color: menuColor }}
               >
                 {item.label}
               </motion.button>
             ))}
 
-            <motion.button
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{
-                delay: MENU_ITEMS.length * 0.1,
-                type: "spring",
-                stiffness: 300,
-              }}
-              className={styles.mobileButton}
-              onClick={() => setMobileOpen(false)}
+            <motion.a
+              href="https://aalayrasool.lemonsqueezy.com/buy/0d653898-9e3c-4899-9612-2b7d950d53f6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={mobileButtonClass}
             >
               {CTA_BUTTON_TEXT}
-            </motion.button>
+            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
