@@ -14,7 +14,7 @@ import Faq from "@/funnel/components/Faq/page";
 import WorkSection from "@/funnel/components/Work/page";
 import Foot from "@/funnel/components/Foot/page";
 import AboutUs from "@/funnel/components/common/AboutUs";
-import Arch from "@/funnel/components/Projects/Arch";
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<
