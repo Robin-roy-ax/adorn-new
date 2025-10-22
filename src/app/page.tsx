@@ -107,7 +107,6 @@ export default function Home() {
       {/* Faq + Footer */}
       <Faq />
       <Foot />
-      <Arch />
     </>
   );
 }
