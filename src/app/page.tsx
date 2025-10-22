@@ -15,47 +15,57 @@ import WorkSection from "@/funnel/components/common/WorkSection";
 import Foot from "@/funnel/components/Foot/page";
 import AboutUs from "@/funnel/components/common/AboutUs";
 
-
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<"default" | "work" | "pricing" | "about">("default");
+  const [activeSection, setActiveSection] = useState<
+    "default" | "work" | "pricing" | "about"
+  >("default");
 
-  // ✅ Check URL hash on load
+  // ✅ Restore scroll position on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
+      const savedPosition = sessionStorage.getItem("scrollPosition");
+      if (savedPosition) {
+        window.scrollTo(0, parseInt(savedPosition, 10));
+      }
+
+      // Detect hash in URL and set active section
       const hash = window.location.hash.replace("#", "");
-      if (hash === "work") setActiveSection("work");
-      if (hash === "pricing") setActiveSection("pricing");
-      if (hash === "about") setActiveSection("about");
+      if (hash === "work" || hash === "pricing" || hash === "about") {
+        setActiveSection(hash as "work" | "pricing" | "about");
+      } else {
+        setActiveSection("default");
+      }
+
+      // Save scroll position before unload
+      const handleBeforeUnload = () => {
+        sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+      };
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      };
     }
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+  // ✅ Menu click handler
   const handleMenuClick = (id: string) => {
-    if (id === "work") {
-      setActiveSection("work");
-      window.history.replaceState(null, "", "#work");
-      // scroll to top of new view
-      setTimeout(() => scrollToTop(), 50);
-    } else if (id === "pricing") {
-      setActiveSection("pricing");
-      window.history.replaceState(null, "", "#pricing");
-      // scroll to top of pricing view
-      setTimeout(() => scrollToTop(), 50);
-    } else if (id === "about") {
-      setActiveSection("about");
-      window.history.replaceState(null, "", "#about");
-      // scroll to top of about view
-      setTimeout(() => scrollToTop(), 50);
+    if (id === "work" || id === "pricing" || id === "about") {
+      setActiveSection(id as "work" | "pricing" | "about");
+      window.history.replaceState(null, "", `#${id}`);
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 50);
+    } else if (id === "home") {
+      setActiveSection("default");
+      window.history.replaceState(null, "", "/");
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 50);
     } else {
+      // For other internal sections
       setActiveSection("default");
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       } else {
-        scrollToTop();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
       window.history.replaceState(null, "", " ");
     }
@@ -65,13 +75,14 @@ export default function Home() {
     <>
       <Nav
         onMenuClick={handleMenuClick}
-        showWorkSection={activeSection === "work" || activeSection === "pricing" || activeSection === "about"}
+        showWorkSection={
+          activeSection === "work" ||
+          activeSection === "pricing" ||
+          activeSection === "about"
+        }
       />
 
-      
-      
-
-      {/* Default View */}
+      {/* Default Home View */}
       {activeSection === "default" && (
         <>
           <Her />
@@ -90,22 +101,24 @@ export default function Home() {
       {/* About Section */}
       {activeSection === "about" && <AboutUs />}
 
-      {/* Pricing Section behaves like WorkSection */}
+      {/* Pricing Section */}
       {activeSection === "pricing" && (
         <div id="pricing" className="bg-white">
           <Pricing variant="compare" />
         </div>
       )}
 
-      {/* Faq + Footer always below work/pricing */}
-      {(activeSection === "work" || activeSection === "pricing" || activeSection === "about") && (
+      {/* Faq + Footer for work/pricing/about */}
+      {(activeSection === "work" ||
+        activeSection === "pricing" ||
+        activeSection === "about") && (
         <>
           <Faq />
           <Foot />
         </>
       )}
 
-      {/* Default footer + faq at end of page */}
+      {/* Default Faq + Footer */}
       {activeSection === "default" && (
         <>
           <Faq />

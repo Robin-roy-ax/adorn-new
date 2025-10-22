@@ -8,7 +8,7 @@ import { useRouter, usePathname } from "next/navigation";
 
 interface NavbarProps {
   onMenuClick: (id: string) => void;
-  showWorkSection: boolean; // true for work and pricing
+  showWorkSection: boolean; // true for work, pricing, about
 }
 
 export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
@@ -19,7 +19,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
 
   useEffect(() => {
     if (showWorkSection) {
-      setInHero(false); // black nav for work & pricing
+      setInHero(false); // dark nav for work/pricing/about
       return;
     }
 
@@ -56,9 +56,12 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
   };
 
   const handleLogoClick = () => {
-    if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
-    else router.push("/");
-    onMenuClick("home");
+    if (pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
+    }
+    onMenuClick("home"); // ✅ Now triggers Hero scroll
   };
 
   return (

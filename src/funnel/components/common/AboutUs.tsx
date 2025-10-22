@@ -55,7 +55,7 @@ export default function AboutUs() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
+        transition={{delay: 0.2, duration: 0.7 }}
         className="flex flex-col items-center justify-center"
       >
         <h2 className="font-inter text-[2.5rem] md:text-[5rem] lg:text-[6rem] font-medium leading-[1.1em] tracking-[-0.05em] text-[rgb(45,55,83)]">
