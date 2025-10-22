@@ -9,9 +9,14 @@ import {
   FEATURED_WORK_ANIMATIONS,
 } from "./data";
 import styles from "./style.module.css";
-import ViewProjectCursor from "./MousePointer";
+import ViewProjectCursor from "../common/MousePointer";
+import { useRouter } from "next/navigation";
 
-export default function FeaturedWork() {
+interface FeaturedWorkProps {
+  onProjectClick?: (projectId: string) => void;
+}
+
+export default function FeaturedWork({ onProjectClick }: FeaturedWorkProps) {
   return (
     <section className={styles.featuredWorkSection}>
       {/* Header */}
@@ -36,7 +41,7 @@ export default function FeaturedWork() {
       </motion.div>
 
       {/* Horizontal Scroll Carousel */}
-      <HorizontalScrollCarousel />
+      <HorizontalScrollCarousel onProjectClick={onProjectClick} />
 
       {/* Footer Button */}
       <motion.div
@@ -55,12 +60,16 @@ export default function FeaturedWork() {
   );
 }
 
-function HorizontalScrollCarousel() {
+interface HorizontalScrollCarouselProps {
+  onProjectClick?: (projectId: string) => void;
+}
+
+function HorizontalScrollCarousel({ onProjectClick }: HorizontalScrollCarouselProps) {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
 
-  // 👇 track hover and mouse position
+  const router = useRouter();
   const [hovering, setHovering] = useState(false);
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
 
@@ -71,6 +80,11 @@ function HorizontalScrollCarousel() {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
+  const handleClick = (projectId: string) => {
+    if (onProjectClick) onProjectClick(projectId);
+    router.push(`/${projectId}`); // ✅ navigate to real route
+  };
 
   return (
     <section ref={targetRef} className={styles.carouselSection}>
@@ -87,9 +101,9 @@ function HorizontalScrollCarousel() {
                 delay: index * FEATURED_WORK_ANIMATIONS.projectCards.staggerDelay,
               }}
               viewport={{ once: true }}
-              // 👇 show cursor only while hovering a card
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
+              onClick={() => handleClick(project.id)}
             >
               {/* Image */}
               <div className={styles.projectImageContainer}>
@@ -107,9 +121,7 @@ function HorizontalScrollCarousel() {
               {/* Text Content */}
               <div className={styles.projectContent}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
-                <p className={styles.projectDescription}>
-                  {project.description}
-                </p>
+                <p className={styles.projectDescription}>{project.description}</p>
               </div>
 
               {/* Tags */}
@@ -124,12 +136,9 @@ function HorizontalScrollCarousel() {
           ))}
         </motion.div>
 
-        {/* 👇 MousePointer (only visible when hovering) */}
+        {/* Mouse Pointer */}
         {hovering && mousePos && (
-          <ViewProjectCursor
-            visible={true}
-            mousePos={mousePos}
-          />
+          <ViewProjectCursor visible={true} mousePos={mousePos} />
         )}
       </div>
     </section>

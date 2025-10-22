@@ -92,7 +92,7 @@ export default function HomeSection() {
         </div>
 
         <div className={styles.footerBottom}>
-          <p>© Adorn 2024. All rights reserved</p>
+          <p>© Picasso Fusion 2024. All rights reserved</p>
           <p>
             Designed by{" "}
             <a href="#" className="underline hover:text-gray-700">

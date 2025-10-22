@@ -20,7 +20,7 @@ export default function Benefits() {
             Discover your <span>Benefits</span>
           </h2>
           <p className={styles.description}>
-            Explore the exclusive advantages of partnering with Adorn for all
+            Explore the exclusive advantages of partnering with Picasso Fusion for all
             your creative needs.
           </p>
         </div>

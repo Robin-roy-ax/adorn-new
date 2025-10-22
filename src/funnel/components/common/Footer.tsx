@@ -127,7 +127,7 @@ export default function HomePage() {
 
         {/* Footer Bottom */}
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row items-center justify-between text-gray-500 text-sm max-w-[1400px] mx-auto">
-          <p>© Adorn 2024. All rights reserved</p>
+          <p>© Picasso Fusion 2024. All rights reserved</p>
           <p>
             Designed by{" "}
             <a href="#" className="underline hover:text-gray-700">

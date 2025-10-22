@@ -11,16 +11,16 @@ import Service from "@/funnel/components/Service/page";
 import Benefit from "@/funnel/components/Benefit/page";
 import Pricing from "@/funnel/components/Pricing/index";
 import Faq from "@/funnel/components/Faq/page";
-import WorkSection from "@/funnel/components/common/WorkSection";
+import WorkSection from "@/funnel/components/Work/page";
 import Foot from "@/funnel/components/Foot/page";
 import AboutUs from "@/funnel/components/common/AboutUs";
+import Arch from "@/funnel/components/Projects/Arch";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<
     "default" | "work" | "pricing" | "about"
   >("default");
 
-  // ✅ Restore scroll position on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedPosition = sessionStorage.getItem("scrollPosition");
@@ -28,7 +28,6 @@ export default function Home() {
         window.scrollTo(0, parseInt(savedPosition, 10));
       }
 
-      // Detect hash in URL and set active section
       const hash = window.location.hash.replace("#", "");
       if (hash === "work" || hash === "pricing" || hash === "about") {
         setActiveSection(hash as "work" | "pricing" | "about");
@@ -36,7 +35,6 @@ export default function Home() {
         setActiveSection("default");
       }
 
-      // Save scroll position before unload
       const handleBeforeUnload = () => {
         sessionStorage.setItem("scrollPosition", window.scrollY.toString());
       };
@@ -48,7 +46,6 @@ export default function Home() {
     }
   }, []);
 
-  // ✅ Menu click handler
   const handleMenuClick = (id: string) => {
     if (id === "work" || id === "pricing" || id === "about") {
       setActiveSection(id as "work" | "pricing" | "about");
@@ -59,7 +56,6 @@ export default function Home() {
       window.history.replaceState(null, "", "/");
       setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 50);
     } else {
-      // For other internal sections
       setActiveSection("default");
       const section = document.getElementById(id);
       if (section) {
@@ -108,23 +104,10 @@ export default function Home() {
         </div>
       )}
 
-      {/* Faq + Footer for work/pricing/about */}
-      {(activeSection === "work" ||
-        activeSection === "pricing" ||
-        activeSection === "about") && (
-        <>
-          <Faq />
-          <Foot />
-        </>
-      )}
-
-      {/* Default Faq + Footer */}
-      {activeSection === "default" && (
-        <>
-          <Faq />
-          <Foot />
-        </>
-      )}
+      {/* Faq + Footer */}
+      <Faq />
+      <Foot />
+      <Arch />
     </>
   );
 }

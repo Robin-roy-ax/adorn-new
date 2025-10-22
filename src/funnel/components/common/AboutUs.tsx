@@ -208,7 +208,7 @@ export default function AboutUs() {
       role: "Founder/Creative Director",
       image: "https://framerusercontent.com/images/EmrjuKhlE2MYwMMNxmKiVqqR4.png",
       description:
-        "Karim is the visionary behind Adorn, leading the team with his passion for creativity and innovation. With years of experience in the industry, he drives the company's mission to create exceptional brand experiences.",
+        "Karim is the visionary behind Picasso Fusion, leading the team with his passion for creativity and innovation. With years of experience in the industry, he drives the company's mission to create exceptional brand experiences.",
     },
     {
       name: "Matthew Davis",

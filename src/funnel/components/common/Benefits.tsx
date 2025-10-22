@@ -69,7 +69,7 @@ export default function Benefits() {
 
     {/* Description */}
     <p className="text-gray-600 text-lg md:text-base lg:max-w-md">
-            Explore the exclusive advantages of partnering with Adorn for all your
+            Explore the exclusive advantages of partnering with Picasso Fusion for all your
             creative needs.
           </p>
   </div>
