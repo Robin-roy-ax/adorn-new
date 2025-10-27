@@ -15,30 +15,81 @@
   
   .header {
     text-align: center;
+    margin-top: 10rem;
     margin-bottom: 4rem;
   }
   
+  :root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-blue: #1d52e5;
+  --color-primary: #28334d;
+  --color-muted: #8592b1;
+  --color-primary-transparent: #28334d99;
+  --color-dark: #111a3b;
+  --color-light-bg: #f5f6fa;
+  --color-border: #dde3ee;
+  --color-overlay: #ccd5e899;
+}
+
+/* =============================
+   TYPOGRAPHY STYLES
+   ============================= */
+
+.heading {
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+  font-size: 6rem; /* equivalent to 96px */
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.1em;
+  letter-spacing: -0.05em;
+  text-align: center;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+.headingItalic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-primary);
+}
+
+/* Optional: smaller responsive scaling */
+@media (max-width: 1024px) {
   .heading {
-    font-size: 4rem;
-    font-weight: 500;
-    color: #2d3753;
-    line-height: 1.1em;
-    letter-spacing: -0.05em;
+    font-size: 4.5rem;
   }
-  
-  .headingItalic {
-    font-weight: 400;
-    font-style: italic;
-    font-family: serif;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 3rem;
   }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+}
+
   
   .subtext {
     color: #939cad;
+    align-items: center;
+    font-family: "Inter", "Inter Placeholder", sans-serif;
     margin-top: 1.5rem;
     max-width: 36rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.125rem;
+    font-size: 17px;
+    font-weight: 500;
   }
   
   .grid {

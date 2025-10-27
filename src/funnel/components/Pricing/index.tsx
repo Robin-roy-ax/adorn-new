@@ -31,8 +31,8 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
     className="
-      font-medium leading-[1.1em] tracking-[-0.05em]
-      text-[2.5rem] sm:text-[3rem] md:text-[5rem] lg:text-[7rem] xl:text-[9rem]
+      font-medium leading-[1.1em] mt-6rem tracking-[-0.05em]
+      text-[2.5rem] sm:text-[3rem] md:text-[5rem] lg:text-[7rem] xl:text-[7rem]
     "
   >
     {headerTitle.includes("Compare") ? (
@@ -59,7 +59,7 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
     transition={{ duration: 1, ease: "easeOut" }}
     viewport={{ once: true }}
     className="
-      mt-6 text-gray-500 font-semibold leading-relaxed
+      mt-6rem text-gray-500 font-semibold leading-relaxed
       text-[0.9rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.1rem]
       max-w-2xl mx-auto
     "

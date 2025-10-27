@@ -56,7 +56,7 @@ export default function AboutUs() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{delay: 0.2, duration: 0.7 }}
-        className="flex flex-col items-center justify-center"
+        className="flex mt-45 flex-col items-center justify-center"
       >
         <h2 className="font-inter text-[2.5rem] md:text-[5rem] lg:text-[6rem] font-medium leading-[1.1em] tracking-[-0.05em] text-[rgb(45,55,83)]">
           We&apos;re a{" "}
@@ -67,7 +67,7 @@ export default function AboutUs() {
           based in London
         </h2>
 
-        <p className="mt-6 text-[rgb(133,146,177)] text-lg md:text-lg max-w-3xl leading-relaxed">
+        <p className="mt-6 text-[#8592b1] text-center text-lg md:text-lg max-w-3xl leading-relaxed">
           At Picasso Fusion, creativity is our cornerstone. We&apos;re a dynamic team driven
           by innovation and dedicated to bringing your vision to life.
         </p>
