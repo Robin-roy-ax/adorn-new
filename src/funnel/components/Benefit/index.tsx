@@ -73,7 +73,7 @@ function BenefitCard({ benefit }: { benefit: Benefit }) {
         
         style={{
           transform: benefit.title === "Unlimited Revisions"
-            ? "translate(-50%, -28%)"
+            ? "translate(-30%, -20%) rotate(-326deg)"
             : `translate(-50%, -1rem) rotate(${benefit.rotation}deg)`
         }}
       >

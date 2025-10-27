@@ -18,48 +18,57 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
       className="bg-white flex flex-col items-center py-20 px-6 text-center text-[#394560]"
     >
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true }}
-        className="text-center max-w-5xl mx-auto px-6"
-      >
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-[9rem] md:text-[7rem] sm:text-[48px] font-medium leading-[1.1em] tracking-[-0.05em]"
-        >
-          {headerTitle.includes("Compare") ? (
-            <>
-              Compare & Choose{" "}
-              <span className="font-['Instrument_Serif'] italic font-normal">
-                Your Plan
-              </span>
-            </>
-          ) : (
-            <>
-              Transparent{" "}
-              <span className="font-['Instrument_Serif'] italic font-normal">
-                Pricing
-              </span>
-            </>
-          )}
-        </motion.h2>
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+  className="text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+>
+  {/* Title */}
+  <motion.h2
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="
+      font-medium leading-[1.1em] tracking-[-0.05em]
+      text-[2.5rem] sm:text-[3rem] md:text-[5rem] lg:text-[7rem] xl:text-[9rem]
+    "
+  >
+    {headerTitle.includes("Compare") ? (
+      <>
+        Compare & Choose{" "}
+        <span className="font-['Instrument_Serif'] italic font-normal">
+          Your Plan
+        </span>
+      </>
+    ) : (
+      <>
+        Transparent{" "}
+        <span className="font-['Instrument_Serif'] italic font-normal">
+          Pricing
+        </span>
+      </>
+    )}
+  </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mt-6 text-gray-400 text-md font-semibold md:text-md leading-relaxed"
-        >
-          Explore our pricing options below and choose the plan that best fits your needs.
-          <br />
-          No hidden fees.
-        </motion.p>
-      </motion.div>
+  {/* Subtitle */}
+  <motion.p
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="
+      mt-6 text-gray-500 font-semibold leading-relaxed
+      text-[0.9rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.1rem]
+      max-w-2xl mx-auto
+    "
+  >
+    Explore our pricing options below and choose the plan that best fits your needs.
+    <br className="hidden sm:block" />
+    No hidden fees.
+  </motion.p>
+</motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}

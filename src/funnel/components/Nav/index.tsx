@@ -8,7 +8,7 @@ import { useRouter, usePathname } from "next/navigation";
 
 interface NavbarProps {
   onMenuClick: (id: string) => void;
-  showWorkSection: boolean; // true for work, pricing, about
+  showWorkSection: boolean;
 }
 
 export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
@@ -18,16 +18,12 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (showWorkSection) {
-      setInHero(false); // dark nav for work/pricing/about
-      return;
-    }
+    if (showWorkSection) { setInHero(false); return; }
 
     const handleScroll = () => {
-      const heroSection = document.getElementById("hero");
-      if (!heroSection) return;
-      const heroBottom = heroSection.getBoundingClientRect().bottom;
-      setInHero(heroBottom > 0);
+      const hero = document.getElementById("hero");
+      if (!hero) return;
+      setInHero(hero.getBoundingClientRect().bottom > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -37,15 +33,13 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
 
   const menuColor = inHero ? "#fff" : "#000";
   const navbarClass = inHero ? styles.navbarHero : styles.navbarDefault;
-  const logoSectionClass = inHero ? styles.logoSectionHero : styles.logoSectionDefault;
-
-  const desktopButtonClass = inHero
+  const logoClass = inHero ? styles.logoSectionHero : styles.logoSectionDefault;
+  const desktopBtnClass = inHero
     ? `${styles.desktopButton} ${styles.heroButton}`
     : `${styles.desktopButton} ${styles.defaultButton}`;
-
-  const mobileButtonClass = inHero
-    ? `${styles.mobileButtonHero}`
-    : `${styles.mobileButtonDefault}`;
+  const mobileBtnClass = inHero
+    ? styles.mobileButtonHero
+    : styles.mobileButtonDefault;
 
   const handleNavigation = (id: string) => {
     setMobileOpen(false);
@@ -56,12 +50,9 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
   };
 
   const handleLogoClick = () => {
-    if (pathname === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      router.push("/");
-    }
-    onMenuClick("home"); // ✅ Now triggers Hero scroll
+    if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
+    else router.push("/");
+    onMenuClick("home");
   };
 
   return (
@@ -69,7 +60,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
       {/* Logo */}
       <div
         onClick={handleLogoClick}
-        className={`${styles.logoSection} ${logoSectionClass}`}
+        className={`${styles.logoSection} ${logoClass}`}
         style={{ color: menuColor }}
       >
         <span>{LOGO_SYMBOL}</span>
@@ -90,14 +81,18 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
         ))}
       </div>
 
-      {/* CTA + Hamburger */}
+      {/* Right Section: CTA + Hamburger */}
       <div className={styles.rightSection}>
-        <div className={styles.desktopButtonSection}>
+        <div
+          className={`${styles.desktopButtonSection} ${
+            inHero ? styles.desktopButtonSectionHero : styles.desktopButtonSectionDefault
+          }`}
+        >
           <a
             href="https://aalayrasool.lemonsqueezy.com/buy/0d653898-9e3c-4899-9612-2b7d950d53f6"
             target="_blank"
             rel="noopener noreferrer"
-            className={desktopButtonClass}
+            className={desktopBtnClass}
           >
             {CTA_BUTTON_TEXT}
           </a>
@@ -114,7 +109,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -140,7 +135,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
               href="https://aalayrasool.lemonsqueezy.com/buy/0d653898-9e3c-4899-9612-2b7d950d53f6"
               target="_blank"
               rel="noopener noreferrer"
-              className={mobileButtonClass}
+              className={mobileBtnClass}
             >
               {CTA_BUTTON_TEXT}
             </motion.a>

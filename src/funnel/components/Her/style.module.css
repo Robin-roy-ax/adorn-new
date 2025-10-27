@@ -52,7 +52,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   margin-top: 2.5rem; /* mt-10 */
-  background: linear-gradient(to right, rgb(244, 114, 182), rgb(52, 211, 153));
+  background-image: linear-gradient(270deg, rgb(179, 255, 226) 0%, rgb(199, 239, 255) 50.0001%, rgb(224, 199, 255) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -62,7 +62,7 @@
   text-align: center;
   margin-top: 2.5rem;
   font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17, #fff);
   line-height: 1.1;
   letter-spacing: -0.05em;
@@ -88,7 +88,7 @@
   font-weight: 400;
   color: var(--token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17, rgb(255, 255, 255));
   letter-spacing: 0em;
-  display: block;
+  display: inline;
 }
 
 @media (min-width: 640px) {
@@ -103,14 +103,9 @@
   line-height: 1.1;
   letter-spacing: -0.05em;
   color: #fff;
-  display: block;
+  display: inline;
 }
 
-@media (min-width: 640px) {
-  .heroHeadingNormal {
-    display: inline;
-  }
-}
 
 .heroDescription {
   margin-top: 1.5rem;

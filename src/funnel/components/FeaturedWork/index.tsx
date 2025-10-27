@@ -67,7 +67,7 @@ interface HorizontalScrollCarouselProps {
 function HorizontalScrollCarousel({ onProjectClick }: HorizontalScrollCarouselProps) {
   const targetRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({ target: targetRef });
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
 
   const router = useRouter();
   const [hovering, setHovering] = useState(false);

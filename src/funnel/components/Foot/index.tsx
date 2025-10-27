@@ -1,15 +1,13 @@
-// components/Home/index.tsx
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { menuLinks, socialLinks } from "./data";
 import styles from "./style.module.css";
 
 export default function HomeSection() {
   return (
     <main className={styles.main}>
-      {/* Hero */}
+      {/* ===== HERO ===== */}
       <motion.div
         className={styles.hero}
         initial={{ opacity: 0 }}
@@ -34,68 +32,107 @@ export default function HomeSection() {
               Book a discovery call
             </a>
           </div>
-
-          {/* Decorative images (hidden/blurred) */}
-          <motion.div className="absolute inset-0" style={{ filter: "blur(25px)", opacity: 0 }}>
-            <Image
-              src="https://framerusercontent.com/images/F7z8b78ieeXJk8cetLjYCwi6gUY.png?scale-down-to=1024"
-              alt=""
-              fill
-              className="object-cover object-center rounded-[20px]"
-              aria-hidden
-            />
-          </motion.div>
         </div>
       </motion.div>
 
-      {/* Footer */}
+      {/* ===== FOOTER ===== */}
       <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          {/* Newsletter */}
-          <div className="footerSection">
-            <h3>Subscribe to our newsletter</h3>
-            <div className="flex items-center gap-3">
+        <div className={styles.footerContainer}>
+          {/* LEFT: Newsletter */}
+          <div className={styles.footerLeft}>
+            <h3
+              style={{
+                fontFamily: '"Inter", sans-serif',
+                fontSize: "40px",
+                fontWeight: 500,
+                letterSpacing: "-0.05em",
+                lineHeight: "1.2em",
+                color: "#28334d",
+                margin: 0,
+              }}
+            >
+              Subscribe to our newsletter
+            </h3>
+
+            <div className="flex items-center gap-3 w-full max-w-md mt-4">
               <input
                 type="email"
                 placeholder="name@email.com"
-                className="bg-gray-100 text-gray-700 px-5 py-3 rounded-full w-full outline-none focus:ring-2 focus:ring-gray-300 text-base"
+                className="bg-[#f5f6fa] text-[#28334d] px-5 py-3 rounded-full w-full outline-none focus:ring-2 focus:ring-[#dde3ee] placeholder-[#8592b1] text-base transition-all duration-200"
               />
-              <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 text-base">
+              <button className="bg-[#000000] text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200">
                 Subscribe
               </button>
             </div>
           </div>
 
-          {/* Menu */}
-          <div className="footerSection">
-            <h4>Menu</h4>
-            <ul className={styles.footerLinks}>
-              {menuLinks.map((link, idx) => (
-                <li key={idx}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* RIGHT: Menu + Social + Floating Button */}
+          <div className={styles.footerRight}>
+            {/* MENU */}
+            <div className={styles.footerMenu}>
+              <h4 className={styles.footerTitle}>Menu</h4>
+              <ul className="flex flex-col gap-3 items-start list-none m-0 p-0">
+                {menuLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={link.href}
+                      className="text-[#8592b1] hover:text-[#bababaed] transition-all duration-200 text-[16px]"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Social */}
-          <div className="footerSection">
-            <h4>Follow Us</h4>
-            <ul className={styles.socialLinks}>
-              {socialLinks.map((social, idx) => (
-                <li key={idx}>
-                  <a href={social.href}>{social.label}</a>
-                </li>
-              ))}
-            </ul>
+            {/* SOCIAL */}
+            <div className={styles.footerSocial}>
+              <h4 className={styles.footerTitle}>Follow Us</h4>
+              <ul className="flex flex-col gap-3 items-center list-none m-0 p-0">
+                {socialLinks.map((social, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={social.href}
+                      className="text-[#8592b1] hover:text-[#bababaed] transition-all duration-200 text-[16px]"
+                    >
+                      {social.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* FLOATING BUTTON */}
+            <div className={styles.footerButton}>
+              <a
+                href="#hero"
+                className="bg-black hover:bg-[#3c3c3c] text-white w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 shadow-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="12" y1="19" x2="12" y2="5" />
+                  <polyline points="5 12 12 5 19 12" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className={styles.footerBottom}>
           <p>© Picasso Fusion 2024. All rights reserved</p>
           <p>
             Designed by{" "}
-            <a href="#" className="underline hover:text-gray-700">
+            <a href="#" className="underline text-[#28334d] hover:text-[#1b47bf]">
               Aalay Rasool
             </a>
           </p>

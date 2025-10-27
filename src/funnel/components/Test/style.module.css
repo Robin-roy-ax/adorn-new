@@ -104,22 +104,22 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 .testimonialCard {
   position: relative;
   background-color: rgb(243, 244, 246);
-  border-radius: 1rem;
+  border-radius: 20px;
   padding: 2rem;
   border: 1px solid rgb(229, 231, 235);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 14rem;
+  background-color: var(--token-603511f4-daed-4461-b963-0d12ecb0fd1b, rgb(245, 246, 250));
   width: 27rem;
   margin: 0 auto;
   transition: all 0.5s ease-in-out;
+  box-shadow: rgba(221, 227, 238, 0.74) 0px 0.78363px 0.78363px -0.535714px, rgba(221, 227, 238, 0.725) 0px 1.91965px 1.91965px -1.07143px, rgba(221, 227, 238, 0.706) 0px 3.63745px 3.63745px -1.60714px, rgba(221, 227, 238, 0.67) 0px 6.35004px 6.35004px -2.14286px, rgba(221, 227, 238, 0.61) 0px 11.0519px 11.0519px -2.67857px, rgba(221, 227, 238, 0.498) 0px 20.2428px 20.2428px -3.21429px, rgba(221, 227, 238, 0.25) 0px 40px 40px -3.75px;
 }
+
 
 .testimonialCard::before {
   content: '';
@@ -161,6 +161,7 @@
 
 .testimonialImage {
   object-fit: cover;
+  object-position: center;
 }
 
 .testimonialInfo {

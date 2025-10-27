@@ -94,53 +94,47 @@ export default function Hero() {
         {HERO_DESCRIPTION}
       </motion.p>
 
-      {/* Buttons */}
-      <motion.div
+     {/* Buttons */}
+     <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: HERO_ANIMATIONS.buttons.delay }}
-        className={styles.heroButtons}
+        className="flex flex-col sm:flex-row gap-4 mt-8"
       >
-        <motion.button
+        <motion.a
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: HERO_ANIMATIONS.button1.delay }}
-          className={styles.heroButtonPrimary}
+          href="https://cal.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
         >
-          <span className="relative z-10">{HERO_BUTTONS.primary}</span>
-          <span className="absolute inset-0 rounded-full shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)]"></span>
-        </motion.button>
+          {HERO_BUTTONS.primary}
+        </motion.a>
 
-        <motion.button
+        <motion.a
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: HERO_ANIMATIONS.button2.delay }}
-          className={styles.heroButtonSecondary}
+          href="#pricing"
+          className="px-6 py-3 rounded-full border border-gray-400 text-gray-200 hover:bg-gray-700 hover:text-white transition-all duration-300"
         >
           {HERO_BUTTONS.secondary}
-        </motion.button>
+        </motion.a>
       </motion.div>
 
-      {/* Avatars + Text */}
+      {/* Avatars */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: HERO_ANIMATIONS.avatars.delay }}
-        className={styles.heroAvatarsSection}
+        className="flex flex-col items-center mt-12"
       >
-        <div className={styles.heroAvatars}>
+        <div className="flex -space-x-4 mb-2">
           {AVATAR_IMAGES.map((src, i) => (
-            <div
-              key={i}
-              className={styles.heroAvatar}
-            >
-              <Image
-                src={src}
-                alt={`Client ${i + 1}`}
-                width={40}
-                height={40}
-                className={styles.heroAvatarImage}
-              />
+            <div key={i} className="w-10 h-10 rounded-full border-2 border-white/60 overflow-hidden shadow-md">
+              <Image src={src} alt={`Client ${i + 1}`} width={40} height={40} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
@@ -148,23 +142,21 @@ export default function Hero() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: HERO_ANIMATIONS.avatarText.delay }}
-          className={styles.heroClientCount}
+          className="text-white font-medium"
         >
           {CLIENT_COUNT_TEXT.number}{" "}
-          <span className={styles.heroClientDescription}>
-            {CLIENT_COUNT_TEXT.description}
-          </span>
+          <span className="text-gray-400">{CLIENT_COUNT_TEXT.description}</span>
         </motion.p>
       </motion.div>
 
-      {/* Scroll down text */}
+      {/* Scroll Down */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: HERO_ANIMATIONS.scrollText.delay }}
-        className={styles.heroScrollText}
+        className="absolute bottom-5 text-gray-400 text-sm"
       >
-        <p>{SCROLL_DOWN_TEXT}</p>
+        {SCROLL_DOWN_TEXT}
       </motion.div>
     </motion.section>
   );
