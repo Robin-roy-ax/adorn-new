@@ -1,5 +1,4 @@
 // Re-export the FeaturedWork component and related data for easy importing
-export { default as FeaturedWork } from "./index";
 export {
   FEATURED_WORK_PROJECTS,
   FEATURED_WORK_TEXT,

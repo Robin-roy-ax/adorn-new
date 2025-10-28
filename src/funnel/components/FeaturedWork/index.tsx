@@ -81,9 +81,9 @@ function HorizontalScrollCarousel({ onProjectClick }: HorizontalScrollCarouselPr
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const handleClick = (projectId: string) => {
-    if (onProjectClick) onProjectClick(projectId);
-    router.push(`/${projectId}`); // ✅ navigate to real route
+  const handleClick = (route: string) => {
+    if (onProjectClick) onProjectClick(route);
+    router.push(route); // ✅ navigate directly to route from data
   };
 
   return (
@@ -103,7 +103,7 @@ function HorizontalScrollCarousel({ onProjectClick }: HorizontalScrollCarouselPr
               viewport={{ once: true }}
               onMouseEnter={() => setHovering(true)}
               onMouseLeave={() => setHovering(false)}
-              onClick={() => handleClick(project.id)}
+              onClick={() => handleClick(project.route)} // ✅ route-based click
             >
               {/* Image */}
               <div className={styles.projectImageContainer}>
