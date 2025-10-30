@@ -8,8 +8,8 @@ import NovaPage from "@/funnel/components/Work/Projects/Nova";
 import ArchPage from "@/funnel/components/Work/Projects/ArchSphere";
 import HarmonyPage from "@/funnel/components/Work/Projects/Harmony";
 import { projects } from "@/funnel/components/Work/data";
-import Faq from "@/funnel/components/Faq";
-import Foot from "@/funnel/components/Foot";
+import FaqPage from "@/funnel/components/FaqPage/page";
+import Footer from "@/funnel/components/Footer";
 
 const projectComponentMap: Record<string, React.ComponentType> = {
   "auluxe": AuluxePage,
@@ -45,7 +45,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   }
 
   return <><ProjectComponent />
-  <Faq />
-  <Foot />
+  <FaqPage />
+  <Footer />
   </>;
 }

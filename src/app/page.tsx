@@ -2,18 +2,19 @@
 
 import { useState, useEffect } from "react";
 
-import Nav from "@/funnel/components/Nav/page";
-import Her from "@/funnel/components/Her/page";
-import Abo from "@/funnel/components/Abo/page";
+import Navbar from "@/funnel/components/Navbar/page";
+import Hero from "@/funnel/components/Hero/page";
+import About from "@/funnel/components/About/page";
 import FeaturedWork from "@/funnel/components/FeaturedWork/page";
-import Test from "@/funnel/components/Test/page";
+import Testimonials from "@/funnel/components/Testimonials/page";
 import Service from "@/funnel/components/Service/page";
 import Benefit from "@/funnel/components/Benefit/page";
 import Pricing from "@/funnel/components/Pricing/index";
-import Faq from "@/funnel/components/Faq/page";
+import FaqPage from "@/funnel/components/FaqPage/page";
 import WorkSection from "@/funnel/components/Work/page";
-import Foot from "@/funnel/components/Foot/page";
-import AboutUs from "@/funnel/components/common/AboutUs";
+import Footer from "@/funnel/components/Footer/page";
+import AboutUs from "@/funnel/components/AboutUS/page";
+
 
 
 export default function Home() {
@@ -69,7 +70,7 @@ export default function Home() {
 
   return (
     <>
-      <Nav
+      <Navbar
         onMenuClick={handleMenuClick}
         showWorkSection={
           activeSection === "work" ||
@@ -81,10 +82,10 @@ export default function Home() {
       {/* Default Home View */}
       {activeSection === "default" && (
         <>
-          <Her />
-          <Abo />
+          <Hero />
+          <About />
           <FeaturedWork />
-          <Test />
+          <Testimonials />
           <Service />
           <Benefit />
           <Pricing />
@@ -105,8 +106,8 @@ export default function Home() {
       )}
 
       {/* Faq + Footer */}
-      <Faq />
-      <Foot />
+      <FaqPage />
+      <Footer />
     </>
   );
 }

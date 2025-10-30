@@ -1,7 +1,9 @@
-"use client";
-
-import ArchSphere from "./index";
+import ArchPage from '@/funnel/components/Work/Projects/ArchSphere/index';
 
 export default function ArchSpherePage() {
-  return <ArchSphere />;
+  return (
+    <main>
+      <ArchPage />
+    </main>
+  );
 }

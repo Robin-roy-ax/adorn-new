@@ -1,7 +1,12 @@
-// Re-export the FeaturedWork component and related data for easy importing
-export {
-  FEATURED_WORK_PROJECTS,
-  FEATURED_WORK_TEXT,
-  FEATURED_WORK_ANIMATIONS
-} from "./data";
-export { default } from "./index";
+// app/page.tsx (or wherever you want to use it)
+import FeaturedWork from '@/funnel/components/FeaturedWork';
+
+export default function Home() {
+  return (
+    <main>
+      {/* Other sections */}
+      <FeaturedWork />
+      {/* Other sections */}
+    </main>
+  );
+}
