@@ -24,8 +24,10 @@
   
   /* Hero Section */
   .heroTitle {
-    font-size: 5rem;
-    font-weight: 600;
+    margin-top: 6rem;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
     text-align: left;
     color: #394560;
   }
@@ -68,13 +70,14 @@
   }
   
   .tagsContainer {
+    height: min-content;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
   }
   
   .tag {
-    padding: 0.5rem 1rem;
+    padding: 1px 6px;
     border: 1px solid rgb(209, 213, 219);
     color: rgb(156, 163, 175);
     border-radius: 9999px;
@@ -127,7 +130,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 9.375rem;
+    gap: 0;
   }
   
   @media (min-width: 768px) {
@@ -135,13 +138,23 @@
       flex-direction: row;
     }
   }
-  
+
+  .columnLeft {
+    flex: 1;
+  }
+ .columnRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  } 
+
   .columnHeading {
-    font-size: 1.0625rem;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 1.3;
     letter-spacing: -0.05em;
     color: #324267;
+    line-height: 1.2;
   }
   
   .columnContent {
@@ -197,7 +210,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 9.375rem;
+    gap: 0;
   }
   
   @media (min-width: 768px) {
@@ -207,10 +220,7 @@
   }
   
   .implementationLeft {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex: 1;
   }
   
   .implementationRight {
@@ -221,8 +231,9 @@
   }
   
   .implementationTitle {
-    font-size: 2.125rem;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
     color: #324267;
     line-height: 1.2;
   }
@@ -271,10 +282,11 @@
   }
   
   .resultsItemTitle {
-    font-size: 2.125rem;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    font-weight: 600;
     color: #324267;
     line-height: 1.2;
   }

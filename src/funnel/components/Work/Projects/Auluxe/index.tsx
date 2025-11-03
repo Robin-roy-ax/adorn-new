@@ -141,8 +141,12 @@ function TwoColumnSection({ section }: TwoColumnSectionProps) {
       variants={fadeIn}
       className={styles.twoColumnContainer}
     >
-      <h2 className={styles.columnHeading}>{section.heading}</h2>
-      <p className={styles.columnContent}>{section.content}</p>
+      <div className={styles.columnLeft}>
+        <h2 className={styles.columnHeading}>{section.heading}</h2>
+      </div>
+      <div className={styles.columnRight}>
+        <p className={styles.columnContent}>{section.content}</p>
+      </div>
     </motion.div>
   );
 }

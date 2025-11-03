@@ -131,13 +131,26 @@ export default function Hero() {
         transition={{ delay: HERO_ANIMATIONS.avatars.delay }}
         className="flex flex-col items-center mt-12"
       >
-        <div className="flex -space-x-4 mb-2">
-          {AVATAR_IMAGES.map((src, i) => (
-            <div key={i} className="w-10 h-10 rounded-full border-2 border-white/60 overflow-hidden shadow-md">
-              <Image src={src} alt={`Client ${i + 1}`} width={40} height={40} className="w-full h-full object-cover" />
-            </div>
-          ))}
-        </div>
+   <div className="flex -space-x-4 mb-2">
+  {AVATAR_IMAGES.map((src, i) => (
+    <div
+      key={i}
+      className="relative w-10 h-10 rounded-full border-2 border-white/60 overflow-hidden shadow-md
+                 transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-lg"
+    >
+      <Image
+        src={src}
+        alt={`Client ${i + 1}`}
+        width={40}
+        height={40}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  ))}
+</div>
+
+
+
         <motion.p
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
