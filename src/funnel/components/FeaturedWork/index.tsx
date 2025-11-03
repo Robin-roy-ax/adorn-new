@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 import { Project, projects } from './data';
 import styles from './style.module.css';
-import ViewProjectCursor from '@/funnel/components/common/MousePointer'; // Adjust path as needed
+import ViewProjectCursor from '@/funnel/components/common/MousePointer';
 
 export default function FeaturedWork() {
   const [isMobile, setIsMobile] = useState(false);
@@ -325,7 +325,7 @@ function SeeMoreButton() {
       transition={{ duration: 0.6, delay: 0.3 }}
       className={styles.buttonContainer}
     >
-      <Link href="/work" className={styles.button}>
+      <Link  href="/work" className={styles.button}>
         <span className={styles.buttonText}>See more of our work</span>
       </Link>
     </motion.div>

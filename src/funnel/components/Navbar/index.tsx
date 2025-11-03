@@ -16,9 +16,13 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
   const [inHero, setInHero] = useState(true);
   const router = useRouter();
   const pathname = usePathname();
+  const isProjectPage = pathname.startsWith("/projects/");
 
   useEffect(() => {
-    if (showWorkSection) { setInHero(false); return; }
+    if (showWorkSection || isProjectPage) {
+      setInHero(false);
+      return;
+    }
 
     const handleScroll = () => {
       const hero = document.getElementById("hero");
@@ -29,7 +33,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [showWorkSection]);
+  }, [showWorkSection, isProjectPage]);
 
   const menuColor = inHero ? "#fff" : "#000";
   const navbarClass = inHero ? styles.navbarHero : styles.navbarDefault;
@@ -41,18 +45,63 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
     ? styles.mobileButtonHero
     : styles.mobileButtonDefault;
 
+  // ✅ Updated: Smooth scroll + hash support + instant scroll on home
   const handleNavigation = (id: string) => {
     setMobileOpen(false);
-    onMenuClick(id);
+
+    if (pathname !== "/") {
+      // Go home first, store hash in session, then scroll
+      sessionStorage.setItem("targetSection", id);
+      router.push(`/#${id}`);
+      return;
+    }
+
+    // On homepage already — just scroll directly
     const section = document.getElementById(id);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-    else router.push(`/#${id}`);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      window.history.replaceState(null, "", `#${id}`);
+    } else {
+      router.push(`/#${id}`);
+    }
+
+    onMenuClick(id);
   };
 
+  // ✅ After returning from project pages — handle auto-scroll to saved section
+  useEffect(() => {
+    const targetSection = sessionStorage.getItem("targetSection");
+    if (targetSection && pathname === "/") {
+      sessionStorage.removeItem("targetSection");
+      const section = document.getElementById(targetSection);
+      if (section) {
+        setTimeout(
+          () => section.scrollIntoView({ behavior: "smooth" }),
+          50
+        );
+      }
+       // ✅ NEW: If user clicked the logo, always scroll to top (Hero)
+    const fromLogo = sessionStorage.getItem("scrollToHero");
+    if (fromLogo) {
+      sessionStorage.removeItem("scrollToHero");
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 50);
+    }
+    }
+  }, [pathname]);
+
   const handleLogoClick = () => {
-    if (pathname === "/") window.scrollTo({ top: 0, behavior: "smooth" });
-    else router.push("/");
+    setMobileOpen(false);
     onMenuClick("home");
+  
+    if (pathname !== "/") {
+      // Mark intent to scroll to hero after returning
+      sessionStorage.setItem("scrollToHero", "true");
+      router.push("/");
+    } else {
+      // Already on home → scroll immediately
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.replaceState(null, "", "/");
+    }
   };
 
   return (
@@ -85,7 +134,9 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
       <div className={styles.rightSection}>
         <div
           className={`${styles.desktopButtonSection} ${
-            inHero ? styles.desktopButtonSectionHero : styles.desktopButtonSectionDefault
+            inHero
+              ? styles.desktopButtonSectionHero
+              : styles.desktopButtonSectionDefault
           }`}
         >
           <a
@@ -103,9 +154,21 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
           className={styles.mobileHamburger}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.hamburgerLineOpen1 : ""}`} />
-          <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.hamburgerLineOpen2 : ""}`} />
-          <span className={`${styles.hamburgerLine} ${mobileOpen ? styles.hamburgerLineOpen3 : ""}`} />
+          <span
+            className={`${styles.hamburgerLine} ${
+              mobileOpen ? styles.hamburgerLineOpen1 : ""
+            }`}
+          />
+          <span
+            className={`${styles.hamburgerLine} ${
+              mobileOpen ? styles.hamburgerLineOpen2 : ""
+            }`}
+          />
+          <span
+            className={`${styles.hamburgerLine} ${
+              mobileOpen ? styles.hamburgerLineOpen3 : ""
+            }`}
+          />
         </button>
       </div>
 
