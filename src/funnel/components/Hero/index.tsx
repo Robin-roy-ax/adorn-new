@@ -118,7 +118,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: HERO_ANIMATIONS.button2.delay }}
           href="#pricing"
-          className="px-6 py-3 rounded-full border border-gray-400 text-gray-200 hover:bg-gray-700 hover:text-white transition-all duration-300"
+          className={styles.heroButtonSecondary}
         >
           {HERO_BUTTONS.secondary}
         </motion.a>
