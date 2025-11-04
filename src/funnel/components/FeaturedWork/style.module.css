@@ -1,5 +1,10 @@
 /* styles.module.css */
-
+.stickyContainer,
+.workContainer,
+.mobileWorkContainer,
+.horizontalScrollContainer {
+  background-color: white;
+}
 /* Desktop Section */
 .desktopSection {
   background-color: white;

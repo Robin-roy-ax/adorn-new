@@ -11,7 +11,7 @@ export default function Services() {
       <div className={styles.container}>
         {/* Header */}
         <motion.h2
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 1, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
@@ -23,7 +23,7 @@ export default function Services() {
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
@@ -48,7 +48,7 @@ export default function Services() {
               <motion.div
                 key={index}
                 variants={{
-                  hidden: { opacity: 0, y: 50 },
+                  hidden: { opacity: 1, y: 50 },
                   visible: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -73,7 +73,7 @@ export default function Services() {
 
                 {/* Text */}
                 <motion.div
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 1, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true }}
@@ -81,7 +81,7 @@ export default function Services() {
                   style={{ marginTop: "11.5rem" }}
                 >
                   <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true }}
@@ -91,7 +91,7 @@ export default function Services() {
                   </motion.h3>
 
                   <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{
                       duration: 0.7,

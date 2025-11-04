@@ -10,7 +10,7 @@ export default function Benefits() {
     <section id="benefits" className={styles.section}>
       <motion.div
         className={styles.container}
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 1, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
@@ -62,7 +62,7 @@ function BenefitCard({ benefit }: { benefit: Benefit }) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 40 },
+        hidden: { opacity: 1, y: 40 },
         visible: { opacity: 1, y: 0 },
       }}
       className={styles.card}
@@ -88,7 +88,7 @@ function BenefitCard({ benefit }: { benefit: Benefit }) {
 
       {/* Text */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 1, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}

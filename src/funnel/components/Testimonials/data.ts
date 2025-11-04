@@ -71,12 +71,12 @@ export const TESTIMONIALS_TEXT = {
 export const TESTIMONIALS_ANIMATIONS = {
   header: {
     duration: 0.8,
-    initial: { opacity: 0, y: 40 },
+    initial: { opacity: 1, y: 40 },
     animate: { opacity: 1, y: 0 }
   },
   card: {
     duration: 0.6,
-    initial: { opacity: 0, y: 60 },
+    initial: { opacity: 1, y: 60 },
     animate: { opacity: 1, y: 0 },
     ease: [0.16, 1, 0.3, 1] as const
   }
