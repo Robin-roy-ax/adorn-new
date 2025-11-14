@@ -1,12 +1,13 @@
 export const HERO_SUBTITLE = "Your Gateway to Creative Excellence";
 
 export const HERO_MAIN_HEADING = {
-  part1: "Your On-Demand",
-  part2: "Creative",
-  part3: "Studio"
+  part1: "You",
+  part1Italic: "define,",
+  part2: "We",
+  part2Italic: "design"
 };
 
-export const HERO_DESCRIPTION = "We are a design and development studio dedicated to crafting innovative digital solutions that shape the future.";
+export const HERO_DESCRIPTION = "“Upgrade your designs with Picassofusion. Purchase our design credits and see our expert team turn your ideas into stunning visuals.”";
 
 export const HERO_BUTTONS = {
   primary: "Book a discovery call",

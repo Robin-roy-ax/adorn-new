@@ -7,9 +7,9 @@ export interface Service {
   
   export const services: Service[] = [
     {
-      title: "Branding",
+      title: "Design board",
       description:
-        "From logo design to brand messaging, we'll help you establish a distinct brand presence that sets you apart from the competition.",
+        "Add as many design requests to your board as you’d like, and we’ll handle each with care and creativity. Our team turns your ideas into stunning visuals that capture attention. Enjoy limitless design possibilities, all in one place.",
       image: "https://framerusercontent.com/images/svgULmsLIR41ZA5On0KPuibbbc.png",
       rotation: 0,
     },
@@ -28,9 +28,9 @@ export interface Service {
       rotation: -87,
     },
     {
-      title: "Digital Marketing",
+      title: "Lightning fast delivery",
       description:
-        "We'll develop a custom strategy that aligns with your business goals and target audience to deliver measurable results.",
+        "Receive your designs one by one, fast and seamless. Each piece reflects quality and creativity. Get stunning results without the wait.",
       image: "https://framerusercontent.com/images/eGQ39KbasgFve63JkjG1lWcG8fg.png",
       rotation: -48,
     },

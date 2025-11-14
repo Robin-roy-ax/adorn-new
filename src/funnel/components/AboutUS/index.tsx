@@ -59,9 +59,7 @@ function HeroSection() {
         {content.hero.title}{" "}
         <span className={styles.heroTitleItalic}>
           {content.hero.titleHighlight}
-        </span>{" "}
-        <br />
-        {content.hero.subtitle}
+        </span>
       </h2>
 
       <p className={styles.heroDescription}>{content.hero.description}</p>
@@ -252,6 +250,10 @@ export default function AboutUs() {
       <SectionRow
         title={content.approach.title}
         description={content.approach.description}
+      />
+     <SectionRow
+        title={content.pioneer.title}
+        description={content.pioneer.description}
       />
       <NumbersSection />
       <TeamSection />

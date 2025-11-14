@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MENU_ITEMS, LOGO_TEXT, CTA_BUTTON_TEXT, LOGO_SYMBOL } from "./data";
+import { MENU_ITEMS, CTA_BUTTON_TEXT, LOGO_IMAGE } from "./data";
 import styles from "./style.module.css";
 import { useRouter, usePathname } from "next/navigation";
+import Image from "next/image";
 
 interface NavbarProps {
   onMenuClick: (id: string) => void;
@@ -110,10 +111,9 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
       <div
         onClick={handleLogoClick}
         className={`${styles.logoSection} ${logoClass}`}
-        style={{ color: menuColor }}
+        
       >
-        <span>{LOGO_SYMBOL}</span>
-        <span>{LOGO_TEXT}</span>
+        <Image src={LOGO_IMAGE} alt="Logo" width={100} height={100} />
       </div>
 
       {/* Desktop Menu */}

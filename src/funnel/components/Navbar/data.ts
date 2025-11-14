@@ -1,5 +1,5 @@
 import type { Variants } from "framer-motion";
-
+import image from "@/funnel/components/Navbar/Picassofusion Logo-12.png"
 // Menu items with section IDs (for smooth navigation)
 export const MENU_ITEMS = [
   { label: "Work", href: "#work", id: "work" },
@@ -24,7 +24,7 @@ export const menuVariants: Variants = {
 export const LOGO_SYMBOL = "✻";
 export const LOGO_TEXT = "Picasso Fusion";
 export const CTA_BUTTON_TEXT = "Get it for $49";
-
+export const LOGO_IMAGE = image;
 // Optional: Hero section ID for scroll-to-top logo behavior
 export const HERO_SECTION_ID = "#hero";
 
@@ -32,4 +32,5 @@ export const Logo = {
   id: "logo",
   symbol: LOGO_SYMBOL,
   text: LOGO_TEXT,
+  image: LOGO_IMAGE,
 };

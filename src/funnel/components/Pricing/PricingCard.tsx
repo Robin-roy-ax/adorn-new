@@ -30,10 +30,10 @@ export default function PricingCard({
     <motion.div
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200 }}
-      className={`relative rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
-        overflow-hidden flex flex-col justify-between p-6 sm:p-8 text-left 
-        h-auto min-h-[500px] sm:min-h-[530px] lg:h-[570px]
-        w-full max-w-[370px] mx-auto
+      className={`relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
+        p-6 sm:p-8 text-left
+        min-h-[460px] sm:min-h-[500px] lg:min-h-[530px]
+        max-w-full md:max-w-none
         ${highlight
           ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] text-white z-30"
           : "bg-gray-100 text-slate-800 border-slate-200 z-20"
@@ -48,18 +48,18 @@ export default function PricingCard({
 
       {/* Header */}
       <div>
-        <h3 className="font-semibold text-base sm:text-lg mb-2">{title}</h3>
-        <p className="text-3xl sm:text-4xl font-bold">
+        <h3 className="mb-2 text-base font-semibold sm:text-lg">{title}</h3>
+        <p className="text-3xl font-bold sm:text-4xl">
           ${price}
           <span className="text-sm sm:text-base font-medium">{period}</span>
         </p>
-        <p className="text-xs sm:text-sm opacity-80 mt-2">{description}</p>
+        <p className="mt-2 text-xs opacity-80 sm:text-sm">{description}</p>
       </div>
 
       {/* Buttons */}
       <div className="mt-6 sm:mt-8">
         <button
-          className={`w-full py-2.5 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300
+          className={`w-full rounded-full py-2.5 text-sm font-semibold transition-all duration-300 sm:py-3 sm:text-base
             ${highlight
               ? "bg-white hover:bg-[#1d52e5] hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)] relative overflow-hidden text-black hover:text-white shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)] rounded-full"
               : "bg-gray-100 hover:bg-gray-300 text-slate-800 border-gray-300 border"
@@ -69,7 +69,7 @@ export default function PricingCard({
         </button>
 
         <button
-          className={`w-full py-2 mt-3 text-sm sm:text-base underline underline-offset-4 transition
+          className={`mt-3 w-full py-2 text-sm underline underline-offset-4 transition sm:text-base
             ${highlight ? "font-bold text-indigo-200 hover:text-indigo-100" : "font-bold text-slate-500 hover:text-slate-700"}
           `}
         >

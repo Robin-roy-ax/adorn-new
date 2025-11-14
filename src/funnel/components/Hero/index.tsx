@@ -53,17 +53,27 @@ export default function Hero() {
           color: CSS_TOKENS.primaryColor,
           textAlign: "center",
           fontFamily: "Inter, Inter Placeholder, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-          fontWeight: 400,
+          fontWeight: 600,
           fontStyle: "normal",
+          letterSpacing: "0em",
         }}
       >
-        {HERO_MAIN_HEADING.part1}{" "}
+        {HERO_MAIN_HEADING.part1}{" "}<span style={{
+            fontFamily: "Instrument_Serif",
+            fontStyle: "italic",
+            fontWeight: 500,
+            letterSpacing: "0.01em",
+            color: "#fff",
+          }}>{HERO_MAIN_HEADING.part1Italic}</span>
         <br />
         <span
           className={`${styles.heroHeadingItalic} ${instrumentSerif.className}`}
           style={{
-            fontStyle: "italic",
             color: CSS_TOKENS.primaryColor,
+            textAlign: "center",
+            fontFamily: "Inter, Inter Placeholder, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            fontWeight: 600,
+            fontStyle: "normal",
             letterSpacing: "0em",
           }}
         >
@@ -72,12 +82,14 @@ export default function Hero() {
         <span
           className={styles.heroHeadingNormal}
           style={{
-            fontFamily: '"Inter", sans-serif',
-            letterSpacing: "-0.05em",
+            fontFamily: "Instrument_Serif",
+            fontStyle: "italic",
+            fontWeight: 500,
+            letterSpacing: "0.01em",
             color: "#fff",
           }}
         >
-          {HERO_MAIN_HEADING.part3}
+          {HERO_MAIN_HEADING.part2Italic}
         </span>
       </motion.h1>
 

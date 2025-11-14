@@ -66,24 +66,29 @@ export interface Stat {
   
   export const content = {
     hero: {
-      title: "We're a",
-      titleHighlight: "creative studio",
-      subtitle: "based in London",
+      title: "Innovate,",
+      titleHighlight: "Elevate & Design.",
+      //subtitle: "Based on Chennai",
       description:
-        "At Picasso Fusion, creativity is our cornerstone. We're a dynamic team driven by innovation and dedicated to bringing your vision to life.",
+        "Unlock your creative potential with us, offering limitless possibilities to transform your concepts into stunning realities.",
     },
     overview: {
       text: "Picasso Fusion is a vibrant creative studio dedicated to crafting exceptional brand experiences. Since 2020, we've been shaping digital landscapes and driving meaningful connections worldwide.",
     },
     mission: {
-      title: "Our Mission",
+      title: "Top-Notch Equipment",
       description:
-        "Empowering brands to thrive in a digital world, we inspire imagination, collaboration, and excellence. Our goal is to elevate brands through impactful storytelling and innovative design solutions.",
+        "We leverage cutting-edge tools and technology to deliver exceptional quality and precision in every design. Our state-of-the-art equipment ensures that your vision is brought to life with unparalleled excellence.",
     },
     approach: {
-      title: "Our Approach",
+      title: "Dedicated Team",
       description:
-        "We embrace collaboration, working closely with our clients to understand their goals and challenges. Through open dialogue and creative exploration, we develop customized solutions that resonate with audiences and drive results. Our iterative process ensures every aspect of our work is refined and perfected, delivering exceptional quality and value.",
+        "Our team of skilled professionals are passionate about creating designs that inspire. With expertise and commitment, we work collaboratively to bring innovative ideas to fruition.",
+    },
+    pioneer: {
+      title: "Pioneering the Path in Design",
+      description:
+        "We are at the forefront of design trends, always pushing boundaries and exploring new possibilities. Our innovative approach ensures that we stay ahead of the curve and deliver cutting-edge solutions.",
     },
     numbers: {
       title: "In Numbers",

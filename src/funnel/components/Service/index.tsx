@@ -17,8 +17,8 @@ export default function Services() {
           viewport={{ once: true }}
           className={styles.heading}
         >
-          Our Creative{" "}
-          <span>Offerings</span>
+          Membership{" "}
+          <span>benefits</span>
         </motion.h2>
 
         {/* Description */}
@@ -29,8 +29,8 @@ export default function Services() {
           viewport={{ once: true }}
           className={styles.description}
         >
-          We offer a comprehensive suite of creative services designed to
-          elevate your brand and captivate your audience.
+          Unlock creativity with our exclusive design membership.
+          Streamline your journey with expert designers delivering quality, flexibility, and results that elevate your brand.
         </motion.p>
 
         {/* Services Grid */}
