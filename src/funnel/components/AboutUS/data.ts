@@ -73,7 +73,7 @@ export interface Stat {
         "Unlock your creative potential with us, offering limitless possibilities to transform your concepts into stunning realities.",
     },
     overview: {
-      text: "Picasso Fusion is a vibrant creative studio dedicated to crafting exceptional brand experiences. Since 2020, we've been shaping digital landscapes and driving meaningful connections worldwide.",
+      text: "Picasso Fusion delivers high quality, personalized designs through a simple credit based system. Our team turns your ideas into impactful visuals across every design need. Fast, flexible, and seamless in elevating your brand with ease.",
     },
     mission: {
       title: "Top-Notch Equipment",

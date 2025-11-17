@@ -25,8 +25,8 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Clearing Up Common{" "}
-          <span>Queries</span>
+          Your Questions,{" "}
+          <span>Simplified</span>
         </motion.h2>
         <motion.p
           className={styles.description}
@@ -35,7 +35,7 @@ export default function FAQSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Dive into our FAQ section for insights into our services. We&apos;ve compiled answers to common questions to ensure you&apos;re well-informed.
+          Explore our FAQ section for clear answers to common questions about how Picasso Fusion works, its features, and how to get the most out of our design platform.
         </motion.p>
       </div>
 

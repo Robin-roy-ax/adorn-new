@@ -27,7 +27,7 @@ const CustomCursor = () => {
     <AnimatePresence>
       {isCustomCursorActive && (
         <motion.div
-          className="fixed top-[-15] left-[-20] w-3 h-3 rounded-full pointer-events-none z-[9999] 
+          className="fixed top-[0px] left-[0px] w-3 h-3 rounded-full pointer-events-none z-[9999] 
                      mix-blend-difference bg-white transition-opacity duration-300"
           style={{
             x: smoothX,

@@ -1,4 +1,4 @@
-export const HERO_SUBTITLE = "Your Gateway to Creative Excellence";
+export const HERO_SUBTITLE = "From Imagination to Reality";
 
 export const HERO_MAIN_HEADING = {
   part1: "You",

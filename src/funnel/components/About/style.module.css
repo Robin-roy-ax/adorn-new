@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   text-align: center;
   padding: 1.5rem;
   background-color: white;
@@ -11,8 +10,9 @@
 }
 
 .aboutTextBlock {
-  max-width: 48rem; /* max-w-3xl */
-  margin: 0 auto;
+  max-width: 75%; /* max-w-3xl */
+  margin-top: 6rem;
+  margin-bottom: 2rem;
 }
 
 .aboutMainHeading {
@@ -40,7 +40,7 @@
 }
 
 .aboutButtonContainer {
-  margin-top: 2.5rem; /* mt-10 */
+  margin-top: 1rem; /* mt-10 */
 }
 
 .aboutButton {

@@ -1,12 +1,12 @@
 export const ABOUT_TEXT = {
   main: {
     part1: "Picasso Fusion",
-    part2: "is a hub of",
-    part3: "creativity and innovation.",
-    part4: "We're dedicated to",
-    part5: "bringing your brand to life through unique, impactful design solutions.",
-    part6: "Dive into our world and discover the magic of",
-    part7: "collaboration and creativity."
+    part2: "is a creative powerhouse crafting meaningful visual experiences.",
+    part3: "We bring ideas to life through",
+    part4: "branding, digital design, motion graphics,",
+    part5: "and more.",
+    part6: "Step into our world where collaboration and",
+    part7: "creativity elevate every project."
   }
 };
 

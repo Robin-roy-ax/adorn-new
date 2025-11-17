@@ -1,7 +1,7 @@
 // components/FAQ/data.ts
 export const faqs = [
     {
-      question: "How long does it take to complete a project?",
+      question: "What programs do you design in?",
       answer:
         "The duration varies depending on the scope and complexity of the project. We strive to deliver high-quality work within a reasonable timeframe, ensuring both efficiency and excellence.",
     },

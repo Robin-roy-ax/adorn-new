@@ -17,11 +17,11 @@ export default function HomeSection() {
         <div className={styles.heroCard}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              Let&apos;s Create Your <br />
-              <span>Dream Project</span>
+              Your Next Big Idea <br />
+              <span>Starts Here</span>
             </h1>
             <p className={styles.heroText}>
-              Our team is here to help you succeed. Let&apos;s work together to achieve your goals and elevate your brand to new heights.
+              From concept to final design, we collaborate closely to bring your vision to life with clarity, creativity, and purpose.
             </p>
             <a
               href="https://cal.com"
@@ -129,13 +129,7 @@ export default function HomeSection() {
         {/* Bottom Bar */}
         <div className={styles.footerBottom}>
           <p>© Picasso Fusion 2024. All rights reserved</p>
-          <p>
-            Designed by{" "}
-            <a href="#" className="underline text-[#28334d] hover:text-[#1b47bf]">
-              Aalay Rasool
-            </a>
-          </p>
-          <p>Built in Framer</p>
+          <p>Designed for you by Picasso Fusion</p>
         </div>
       </footer>
     </main>
