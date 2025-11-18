@@ -47,9 +47,9 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
             </div>
           ) : (
             <div>
-              Transparent{" "}
+              Flexible Plans Tailored to{" "}
               <span className="font-['Instrument_Serif'] italic font-normal">
-                Pricing
+                Your Needs
               </span>
             </div>
           )}
@@ -67,7 +67,7 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
             mx-auto max-w-2xl px-2
           "
         >
-          Explore our pricing options below and choose the plan that best fits your needs.
+          Find the plan that fits your needs best with no surprises and
           <br className="hidden sm:block" />
           No hidden fees.
         </motion.p>

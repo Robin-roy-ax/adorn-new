@@ -84,10 +84,10 @@ export default function Home() {
         <>
           <Hero />
           <About />
-          <FeaturedWork />
-          <Testimonials />
-          <Service />
           <Benefit />
+          <FeaturedWork />
+          <Service />
+          <Testimonials />
           <Pricing />
         </>
       )}

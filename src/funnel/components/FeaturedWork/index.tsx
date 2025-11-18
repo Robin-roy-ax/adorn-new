@@ -155,8 +155,7 @@ function MobileHeader() {
       
       <div>
         <p className={styles.mobileDescription}>
-          Dive into a world of creativity and inspiration with our portfolio.
-          Explore our work and imagine the possibilities for your brand.
+          
         </p>
       </div>
     </motion.div>

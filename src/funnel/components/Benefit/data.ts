@@ -7,37 +7,37 @@ export interface Benefit {
   
   export const benefits: Benefit[] = [
     {
-      title: "Creative Expertise",
+      title: "Earn Design Credits",
       description:
-        "Our team's creativity and skill ensure your vision is realized just as you imagine.",
+        "Subscribe to a plan & request as many designs as you'd like with the design credits acquired.",
       image: "https://framerusercontent.com/images/l3KNSNbkgNv2hJLVWQeFkd4lHpY.png",
       rotation: 0,
     },
     {
-      title: "Unlimited Revisions",
+      title: "Define Your Needs",
       description:
-        "Refine your project with as many changes as you need, all included.",
+        "Share your ideas, goals, and specific requirements to set the project direction clearly.",
       image: "https://framerusercontent.com/images/IYxqjuIsZKRILxwnpHfCaF5pDU.png",
       rotation: -326,
     },
     {
-      title: "Flexibility",
+      title: "Design & Collaborate",
       description:
-        "Adjust your project easily as it progresses to fit your evolving needs.",
+        "Our creative team brings your vision to life while working closely with you.",
       image: "https://framerusercontent.com/images/VlpbceWkAaM2u7S64Jp0wgZj78.png",
       rotation: 360,
     },
     {
-      title: "Fixed Monthly Rate",
+      title: "Iterate & Improve",
       description:
-        "Enjoy peace of mind with a fixed monthly rate — no surprises, just consistent service.",
+        "Take control as you track your design's progress and provide feedback.",
       image: "https://framerusercontent.com/images/QE1dsl8X4T07kGMEhHvYY8AjZI.png",
       rotation: 35,
     },
     {
       title: "Timely Delivery",
       description:
-        "Trust our commitment to timely project completion, ensuring your deadlines are met.",
+        "Count on us for timely project delivery, keeping your deadlines on track.",
       image: "https://framerusercontent.com/images/afXs1pv78HA13RYyTc5Talai04.png",
       rotation: -395,
     },

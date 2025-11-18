@@ -17,11 +17,10 @@ export default function Benefits() {
         {/* Header */}
         <div className={styles.header}>
           <h2 className={styles.title}>
-            Discover your <span>Benefits</span>
+            Smooth<span>{" "}</span><span className="italic font-[400] font-[Instrument_Serif]">Process,</span><br />Stunning <span className="italic font-[400] font-[Instrument_Serif]">Outcomes</span>
           </h2>
           <p className={styles.description}>
-            Explore the exclusive advantages of partnering with Picasso Fusion for all
-            your creative needs.
+            At Picasso Fusion, our refined process ensures efficiency, clarity, and exceptional results. From concept to final delivery, we guide you with transparency and precision, turning your vision into impactful, polished designs.
           </p>
         </div>
 

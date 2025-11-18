@@ -129,7 +129,7 @@ export default function HomeSection() {
         {/* Bottom Bar */}
         <div className={styles.footerBottom}>
           <p>© Picasso Fusion 2024. All rights reserved</p>
-          <p>Designed for you by Picasso Fusion</p>
+          <p>Our Design, Your Vision</p>
         </div>
       </footer>
     </main>
