@@ -3,9 +3,14 @@
     padding-top: 12rem;
     background-color: white;
   }
-  
+  @media (max-width: 768px) {
+    .section {
+      padding-top: 4rem;
+    }
+  }
+
   .container {
-    max-width: 90.625rem;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 0 2rem;
   }
@@ -90,12 +95,16 @@
   @media (max-width: 767px) {
     .grid {
       grid-template-columns: 1fr;
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+      padding: 3rem 0;
     }
   }
   
   .card {
     position: relative;
-    width: 28rem;
+    width: 100%;
+    max-width: 28rem;
     height: 28rem;
     background-color: #111a3b;
     border-radius: 1.5rem;
@@ -112,6 +121,13 @@
       0 40px 40px -3.75px #6b708740;
     transition: all 0.7s ease;
     margin: 0 auto;
+  }
+
+  @media (max-width: 767px) {
+    .card {
+      height: auto;
+      min-height: 22rem;
+    }
   }
   
   .card:hover {

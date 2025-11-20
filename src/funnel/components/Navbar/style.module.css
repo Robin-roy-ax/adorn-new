@@ -6,19 +6,81 @@
   transform: translateX(-50%);
   z-index: 50;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   width: 70%;
   max-width: 1000px;
-  height: 4.1rem;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.15);
   color: #fff;
   box-shadow: rgba(255, 255, 255, 0.07) 0px 0.120725px 0.362176px 0px inset, rgba(255, 255, 255, 0.6) 0px 1px 3px 0px inset, rgba(0, 0, 0, 0.01) 0px -0.120725px 0.362176px 0px inset, rgba(0, 0, 0, 0.1) 0px -1px 3px 0px inset, rgba(0, 0, 0, 0.12) 0px 30px 40px 0px;
-  opacity: 1
+  opacity: 1;
+  overflow: hidden;
+}
+
+/* Navbar when expanded on mobile - keep same width */
+.navbarExpanded {
+  border-radius: 30px;
+}
+
+/* Responsive width adjustments */
+@media (max-width: 1350px) {
+  .navbar {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 92%;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Top part of navbar (logo + menu + buttons) */
+.navbarTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3rem; /* Reduced from 4.1rem to match default */
+  width: 100%;
+  transition: min-height 0.3s ease;
+}
+
+/* Both hero and default navbar should have same height */
+.navbarHero .navbarTop,
+.navbarDefault .navbarTop {
+  min-height: 3rem;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .navbarTop,
+  .navbarHero .navbarTop,
+  .navbarDefault .navbarTop {
+    min-height: 2.5rem; /* Same height for both states */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbarTop,
+  .navbarHero .navbarTop,
+  .navbarDefault .navbarTop {
+    min-height: 2.3rem; /* Same height for both states */
+  }
 }
 
 /* Hero vs Other Sections */
@@ -42,7 +104,10 @@
   font-size: 1.5rem;
   font-weight: 500;
   font-family: "Inter", sans-serif;
+  transition: all 0.3s ease;
 }
+
+
 
 .logoSectionHero {
   border-color: rgba(255, 255, 255, 0.2);
@@ -126,7 +191,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-  white-space: nowrap;
+  white-space: normal;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1),
     inset 0 -1px 2px rgba(255, 255, 255, 0.3);
 }
@@ -142,7 +207,7 @@
 }
 
 .defaultButton {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
   color: white;
 }
 
@@ -150,111 +215,197 @@
   background-color: rgb(37, 99, 235);
   color: white;
 }
-/* ====== MOBILE HAMBURGER NAVBAR ====== */
-.mobileHamburgerContainer {
-  display: none; /* hidden on desktop */
-  position: relative;
-  top: 1.5rem;
-  left: 0;
-  width: 100%;
-  padding: 0 1.5rem;
-  z-index: 60;
-  display: flex;
-  justify-content: flex-end; /* hamburger to right */
-  align-items: center;
-}
-
-@media (max-width: 1350px) {
-  .mobileHamburgerContainer {
-    display: flex;
-  }
-}
 
 /* ====== MOBILE HAMBURGER BUTTON ====== */
-.mobileHamburgerContainer {
-  display: none; /* hidden on desktop */
-  position: absolute;
-  top: 50%;           /* vertically center */
-  right: 1.5rem;      /* distance from right edge */
-  transform: translateY(-50%);
-  z-index: 60;
-}
-
-@media (max-width: 1350px) {
-  .mobileHamburgerContainer {
-    display: block;
-  }
-}
-
-/* Hamburger Button (Two Horizontal Lines) */
 .mobileHamburger {
   width: 30px;
-  height: 20px;
-  background: none;   /* no background */
+  height: 24px;
+  background: none;
   border: none;
   cursor: pointer;
   display: none;
   flex-direction: column;
-  justify-content: space-between; /* space lines evenly */
+  justify-content: space-between;
   padding: 0;
+  position: relative;
+  z-index: 10;
+  transition: filter 0.3s ease;
+}
+
+@media (max-width: 1350px) {
+  .mobileHamburger {
+    display: flex;
+  }
+}
+
+/* Scale down hamburger slightly on default navbar */
+@media (max-width: 1350px) {
+  .navbarDefault .mobileHamburger {
+    width: 26px;
+    height: 20px;
+  }
+  
+  .navbarDefault .hamburgerLine {
+    height: 2.5px;
+  }
+}
+
+/* Hamburger color states - matches logo behavior */
+.navbarHero .mobileHamburger {
+  filter: none;
+}
+
+.navbarDefault .mobileHamburger {
+  filter: invert(100%);
 }
 
 /* Hamburger Lines */
 .hamburgerLine {
   height: 3px;
   width: 100%;
-  background-color: white; /* line color */
+  background-color: white;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
 }
 
-/* When Open (Rotate into Cross) */
-.mobileHamburger.open .hamburgerLine1 {
-  transform: rotate(45deg) translate(5px, 5px);
+/* When Open (Transform into X) */
+.hamburgerLineOpen1 {
+  transform: rotate(45deg) translate(8px, 8px);
 }
 
-.mobileHamburger.open .hamburgerLine2 {
-  transform: rotate(-45deg) translate(5px, -5px);
+.hamburgerLineOpen2 {
+  opacity: 0;
 }
 
+.hamburgerLineOpen3 {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
 
-/* ====== MOBILE MENU (Right Sidebar) ====== */
-.mobileMenu {
-  position: fixed;
-  top: 70px; /* below navbar */
-  right: 0;
-  width: 280px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px 0 0 20px;
-  padding: 1rem 1.5rem;
+/* ====== MOBILE MENU EXPANDED CONTENT ====== */
+.mobileMenuExpanded {
+  width: 100%;
+  padding-top: 1rem;
+  overflow: hidden;
+}
+
+/* Divider */
+.mobileMenuDivider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+/* Divider color for default navbar */
+.navbarDefault .mobileMenuDivider {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Menu Links Container */
+.mobileMenuLinks {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  z-index: 50;
-  box-shadow: 
-    rgba(255, 255, 255, 0.07) 0px 0.12px 0.36px inset,
-    rgba(255, 255, 255, 0.6) 0px 1px 3px inset,
-    rgba(0,0,0,0.01) 0px -0.12px 0.36px inset,
-    rgba(0,0,0,0.1) 0px -1px 3px inset,
-    rgba(0,0,0,0.12) 0px 30px 40px 0px;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Mobile Menu Links */
-.mobileMenuLink {
-  color: white;
+/* Individual Menu Item */
+.mobileMenuItem {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
   font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem 0;
-  cursor: pointer;
   text-align: left;
-  transition: color 0.3s;
+  padding: 0.75rem 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
 }
 
-.mobileMenuLink:hover {
-  color: rgb(37, 99, 235);
+/* Menu item color for hero navbar */
+.navbarHero .mobileMenuItem {
+  color: #fff;
 }
 
+/* Menu item color for default navbar */
+.navbarDefault .mobileMenuItem {
+  color: #000;
+}
+
+.mobileMenuItem:hover {
+  opacity: 0.7;
+  transform: translateX(5px);
+}
+
+@media (max-width: 480px) {
+  .mobileMenuItem {
+    font-size: 1.3rem;
+    padding: 0.6rem 0;
+  }
+}
+
+/* CTA Button in Mobile Menu */
+.mobileMenuCTA {
+  display: block;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  margin-bottom: 0.5rem;
+}
+
+/* CTA Button for hero navbar - white background */
+.navbarHero .mobileMenuCTA {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* CTA Button for default navbar - black background */
+.navbarDefault .mobileMenuCTA {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobileMenuCTA:hover {
+  transform: translateY(-2px);
+}
+
+.navbarHero .mobileMenuCTA:hover {
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+.navbarDefault .mobileMenuCTA:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .mobileMenuCTA {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
 
 /* ====== MEDIA QUERIES ====== */
 @media (max-width: 1350px) {
@@ -262,7 +413,18 @@
   .desktopButtonSection {
     display: none;
   }
-  .mobileHamburger{
-    display: flex;
-  }
+}
+
+/* ====== NAVBAR HIDE/SHOW ANIMATIONS ====== */
+.navbarVisible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.navbarHidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }

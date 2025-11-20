@@ -3,9 +3,9 @@ import image from "@/funnel/components/Navbar/Picassofusion Logo-12.png"
 // Menu items with section IDs (for smooth navigation)
 export const MENU_ITEMS = [
   { label: "Work", href: "#work", id: "work" },
+  { label: "Benefits", href: "#services", id: "services" },
+  { label: "Process", href: "#benefits", id: "benefits" },
   { label: "Testimonials", href: "#testimonials", id: "testimonials" },
-  { label: "Services", href: "#services", id: "services" },
-  { label: "Benefits", href: "#benefits", id: "benefits" },
   { label: "Pricing", href: "#pricing", id: "pricing" },
   { label: "About Us", href: "#about", id: "about" },
 ];
@@ -23,7 +23,7 @@ export const menuVariants: Variants = {
 // Branding and CTA
 export const LOGO_SYMBOL = "✻";
 export const LOGO_TEXT = "Picasso Fusion";
-export const CTA_BUTTON_TEXT = "Get it for $49";
+export const CTA_BUTTON_TEXT = "Get Started";
 export const LOGO_IMAGE = image;
 // Optional: Hero section ID for scroll-to-top logo behavior
 export const HERO_SECTION_ID = "#hero";

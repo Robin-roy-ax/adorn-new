@@ -5,6 +5,7 @@ import Image from "next/image";
 import { services } from "./data";
 import styles from "./style.module.css";
 
+
 export default function Services() {
   return (
     <section id="services" className={styles.section}>

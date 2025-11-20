@@ -10,7 +10,7 @@ export const HERO_MAIN_HEADING = {
 export const HERO_DESCRIPTION = "“Upgrade your designs with Picassofusion. Purchase our design credits and see our expert team turn your ideas into stunning visuals.”";
 
 export const HERO_BUTTONS = {
-  primary: "Book a discovery call",
+  primary: "Schedule a call",
   secondary: "See pricing plans"
 };
 

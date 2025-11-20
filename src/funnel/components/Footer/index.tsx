@@ -29,7 +29,7 @@ export default function HomeSection() {
               rel="noopener noreferrer"
               className={styles.heroButton}
             >
-              Book a discovery call
+              Schedule a call
             </a>
           </div>
         </div>

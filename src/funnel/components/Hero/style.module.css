@@ -66,7 +66,6 @@
   color: var(--token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17, #fff);
   line-height: 1.1;
   letter-spacing: -0.05em;
-  white-space: pre;
   font-size: clamp(3rem, 8vw, 9rem);
   font-style: normal;
 }
@@ -80,6 +79,7 @@
 @media (min-width: 1024px) {
   .heroMainHeading {
     font-size: clamp(5rem, 6vw, 12rem);
+    white-space: pre;
   }
 }
 

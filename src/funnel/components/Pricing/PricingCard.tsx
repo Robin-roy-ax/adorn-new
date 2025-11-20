@@ -32,8 +32,7 @@ export default function PricingCard({
       transition={{ type: "spring", stiffness: 200 }}
       className={`relative flex h-full w-full flex-col justify-between overflow-hidden rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
         p-6 sm:p-8 text-left
-        min-h-[460px] sm:min-h-[500px] lg:min-h-[530px]
-        max-w-full md:max-w-none
+        min-h-[500px] sm:min-h-[520px] lg:min-h-[550px]
         ${highlight
           ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] text-white z-30"
           : "bg-gray-100 text-slate-800 border-slate-200 z-20"
@@ -48,18 +47,18 @@ export default function PricingCard({
 
       {/* Header */}
       <div>
-        <h3 className="mb-2 text-base font-semibold sm:text-lg">{title}</h3>
-        <p className="text-3xl font-bold sm:text-4xl">
+        <h3 className="mb-2 text-lg font-semibold sm:text-xl">{title}</h3>
+        <p className="text-4xl font-bold sm:text-5xl">
           ${price}
-          <span className="text-sm sm:text-base font-medium">{period}</span>
+          <span className="text-base sm:text-lg font-medium">{period}</span>
         </p>
-        <p className="mt-2 text-xs opacity-80 sm:text-sm">{description}</p>
+        <p className="mt-3 text-sm opacity-80 sm:text-base">{description}</p>
       </div>
 
       {/* Buttons */}
       <div className="mt-6 sm:mt-8">
         <button
-          className={`w-full rounded-full py-2.5 text-sm font-semibold transition-all duration-300 sm:py-3 sm:text-base
+          className={`w-full rounded-full py-3 text-base font-semibold transition-all duration-300 sm:py-3.5 sm:text-lg
             ${highlight
               ? "bg-white hover:bg-[#1d52e5] hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)] relative overflow-hidden text-black hover:text-white shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)] rounded-full"
               : "bg-gray-100 hover:bg-gray-300 text-slate-800 border-gray-300 border"
@@ -79,19 +78,19 @@ export default function PricingCard({
 
       {/* Divider */}
       <hr
-        className={`my-4 sm:my-6 ${highlight ? "border-gray-500" : "border-slate-300"}`}
+        className={`my-5 sm:my-6 ${highlight ? "border-gray-500" : "border-slate-300"}`}
       />
 
       {/* Features */}
-      <ul className="space-y-2 text-xs sm:text-sm">
+      <ul className="space-y-3 text-sm sm:text-base">
         {features.map((feature, i) => (
-          <li key={i} className={`flex items-center gap-2 font-semibold ${highlight ? "text-gray-400" : "text-gray-400"}`}>
+          <li key={i} className={`flex items-start gap-3 font-semibold ${highlight ? "text-gray-300" : "text-gray-600"}`}>
             <Check
-              className={`w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0 ${
+              className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 ${
                 highlight ? "text-white" : "text-gray-800"
               }`}
             />
-            <span>{feature}</span>
+            <span className="leading-relaxed">{feature}</span>
           </li>
         ))}
       </ul>

@@ -9,7 +9,7 @@ export interface Service {
     {
       title: "Design Board",
       description:"Add as many design requests as you want; we craft each with care, creativity, and stunning visuals, offering truly endless possibilities for you.",
-      image: "https://framerusercontent.com/images/svgULmsLIR41ZA5On0KPuibbbc.png",
+      image: "https://framerusercontent.com/images/svgULmsLIR41ZA5On0KPuibbbc.png", 
       rotation: 0,
     },
     {
