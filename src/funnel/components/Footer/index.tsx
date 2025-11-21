@@ -3,8 +3,22 @@
 import { motion } from "framer-motion";
 import { menuLinks, socialLinks } from "./data";
 import styles from "./style.module.css";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
 
 export default function HomeSection() {
+
+    // ---- Cal.com popup setup ----
+    useEffect(() => {
+      (async function () {
+        const cal = await getCalApi({ namespace: "cal" });
+        cal("ui", {
+          hideEventTypeDetails: false,
+          layout: "month_view",
+        });
+      })();
+    }, []);
+
   return (
     <main className={styles.main}>
       {/* ===== HERO ===== */}
@@ -24,7 +38,8 @@ export default function HomeSection() {
               From concept to final design, we collaborate closely to bring your vision to life with clarity, creativity, and purpose.
             </p>
             <a
-              href="https://cal.com"
+              data-cal-link="robin-roy-ax/30min"
+              data-cal-config='{"layout":"month_view"}'
               target="_blank"
               rel="noopener noreferrer"
               className={styles.heroButton}
