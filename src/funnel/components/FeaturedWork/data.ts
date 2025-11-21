@@ -25,7 +25,7 @@ export const projects: Project[] = [
     title: 'Opulent Interiors™',
     description: 'A luxury interior design firm specializing in bespoke designs and curated furnishings for discerning clients.',
     tags: ['Web Design & Development', 'Motion Graphics'],
-    image: 'https://framerusercontent.com/images/UV0kfsR1WzRkqCK4mMW1O9t0.jpg',
+    image: Saral,
     route: "/projects/opulent-interiors",
   },
   {
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     title: 'Urban Odyssey™',
     description: 'A travel agency passionate about unlocking the hidden gems of city exploration.',
     tags: ['Branding', 'Digital Marketing'],
-    image: 'https://framerusercontent.com/images/TnTieucPuc0WFxg1tIh4JTPmp4.jpg',
+    image: Saral,
     route: "/projects/urban-odyssey",
   },
   {
@@ -41,7 +41,7 @@ export const projects: Project[] = [
     title: 'NovaDrive™',
     description: 'Leading the automotive industry with cutting-edge technology and sustainable innovation.',
     tags: ['Branding', 'Web Design & Development'],
-    image: 'https://framerusercontent.com/images/4vWXJkfkxtU2VxkFCO8Yhkjjj5k.jpg',
+    image: Saral,
     route: "/projects/novadrive",
   },
 ];
