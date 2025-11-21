@@ -2,6 +2,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Instrument_Serif } from "next/font/google";
+import { useEffect } from "react";
+import { getCalApi } from "@calcom/embed-react";
+
 import {
   HERO_SUBTITLE,
   HERO_MAIN_HEADING,
@@ -18,6 +21,18 @@ import styles from "./style.module.css";
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: ["400"] });
 
 export default function Hero() {
+
+  // ---- Cal.com popup setup ----
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "cal" });
+      cal("ui", {
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <motion.section
       id="hero"
@@ -52,29 +67,30 @@ export default function Hero() {
         style={{
           color: CSS_TOKENS.primaryColor,
           textAlign: "center",
-          fontFamily: "Inter, Inter Placeholder, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          fontFamily: "Inter, sans-serif",
           fontWeight: 600,
-          fontStyle: "normal",
           letterSpacing: "0em",
         }}
       >
-        {HERO_MAIN_HEADING.part1}{" "}<span style={{
+        {HERO_MAIN_HEADING.part1}{" "}
+        <span
+          style={{
             fontFamily: "Instrument_Serif",
             fontStyle: "italic",
             fontWeight: 500,
             letterSpacing: "0.01em",
             color: "#fff",
-          }}>{HERO_MAIN_HEADING.part1Italic}</span>
+          }}
+        >
+          {HERO_MAIN_HEADING.part1Italic}
+        </span>
         <br />
         <span
           className={`${styles.heroHeadingItalic} ${instrumentSerif.className}`}
           style={{
             color: CSS_TOKENS.primaryColor,
-            textAlign: "center",
-            fontFamily: "Inter, Inter Placeholder, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            fontFamily: "Inter, sans-serif",
             fontWeight: 600,
-            fontStyle: "normal",
-            letterSpacing: "0em",
           }}
         >
           {HERO_MAIN_HEADING.part2}
@@ -99,31 +115,32 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{
           duration: HERO_ANIMATIONS.description.duration,
-          delay: HERO_ANIMATIONS.description.delay
+          delay: HERO_ANIMATIONS.description.delay,
         }}
         className={styles.heroDescription}
       >
         {HERO_DESCRIPTION}
       </motion.p>
 
-     {/* Buttons */}
-     <motion.div
+      {/* Buttons */}
+      <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: HERO_ANIMATIONS.buttons.delay }}
         className="flex flex-col sm:flex-row gap-4 mt-8"
       >
-        <motion.a
+
+        {/* --- Cal.com Popup Button --- */}
+        <motion.button
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: HERO_ANIMATIONS.button1.delay }}
-          href="https://cal.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md"
+          data-cal-link="robin-roy-ax/30min"
+          data-cal-config='{"layout":"month_view"}'
+          className="relative px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md cursor-pointer"
         >
           {HERO_BUTTONS.primary}
-        </motion.a>
+        </motion.button>
 
         <motion.a
           initial={{ opacity: 0, y: 40 }}
@@ -143,25 +160,23 @@ export default function Hero() {
         transition={{ delay: HERO_ANIMATIONS.avatars.delay }}
         className="flex flex-col items-center mt-12"
       >
-   <div className="flex -space-x-4 mb-2">
-  {AVATAR_IMAGES.map((src, i) => (
-    <div
-      key={i}
-      className="relative w-10 h-10 rounded-full border-2 border-white/60 overflow-hidden shadow-md
+        <div className="flex -space-x-4 mb-2">
+          {AVATAR_IMAGES.map((src, i) => (
+            <div
+              key={i}
+              className="relative w-10 h-10 rounded-full border-2 border-white/60 overflow-hidden shadow-md
                  transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-1 hover:shadow-lg"
-    >
-      <Image
-        src={src}
-        alt={`Client ${i + 1}`}
-        width={40}
-        height={40}
-        className="w-full h-full object-cover"
-      />
-    </div>
-  ))}
-</div>
-
-
+            >
+              <Image
+                src={src}
+                alt={`Client ${i + 1}`}
+                width={40}
+                height={40}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
 
         <motion.p
           initial={{ opacity: 0, x: 20 }}

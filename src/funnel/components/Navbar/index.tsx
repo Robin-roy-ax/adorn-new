@@ -155,7 +155,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
             }`}
           >
             <a
-              href="https://aalayrasool.lemonsqueezy.com/buy/0d653898-9e3c-4899-9612-2b7d950d53f6"
+              href="https://app.picassofusion.com/login?_gl=1*18t62o4*_ga*OTE2MzM2MzI1LjE3NjI0MDgyNzg.*_ga_8S104JGWHM*czE3NjM3MDI3MzAkbzgkZzAkdDE3NjM3MDI3MzAkajYwJGwwJGgw"
               target="_blank"
               rel="noopener noreferrer"
               className={desktopBtnClass}
@@ -219,7 +219,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              href="https://aalayrasool.lemonsqueezy.com/buy/0d653898-9e3c-4899-9612-2b7d950d53f6"
+              href="https://app.picassofusion.com/login?_gl=1*18t62o4*_ga*OTE2MzM2MzI1LjE3NjI0MDgyNzg.*_ga_8S104JGWHM*czE3NjM3MDI3MzAkbzgkZzAkdDE3NjM3MDI3MzAkajYwJGwwJGgw"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.mobileMenuCTA}

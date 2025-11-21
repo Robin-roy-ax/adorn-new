@@ -1,10 +1,13 @@
+import { StaticImageData } from "next/image";
+import Saral from "./Saaral Cover.jpg";
+
 // data.ts
 export interface Project {
   id: string;
   title: string;
   description: string;
   tags: string[];
-  image: string;
+  image: StaticImageData;
   route: string;
 }
 
@@ -14,7 +17,7 @@ export const projects: Project[] = [
     title: 'Auluxe™',
     description: 'Redefining luxury in audio with advanced technology and exquisite design.',
     tags: ['Product Design', 'Motion Graphics'],
-    image: 'https://framerusercontent.com/images/PasykLOKcBfLT5yRCJy3BP5w.jpg',
+    image: Saral,
     route: "/projects/auluxe",
   },
   {

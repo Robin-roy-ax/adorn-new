@@ -61,7 +61,7 @@ export default function Services() {
                 {/* Image */}
                 <div
                   className={styles.cardImage}
-                  style={{ transform: `rotate(${service.rotation}deg)` }}
+                  // style={{ transform: `rotate(${service.rotation}deg)` }}
                 >
                   <Image
                     src={service.image}

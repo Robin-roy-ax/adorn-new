@@ -14,6 +14,7 @@ import FaqPage from "@/funnel/components/FaqPage/page";
 import WorkSection from "@/funnel/components/Work/page";
 import Footer from "@/funnel/components/Footer/page";
 import AboutUs from "@/funnel/components/AboutUS/page";
+// import Dribble from "@/funnel/components/Dribble";
 
 type SectionType = "default" | "work" | "pricing" | "about";
 
@@ -173,6 +174,7 @@ export default function Home() {
       {/* Faq + Footer */}
       <FaqPage />
       <Footer />
+      {/* <Dribble/> */}
     </>
   );
 }

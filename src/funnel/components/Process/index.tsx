@@ -88,12 +88,6 @@ function BenefitCard({
       {/* Image */}
       <div
         className={styles.imageWrapper}
-        style={{
-          transform:
-            benefit.title === "Define Your Needs"
-              ? "translate(-50%, 0%) rotate(0deg) scale(1.3 )"
-              : `translate(-50%, -1rem) rotate(${benefit.rotation}deg)`,
-        }}
       >
         <Image
           src={benefit.image}

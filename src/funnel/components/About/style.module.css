@@ -4,32 +4,90 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1.5rem;
+  padding: 4rem 1.5rem;
   background-color: white;
-  color: rgb(17, 24, 39); /* text-gray-900 */
+  color: rgb(17, 24, 39);
 }
 
 .aboutTextBlock {
-  max-width: 75%; /* max-w-3xl */
-  margin-top: 6rem;
-  margin-bottom: 2rem;
+  max-width: 95%;
+  margin: 0 auto 3rem auto;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .aboutTextBlock {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  .aboutSection {
+    padding: 5rem 2rem;
+  }
+  
+  .aboutTextBlock {
+    max-width: 85%;
+    margin: 0 auto 3.5rem auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutSection {
+    padding: 6rem 3rem;
+  }
+  
+  .aboutTextBlock {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutTextBlock {
+    max-width: 1400px;
+  }
 }
 
 .aboutMainHeading {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 500;
-  line-height: 1.375; /* leading-snug */
-  color: rgb(17, 24, 39); /* text-gray-900 */
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(17, 24, 39);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .aboutMainHeading {
+    font-size: 1.875rem;
+    line-height: 1.4;
+  }
 }
 
 @media (min-width: 768px) {
   .aboutMainHeading {
-    font-size: 3rem; /* md:text-5xl */
+    font-size: 2.25rem;
+    line-height: 1.45;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutMainHeading {
+    font-size: 2.75rem;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 1280px) {
+  .aboutMainHeading {
+    font-size: 3rem;
+    line-height: 1.45;
   }
 }
 
 .aboutTextNormal {
-  color: rgb(17, 24, 39); /* text-gray-900 */
+  color: rgb(17, 24, 39);
 }
 
 .aboutTextGradient {
@@ -40,20 +98,37 @@
 }
 
 .aboutButtonContainer {
-  margin-top: 1rem; /* mt-10 */
+  margin: 0;
 }
 
 .aboutButton {
-  border: 1px solid rgb(209, 213, 219); /* border-gray-300 */
+  border: 1px solid rgb(209, 213, 219);
   border-radius: 9999px;
-  padding: 0.75rem 2rem; /* px-8 py-3 */
-  color: rgb(55, 65, 81); /* text-gray-700 */
-  font-weight: 500;
+  padding: 0.875rem 2.25rem;
+  color: rgb(55, 65, 81);
+  font-weight: 400;
+  font-size: 0.9375rem;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
+@media (min-width: 640px) {
+  .aboutButton {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .aboutButton {
+    padding: 1rem 3rem;
+    font-size: 1.0625rem;
+  }
+}
+
 .aboutButton:hover {
-  background-color: rgb(229, 231, 235); /* hover:bg-gray-200 */
+  background-color: rgb(229, 231, 235);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

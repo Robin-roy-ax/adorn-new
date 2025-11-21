@@ -1,3 +1,6 @@
+import { StaticImageData } from "next/image";
+import Saral from "./Saaral Cover.jpg";
+
 // data.ts
 export interface ProjectImage {
     src: string;
@@ -14,7 +17,7 @@ export interface ProjectImage {
     type: 'image' | 'twoColumn' | 'twoImages' | 'implementation' | 'results';
     heading?: string;
     content?: string;
-    image?: string;
+    image?: StaticImageData;
     alt?: string;
     height?: 'large' | 'medium';
     objectPosition?: string;
@@ -34,7 +37,7 @@ export interface ProjectImage {
     sections: [
       {
         type: 'image' as const,
-        image: 'https://framerusercontent.com/images/PasykLOKcBfLT5yRCJy3BP5w.jpg',
+        image: Saral,
         alt: 'Auluxe Hero',
         height: 'large' as const,
       },
