@@ -1,5 +1,4 @@
-"use client";
-
+import type { Metadata } from "next";
 import Hero from "@/funnel/components/Hero/page";
 import About from "@/funnel/components/About/page";
 import FeaturedWork from "@/funnel/components/FeaturedWork/page";
@@ -8,6 +7,11 @@ import Service from "@/funnel/components/Benefits/page";
 import Benefit from "@/funnel/components/Process/page";
 import Pricing from "@/funnel/components/Pricing/index";
 import FaqPage from "@/funnel/components/FaqPage/page";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to Picasso Fusion. Create, explore, and innovate with our digital art platform.",
+};
 
 export default function Home() {
   return (
