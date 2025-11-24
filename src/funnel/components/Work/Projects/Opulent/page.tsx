@@ -1,9 +1,9 @@
-import OpulentPage from '@/funnel/components/Work/Projects/Opulent/index';
+import Opulent from "@/funnel/components/Work/Projects/Opulent/index";
 
 export default function OpulentInteriorsProjectPage() {
   return (
     <main>
-      <OpulentPage />
+      <Opulent />
     </main>
   );
 }

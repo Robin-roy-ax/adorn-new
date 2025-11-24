@@ -5,9 +5,9 @@ import Image from "next/image";
 import { benefits, Benefit } from "./data";
 import styles from "./style.module.css";
 
-export default function Benefits() {
+export default function Process() {
   return (
-    <section id="benefits" className={styles.section}>
+    <section id="process" className={styles.section}>
       <motion.div
         className={styles.container}
         initial={{ opacity: 1, y: 40 }}

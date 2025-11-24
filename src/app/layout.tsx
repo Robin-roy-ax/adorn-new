@@ -3,6 +3,8 @@ import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/funnel/components/common/CustomCursor";
 import { CursorProvider } from "@/funnel/components/common/CursorContext";
+import Navbar from "@/funnel/components/Navbar/index";
+import Footer from "@/funnel/components/Footer/index";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -30,9 +32,11 @@ export default function RootLayout({
       <body
         className={`${interSans.variable} ${instrumentSerif.variable} font-sans antialiased`}>
         <CursorProvider>
-        <CustomCursor />
-        {children}
-      </CursorProvider>
+          <CustomCursor />
+          <Navbar />
+          {children}
+          <Footer />
+        </CursorProvider>
       </body>
     </html>
   );

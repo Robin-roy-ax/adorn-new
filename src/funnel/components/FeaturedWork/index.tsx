@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 import { Project, projects } from './data';
 import styles from './style.module.css';
-import ViewProjectCursor from '@/funnel/components/common/MousePointer'; // Adjust path as needed
+import ViewProjectCursor from "@/funnel/components/common/MousePointer"; // Adjust path as needed
 
 export default function FeaturedWork() {
   const [isMobile, setIsMobile] = useState(false);

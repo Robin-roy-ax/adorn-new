@@ -4,24 +4,22 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MENU_ITEMS, CTA_BUTTON_TEXT, LOGO_IMAGE } from "./data";
 import styles from "./style.module.css";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
-interface NavbarProps {
-  onMenuClick: (id: string) => void;
-  showWorkSection: boolean;
-}
-
-export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
+export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [inHero, setInHero] = useState(true);
   const [navbarVisible, setNavbarVisible] = useState(true);
-  const router = useRouter();
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/projects/");
 
   useEffect(() => {
-    if (showWorkSection || isProjectPage) {
+    // Check if we are on the home page
+    const isHomePage = pathname === "/";
+    
+    if (!isHomePage) {
       setInHero(false);
       return;
     }
@@ -56,7 +54,7 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [showWorkSection, isProjectPage]);
+  }, [pathname, isProjectPage]);
 
   const menuColor = inHero ? "#fff" : "#000";
   const navbarClass = inHero ? styles.navbarHero : styles.navbarDefault;
@@ -67,81 +65,34 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
 
   const visibilityClass = navbarVisible ? styles.navbarVisible : styles.navbarHidden;
 
-  const handleNavigation = (id: string) => {
-    setMobileOpen(false);
-
-    if (pathname !== "/") {
-      sessionStorage.setItem("targetSection", id);
-      router.push(`/#${id}`);
-      return;
-    }
-
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      window.history.replaceState(null, "", `#${id}`);
-    } else {
-      router.push(`/#${id}`);
-    }
-
-    onMenuClick(id);
-  };
-
-  useEffect(() => {
-    const targetSection = sessionStorage.getItem("targetSection");
-    if (targetSection && pathname === "/") {
-      sessionStorage.removeItem("targetSection");
-      const section = document.getElementById(targetSection);
-      if (section) {
-        setTimeout(
-          () => section.scrollIntoView({ behavior: "smooth" }),
-          50
-        );
-      }
-    }
-    
-    const fromLogo = sessionStorage.getItem("scrollToHero");
-    if (fromLogo) {
-      sessionStorage.removeItem("scrollToHero");
-      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 50);
-    }
-  }, [pathname]);
-
-  const handleLogoClick = () => {
-    setMobileOpen(false);
-    onMenuClick("home");
-  
-    if (pathname !== "/") {
-      sessionStorage.setItem("scrollToHero", "true");
-      router.push("/");
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      window.history.replaceState(null, "", "/");
-    }
-  };
+  // Navigation logic replaced by Next.js Link
+  // sessionStorage logic removed as Next.js Link handles hash navigation
 
   return (
     <nav className={`${styles.navbar} ${navbarClass} ${visibilityClass} ${mobileOpen ? styles.navbarExpanded : ''}`}>
       <div className={styles.navbarTop}>
         {/* Logo */}
-        <div
-          onClick={handleLogoClick}
+        <Link
+          href="/"
+          onClick={() => {
+            setMobileOpen(false);
+          }}
           className={`${styles.logoSection} ${logoClass}`}
         >
           <Image src={LOGO_IMAGE} alt="Logo" width={100} height={100} />
-        </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
           {MENU_ITEMS.map((item) => (
-            <button
+            <Link
               key={item.id}
-              onClick={() => handleNavigation(item.id)}
+              href={item.href}
               className={styles.menuLink}
               style={{ color: menuColor }}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -202,16 +153,22 @@ export default function Navbar({ onMenuClick, showWorkSection }: NavbarProps) {
             
             <div className={styles.mobileMenuLinks}>
               {MENU_ITEMS.map((item, index) => (
-                <motion.button
+                <motion.div
                   key={item.id}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  onClick={() => handleNavigation(item.id)}
-                  className={styles.mobileMenuItem}
                 >
-                  {item.label}
-                </motion.button>
+                  <Link
+                    href={item.href}
+                    onClick={() => {
+                      setMobileOpen(false);
+                    }}
+                    className={styles.mobileMenuItem}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
 

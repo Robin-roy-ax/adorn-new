@@ -1,23 +1,23 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-import AuluxePage from "@/funnel/components/Work/Projects/Auluxe";
-import OpulentPage from "@/funnel/components/Work/Projects/Opulent";
-import UrbanPage from "@/funnel/components/Work/Projects/Urban";
-import NovaPage from "@/funnel/components/Work/Projects/Nova";
-import ArchPage from "@/funnel/components/Work/Projects/ArchSphere";
-import HarmonyPage from "@/funnel/components/Work/Projects/Harmony";
+import Auluxe from "@/funnel/components/Work/Projects/Auluxe/page";
+import Opulent from "@/funnel/components/Work/Projects/Opulent/page";
+import Urban from "@/funnel/components/Work/Projects/Urban/page";
+import Nova from "@/funnel/components/Work/Projects/Nova/page";
+import ArchSphere from "@/funnel/components/Work/Projects/ArchSphere/page";
+import Harmony from "@/funnel/components/Work/Projects/Harmony/page";
 import { projects } from "@/funnel/components/Work/data";
 
 import ProjectClient from "./ProjectClient";
 
 const projectComponentMap: Record<string, React.ComponentType> = {
-  "auluxe": AuluxePage,
-  "opulent-interiors": OpulentPage,
-  "urban-odyssey": UrbanPage,
-  "nova-drive": NovaPage,
-  "archsphere": ArchPage,
-  "harmony-beats": HarmonyPage,
+  "auluxe": Auluxe,
+  "opulent-interiors": Opulent,
+  "urban-odyssey": Urban,
+  "nova-drive": Nova,
+  "archsphere": ArchSphere,
+  "harmony-beats": Harmony,
 };
 
 export function generateStaticParams() {
@@ -44,5 +44,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     notFound();
   }
 
-  return <ProjectClient ProjectComponent={ProjectComponent} />;
+  return (
+    <ProjectClient>
+      <ProjectComponent />
+    </ProjectClient>
+  );
 }

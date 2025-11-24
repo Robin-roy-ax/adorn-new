@@ -5,6 +5,7 @@ import { menuLinks, socialLinks } from "./data";
 import styles from "./style.module.css";
 import { useEffect } from "react";
 import { getCalApi } from "@calcom/embed-react";
+import Link from "next/link";
 
 export default function HomeSection() {
 
@@ -89,12 +90,12 @@ export default function HomeSection() {
               <ul className="flex flex-col gap-3 items-start list-none m-0 p-0">
                 {menuLinks.map((link, idx) => (
                   <li key={idx}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-[#8592b1] hover:text-[#bababaed] transition-all duration-200 text-[16px]"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -106,12 +107,12 @@ export default function HomeSection() {
               <ul className="flex flex-col gap-3 items-center list-none m-0 p-0">
                 {socialLinks.map((social, idx) => (
                   <li key={idx}>
-                    <a
+                    <Link
                       href={social.href}
                       className="text-[#8592b1] hover:text-[#bababaed] transition-all duration-200 text-[16px]"
                     >
                       {social.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -119,8 +120,8 @@ export default function HomeSection() {
 
             {/* FLOATING BUTTON */}
             <div className={styles.footerButton}>
-              <a
-                href="#hero"
+              <Link
+                href="/#hero"
                 className="bg-black hover:bg-[#3c3c3c] text-white w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 shadow-lg"
               >
                 <svg
@@ -137,7 +138,7 @@ export default function HomeSection() {
                   <line x1="12" y1="19" x2="12" y2="5" />
                   <polyline points="5 12 12 5 19 12" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

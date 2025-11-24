@@ -6,9 +6,9 @@ import { services } from "./data";
 import styles from "./style.module.css";
 
 
-export default function Services() {
+export default function Benefits() {
   return (
-    <section id="services" className={styles.section}>
+    <section id="benefits" className={styles.section}>
       <div className={styles.container}>
         {/* Header */}
         <motion.h2

@@ -1,4 +1,4 @@
-import HarmonyPage from '@/funnel/components/Work/Projects/Harmony';
+import HarmonyPage from "@/funnel/components/Work/Projects/Harmony/index";
 
 export default function HarmonyBeatsProjectPage() {
   return (

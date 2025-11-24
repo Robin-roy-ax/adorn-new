@@ -1,4 +1,4 @@
-import AboutUs from '@/funnel/components/AboutUS';
+import AboutUs from "@/funnel/components/AboutUS/index";
 
 export default function Home() {
   return (

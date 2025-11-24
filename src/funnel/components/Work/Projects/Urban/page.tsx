@@ -1,9 +1,9 @@
-import UrbanPage from '@/funnel/components/Work/Projects/Urban/index';
+import Urban from "@/funnel/components/Work/Projects/Urban/index";
 
 export default function UrbanOdysseyProjectPage() {
   return (
     <main>
-      <UrbanPage />
+      <Urban />
     </main>
   );
 }
