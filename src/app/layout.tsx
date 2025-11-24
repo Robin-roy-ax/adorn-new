@@ -24,9 +24,24 @@ export const metadata: Metadata = {
     template: "%s | Picasso Fusion",
   },
   description: "Picasso Fusion is a premier platform for creating and exploring digital art. Unlock your creativity with our exclusive design membership.",
-  keywords: ["digital art", "design membership", "creative platform", "picasso fusion", "art community"],
+  keywords: [
+    "digital art",
+    "design membership",
+    "creative platform",
+    "picasso fusion",
+    "art community",
+    "graphic design",
+    "web design",
+    "design services",
+    "unlimited design",
+    "subscription design",
+  ],
   authors: [{ name: "Picasso Fusion Team" }],
   creator: "Picasso Fusion",
+  publisher: "Picasso Fusion",
+  verification: {
+    google: "your-google-verification-code", // Replace with actual verification code
+  },
   openGraph: {
     type: "website",
     locale: "en_US",

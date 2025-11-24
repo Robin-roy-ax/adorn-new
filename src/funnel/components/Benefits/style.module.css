@@ -1,215 +1,232 @@
 .section {
-    width: 100%;
-    padding-top: 12rem;
-    background-color: white;
-  }
-  @media (max-width: 768px) {
-    .section {
-      padding-top: 4rem;
-    }
-  }
-
-  .container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .container {
-      padding: 0 2rem;
-    }
-  }
-  
-  .heading {  
-    text-align: center;
-    color: #343e56;
-    font-weight: 500;
-    line-height: 1.05em;
-    letter-spacing: -0.05em;
-  }
-  
-  .heading span {
-    font-family: "Instrument Serif", serif;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: normal;
-  }
-  
-  @media (min-width: 1280px) {
-    .heading {
-      font-size: 100px;
-    }
-  }
-  
-  @media (min-width: 1024px) and (max-width: 1279px) {
-    .heading {
-      font-size: 80px;
-    }
-  }
-  
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .heading {
-      font-size: 60px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .heading {
-      font-size: 40px;
-    }
-  }
-  
-  .description {
-    text-align: center;
-    color: #6f80a8;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    max-width: 48rem;
-    margin: 2rem auto 0;
-  }
-  
-  .grid {
-    display: grid;
-    gap: 1.5rem;
-    justify-content: center;
-    max-width: 100%;
-    padding: 6rem 0;
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-  
-  @media (min-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  
-  @media (max-width: 767px) {
-    .grid {
-      grid-template-columns: 1fr;
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
-      padding: 3rem 0;
-    }
-  }
-  
-  .card {
-    position: relative;
-    width: 100%;
-    max-width: 28rem;
-    height: 28rem;
-    /* background-color: #111a3b; */
-    background: radial-gradient(100% 75% at 0% 0%, #cbd4e4 0%, #f5f6fa 100%);
-    border-radius: 1.5rem;
-    overflow: hidden;
-    color: black;
-    padding: 2.5rem;
-    /* box-shadow:
-      0 0.78px 0.78px -0.53px #6b7087bd,
-      0 1.9px 1.9px -1.07px #6b7087ba,
-      0 3.63px 3.63px -1.6px #6b7087b3,
-      0 6.35px 6.35px -2.14px #6b7087ab,
-      0 11.05px 11.05px -2.67px #6b70879c,
-      0 20.24px 20.24px -3.21px #6b708780,
-      0 40px 40px -3.75px #6b708740; */
-    transition: all 0.7s ease;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 767px) {
-    .card {
-      height: auto;
-      min-height: 22rem;
-    }
-  }
-  
-  .card:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  }
-  
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top right, rgba(37, 99, 235, 0.1), transparent);
-    opacity: 0;
-    transition: opacity 0.7s ease;
-  }
-  
-  .card:hover .overlay {
-    opacity: 1;
-  }
-  
-  .cardImage {
-  position: absolute;
-  /* bottom: 60%;
-  left: 60%; */
-  left: 23%;
-  bottom: 45%;
-  /* scale: 1; */
-  width: 15rem;
-  height: 15rem;
-  /* opacity: 0.8; */
-  pointer-events: none;
-  z-index: 1;
+  width: 100%;
+  padding-top: 8rem;
+  background-color: white;
 }
 
-/* Add glowing white background light
-.cardImage::before {
-  content: "";
+@media (max-width: 768px) {
+  .section {
+    padding-top: 4rem;
+  }
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+.heading {
+  text-align: center;
+  color: #343e56;
+  font-weight: 500;
+  line-height: 1.05em;
+  letter-spacing: -0.05em;
+}
+
+.heading span {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+@media (min-width: 1280px) {
+  .heading {
+    font-size: 100px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .heading {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .heading {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .heading {
+    font-size: 40px;
+  }
+}
+
+.description {
+  text-align: center;
+  color: #6f80a8;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  max-width: 48rem;
+  margin: 2rem auto 0;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  max-width: 100%;
+  padding: 6rem 0;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  /* Responsive grid: cards will be at least 24rem wide, filling available space */
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+    /* Force single column on mobile */
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 3rem 0;
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  /* Tokens */
+  --token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17: #fff;
+  --token-a0f817e9-8687-4a56-b89f-933085d9afe0: #000;
+  --token-be2dbe05-c07a-49e9-8b31-ac7f35ec4106: #1d52e5;
+  --token-22ab0cf2-e139-42ef-a5f9-10fd69d821e3: #28334d;
+  --token-c309c53b-0751-4a8a-9654-75cd9b5a1bcf: #8592b1;
+  --token-3f3d365d-c9cd-4b60-89b6-ce4d9069f32d: #28334d99;
+  --token-b11f32cd-61f4-496c-9bcc-2939a2be13f0: #111a3b;
+  --token-603511f4-daed-4461-b963-0d12ecb0fd1b: #f5f6fa;
+  --token-f1f69427-55f1-4736-9f04-12e29d72c9db: #ccd5e899;
+  --token-d649b08b-b393-4dfd-9d66-edb3ef4af5ce: #dde3ee;
+
+  /* Base Styles */
+  font-family: sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: inherit;
+
+  /* Layout */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Align top as per requirements */
+  gap: 32px;
+  padding: 32px;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  min-height: 500px;
+  /* Responsive height based on provided 500px */
+  height: auto;
+
+  /* Visuals */
+  background: radial-gradient(100% 75% at 0% 0%, #94a1b5 0%, var(--token-603511f4-daed-4461-b963-0d12ecb0fd1b, #f5f6fa) 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  color: black;
+
+  /* Borders */
+  --border-color: var(--token-f1f69427-55f1-4736-9f04-12e29d72c9db, #ced7e9);
+  border: 1px solid var(--border-color);
+
+  /* Shadows */
+  box-shadow: 0 .78363px .78363px -.535714px #dde3eebd,
+    0 1.91965px 1.91965px -1.07143px #dde3eeba,
+    0 3.63745px 3.63745px -1.60714px #dde3eeb3,
+    0 6.35004px 6.35004px -2.14286px #dde3eeab,
+    0 11.0519px 11.0519px -2.67857px #dde3ee9c,
+    0 20.2428px 20.2428px -3.21429px #dde3ee80,
+    0 40px 40px -3.75px #dde3ee40;
+
+  will-change: transform;
+  transition: all 0.7s ease;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    /* On desktop, we can enforce the fixed aspect ratio if desired, 
+       but min-height: 500px is usually safer. 
+       Keeping it auto to fit content + min-height. */
+    min-height: 500px;
+  }
+}
+
+.card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
   position: absolute;
   inset: 0;
-  transform: scale(1.6);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgb(255, 255, 255) 30%,
-    transparent 10%
-  );
-  filter: blur(40px);
-  z-index: -1;
-  pointer-events: none;
-} */
+  background: linear-gradient(to top right, rgba(37, 99, 235, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
 
-  
-  .text {
-    position: relative;
-    z-index: 10;
-    margin-top: 55px;
-    text-align: left;
-  }
-  
-  .cardTitle {
-    font-size: 38px;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-  
-  @media (max-width: 1024px) {
-    .cardTitle {
-      font-size: 32px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .cardTitle {
-      font-size: 26px;
-    }
-  }
-  
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.cardImage {
+  position: relative;
+  /* Changed from absolute */
+  width: clamp(12rem, 35vw, 17rem);
+  /* Increased min width to 12rem for mobile */
+  height: clamp(12rem, 35vw, 17rem);
+  /* Increased min height to 12rem for mobile */
+  margin: 0 auto 1.5rem auto;
+  /* Center and add bottom spacing */
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.5s ease;
+  flex-shrink: 0;
+  /* Prevent image from squishing */
+}
+
+/* Removed media queries for cardImage as clamp handles it */
+
+.text {
+  position: relative;
+  z-index: 10;
+  margin-top: auto;
+  /* Push text to bottom if there's extra space */
+  padding-top: 0;
+  /* Removed large padding */
+  text-align: left;
+  width: 100%;
+}
+
+/* Removed media queries for text padding */
+
+.cardTitle {
+  font-size: clamp(1.5rem, 5vw, 2.375rem);
+  /* Increased min size to ~24px for mobile */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+/* Removed media queries for cardTitle */
+
+.cardDesc {
+  color: #55575a84;
+  line-height: 1.5;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  /* Increased min size to 16px for mobile */
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
   .cardDesc {
-    /* color: #d1d5db; */
-    color: #55575a84;
-    line-height: 1.6;
-    font-size: 1.125rem;
     max-width: 28rem;
   }
-  
+}

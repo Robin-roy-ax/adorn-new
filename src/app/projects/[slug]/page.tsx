@@ -15,7 +15,7 @@ const projectComponentMap: Record<string, React.ComponentType> = {
   "auluxe": Auluxe,
   "opulent-interiors": Opulent,
   "urban-odyssey": Urban,
-  "nova-drive": Nova,
+  "novadrive": Nova,
   "archsphere": ArchSphere,
   "harmony-beats": Harmony,
 };
@@ -24,8 +24,9 @@ export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const project = projects.find((item) => item.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
 
   if (!project) {
     return { title: "Project Not Found" };
@@ -34,19 +35,65 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title: `${project.title} | Projects`,
     description: project.description,
+    openGraph: {
+      title: `${project.title} | Projects`,
+      description: project.description,
+      url: `https://picasso-fusion.vercel.app/projects/${slug}`,
+      siteName: "Picasso Fusion",
+      images: [
+        {
+          url: project.image,
+          width: 1200,
+          height: 630,
+          alt: project.title,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Projects`,
+      description: project.description,
+      images: [project.image],
+    },
+    alternates: {
+      canonical: `https://picasso-fusion.vercel.app/projects/${slug}`,
+    },
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const ProjectComponent = projectComponentMap[params.slug];
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const ProjectComponent = projectComponentMap[slug];
+  const project = projects.find((item) => item.slug === slug);
 
-  if (!ProjectComponent) {
+  if (!ProjectComponent || !project) {
     notFound();
   }
 
+  // JSON-LD structured data for the project
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    image: project.image,
+    url: `https://picasso-fusion.vercel.app/projects/${slug}`,
+    creator: {
+      "@type": "Organization",
+      name: "Picasso Fusion",
+    },
+  };
+
   return (
-    <ProjectClient>
-      <ProjectComponent />
-    </ProjectClient>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProjectClient>
+        <ProjectComponent />
+      </ProjectClient>
+    </>
   );
 }

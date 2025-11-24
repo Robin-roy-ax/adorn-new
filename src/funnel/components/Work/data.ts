@@ -48,8 +48,8 @@ export interface Project {
         "Leading the automotive industry with cutting-edge technology and sustainable innovation.",
       image: "https://framerusercontent.com/images/4vWXJkfkxtU2VxkFCO8Yhkjjj5k.jpg",
       tags: ["Branding", "Web Design & Development"],
-      slug: "nova-drive",
-      href: "/projects/nova-drive",
+      slug: "novadrive",
+      href: "/projects/novadrive",
     },
     {
       id: "ArchSphere",

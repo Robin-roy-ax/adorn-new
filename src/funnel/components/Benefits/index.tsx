@@ -79,7 +79,6 @@ export default function Benefits() {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true }}
                   className={styles.text}
-                  style={{ marginTop: "11.5rem" }}
                 >
                   <motion.h3
                     initial={{ opacity: 1, y: 20 }}

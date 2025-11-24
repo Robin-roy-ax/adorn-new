@@ -11,6 +11,9 @@ import FaqPage from "@/funnel/components/FaqPage/page";
 export const metadata: Metadata = {
   title: "Home",
   description: "Welcome to Picasso Fusion. Create, explore, and innovate with our digital art platform.",
+  alternates: {
+    canonical: "https://picasso-fusion.vercel.app",
+  },
 };
 
 export default function Home() {

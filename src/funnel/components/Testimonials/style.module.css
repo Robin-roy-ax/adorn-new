@@ -8,7 +8,7 @@
   max-width: 90.625rem;
   margin: 0 auto;
   padding: 0 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
 }
 
 @media (min-width: 1024px) {
@@ -31,7 +31,8 @@
 
 .testimonialsTitle {
   text-align: center;
-  font-size: 48px; /* Base mobile size */
+  font-size: 48px;
+  /* Base mobile size */
   font-weight: 400;
   letter-spacing: -0.06em;
   color: #2D3753;
@@ -79,7 +80,8 @@
   margin-top: 2rem;
   text-align: center;
   color: #6F80A8;
-  font-size: 0.875rem; /* Base mobile size */
+  font-size: 0.875rem;
+  /* Base mobile size */
   line-height: 1.625;
   max-width: 42rem;
   margin-left: auto;
@@ -107,7 +109,7 @@
 
 .testimonialsGrid {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
   justify-content: center;
   padding: 0 1rem;
 }
@@ -125,11 +127,17 @@
   }
 }
 
+@media (max-width: 767px) {
+  .testimonialsGrid {
+    gap: 1.5rem;
+  }
+}
+
 .testimonialCard {
   position: relative;
   background-color: var(--token-603511f4-daed-4461-b963-0d12ecb0fd1b, rgb(245, 246, 250));
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   border: 1px solid rgb(229, 231, 235);
   display: flex;
   flex-direction: column;
@@ -138,13 +146,19 @@
   max-width: 27rem;
   margin: 0 auto;
   transition: all 0.5s ease-in-out;
-  box-shadow: rgba(221, 227, 238, 0.74) 0px 0.78363px 0.78363px -0.535714px, 
-              rgba(221, 227, 238, 0.725) 0px 1.91965px 1.91965px -1.07143px, 
-              rgba(221, 227, 238, 0.706) 0px 3.63745px 3.63745px -1.60714px, 
-              rgba(221, 227, 238, 0.67) 0px 6.35004px 6.35004px -2.14286px, 
-              rgba(221, 227, 238, 0.61) 0px 11.0519px 11.0519px -2.67857px, 
-              rgba(221, 227, 238, 0.498) 0px 20.2428px 20.2428px -3.21429px, 
-              rgba(221, 227, 238, 0.25) 0px 40px 40px -3.75px;
+  box-shadow: rgba(221, 227, 238, 0.74) 0px 0.78363px 0.78363px -0.535714px,
+    rgba(221, 227, 238, 0.725) 0px 1.91965px 1.91965px -1.07143px,
+    rgba(221, 227, 238, 0.706) 0px 3.63745px 3.63745px -1.60714px,
+    rgba(221, 227, 238, 0.67) 0px 6.35004px 6.35004px -2.14286px,
+    rgba(221, 227, 238, 0.61) 0px 11.0519px 11.0519px -2.67857px,
+    rgba(221, 227, 238, 0.498) 0px 20.2428px 20.2428px -3.21429px,
+    rgba(221, 227, 238, 0.25) 0px 40px 40px -3.75px;
+}
+
+@media (min-width: 480px) {
+  .testimonialCard {
+    padding: 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -168,34 +182,57 @@
 
 .testimonialQuote {
   color: rgb(107, 114, 128);
-  font-size: 0.875rem;
-  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  margin-bottom: 0.875rem;
   font-weight: 500;
-  line-height: 1.625;
+  line-height: 1.5;
+}
+
+@media (min-width: 480px) {
+  .testimonialQuote {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (min-width: 768px) {
   .testimonialQuote {
     font-size: 1rem;
+    line-height: 1.625;
   }
 }
 
 .testimonialFooter {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   margin-top: auto;
-  padding-top: 1rem;
+  padding-top: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .testimonialFooter {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 .testimonialImageContainer {
   position: relative;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
   border: 1px solid rgb(209, 213, 219);
+}
+
+@media (min-width: 768px) {
+  .testimonialImageContainer {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 .testimonialImage {
@@ -209,14 +246,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 0; /* Allows text to wrap properly */
+  min-width: 0;
+  /* Allows text to wrap properly */
 }
 
 .testimonialName {
   font-weight: 600;
   color: black;
   line-height: 1.25;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
+}
+
+@media (min-width: 480px) {
+  .testimonialName {
+    font-size: 0.875rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -226,9 +270,15 @@
 }
 
 .testimonialTitle {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: rgb(107, 114, 128);
   line-height: 1.25;
+}
+
+@media (min-width: 480px) {
+  .testimonialTitle {
+    font-size: 0.75rem;
+  }
 }
 
 @media (min-width: 768px) {

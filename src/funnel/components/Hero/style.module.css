@@ -5,14 +5,36 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 800px;
+  min-height: 600px;
   height: 100vh;
   width: 100%;
-  padding: 30px 60px;
+  padding: 20px;
   overflow: hidden;
   background: radial-gradient(100% 100% at 50% 0%, #0f1c3e 0%, #050915 100%);
   color: white;
   font-family: "Inter", sans-serif;
+}
+
+/* Responsive padding adjustments */
+@media (min-width: 480px) {
+  .heroSection {
+    padding: 25px 30px;
+    min-height: 650px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 30px 40px;
+    min-height: 750px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    padding: 30px 60px;
+    min-height: 800px;
+  }
 }
 
 .heroDividerLines {
@@ -21,7 +43,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1536px; /* 6xl */
+  max-width: 1536px;
+  /* 6xl */
   margin: 0 auto;
   z-index: 0;
 }
@@ -48,14 +71,28 @@
 }
 
 .heroSubtitle {
-  font-size: 0.875rem; /* text-md */
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  margin-top: 2.5rem; /* mt-10 */
+  margin-top: 1.5rem;
   background-image: linear-gradient(270deg, rgb(179, 255, 226) 0%, rgb(199, 239, 255) 50.0001%, rgb(224, 199, 255) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 480px) {
+  .heroSubtitle {
+    font-size: 0.8125rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 0.875rem;
+    margin-top: 2.5rem;
+  }
 }
 
 .heroMainHeading {
@@ -108,10 +145,27 @@
 
 
 .heroDescription {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: #a8a9ad;
-  max-width: 42rem; /* max-w-xl */
-  font-size: 1rem;
+  max-width: 90%;
+  font-size: 0.875rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 480px) {
+  .heroDescription {
+    font-size: 0.9375rem;
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroDescription {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    max-width: 42rem;
+    padding: 0;
+  }
 }
 
 .heroButtons {
@@ -170,7 +224,8 @@
 .heroAvatars {
   display: flex;
   margin-bottom: 0.75rem;
-  gap: -1rem; /* -space-x-4 */
+  gap: -1rem;
+  /* -space-x-4 */
 }
 
 .heroAvatar {
@@ -194,7 +249,8 @@
 }
 
 .heroClientDescription {
-  color: #9ca3af; /* text-gray-400 */
+  color: #9ca3af;
+  /* text-gray-400 */
 }
 
 .heroScrollText {
@@ -202,6 +258,13 @@
   bottom: 0;
   margin-top: 7rem;
   color: #8592b1;
-  font-size: 0.875rem;
-  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .heroScrollText {
+    font-size: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
 }

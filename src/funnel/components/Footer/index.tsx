@@ -39,6 +39,7 @@ export default function HomeSection() {
               From concept to final design, we collaborate closely to bring your vision to life with clarity, creativity, and purpose.
             </p>
             <a
+              href="https://cal.com/robin-roy-ax/30min"
               data-cal-link="robin-roy-ax/30min"
               data-cal-config='{"layout":"month_view"}'
               target="_blank"

@@ -11,9 +11,23 @@
 .hero {
   width: 100%;
   max-width: 103rem;
-  margin-top: 6rem;
-  padding: 4rem 6rem;
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
   perspective: 1200px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    margin-top: 4rem;
+    padding: 3rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    margin-top: 6rem;
+    padding: 4rem 6rem;
+  }
 }
 
 .heroCard {
@@ -21,11 +35,9 @@
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
-  background: radial-gradient(
-    50% 100% at 50% 100%,
-    rgb(10, 19, 41) 0%,
-    rgb(10, 19, 41) 100%
-  );
+  background: radial-gradient(50% 100% at 50% 100%,
+      rgb(10, 19, 41) 0%,
+      rgb(10, 19, 41) 100%);
   box-shadow: rgba(221, 227, 238, 0.25) 0px 40px 40px -3.75px;
 }
 
@@ -36,10 +48,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  padding: 5rem 2rem;
-  height: 28rem;
+  gap: 1rem;
+  padding: 3rem 1.5rem;
+  height: auto;
+  min-height: 20rem;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .heroContent {
+    gap: 1.5rem;
+    padding: 4rem 2rem;
+    min-height: 24rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroContent {
+    padding: 5rem 2rem;
+    height: 28rem;
+  }
 }
 
 .heroTitle {
@@ -56,9 +84,25 @@
 }
 
 .heroText {
-  font-size: 17px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
-  max-width: 32rem;
+  max-width: 28rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .heroText {
+    font-size: 16px;
+    max-width: 30rem;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroText {
+    font-size: 17px;
+    max-width: 32rem;
+  }
 }
 
 .heroButton {
@@ -89,7 +133,7 @@
 .footerContainer {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 5rem;
   max-width: 88rem;
   margin: 0 auto;
 }
@@ -101,12 +145,27 @@
 
 /* Right Section (Menu + Social + Button) */
 .footerRight {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   flex: 1;
+}
+
+@media (min-width: 768px) {
+  .footerRight {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footerRight {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+  }
 }
 
 .footerMenu,

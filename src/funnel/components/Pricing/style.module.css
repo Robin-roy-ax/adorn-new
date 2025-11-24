@@ -232,7 +232,7 @@
   margin-top: 2.5rem;
   display: grid;
   max-width: 36rem;
-  gap: 1.5rem;
+  gap: 2rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
@@ -348,6 +348,7 @@
   .pricingGrid {
     max-width: 72rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
   }
 }
 
