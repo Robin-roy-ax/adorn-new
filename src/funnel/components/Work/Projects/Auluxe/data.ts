@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 import Saral from "./Saaral Cover.jpg";
 
-// data.ts
 export interface ProjectImage {
     src: string;
     alt: string;

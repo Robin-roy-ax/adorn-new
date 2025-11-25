@@ -1,4 +1,3 @@
-// components/FAQ/index.tsx
 "use client";
 
 import { useState } from "react";

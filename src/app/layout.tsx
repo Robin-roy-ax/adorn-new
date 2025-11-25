@@ -5,6 +5,7 @@ import CustomCursor from "@/funnel/components/common/CustomCursor";
 import { CursorProvider } from "@/funnel/components/common/CursorContext";
 import Navbar from "@/funnel/components/Navbar/index";
 import Footer from "@/funnel/components/Footer/index";
+import FaqPage from "@/funnel/components/FaqPage";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -18,7 +19,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://picassofusion.com"), // Replace with actual domain
+  metadataBase: new URL("https://picasso-fusion.vercel.app"), 
   title: {
     default: "Picasso Fusion | Digital Art Platform",
     template: "%s | Picasso Fusion",
@@ -40,18 +41,18 @@ export const metadata: Metadata = {
   creator: "Picasso Fusion",
   publisher: "Picasso Fusion",
   verification: {
-    google: "your-google-verification-code", // Replace with actual verification code
+    google: "your-google-verification-code",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://picassofusion.com",
+    url: "https://picasso-fusion.vercel.app",
     title: "Picasso Fusion | Digital Art Platform",
     description: "Unlock your creativity with our exclusive design membership. Streamline your journey with expert designers.",
     siteName: "Picasso Fusion",
     images: [
       {
-        url: "/og-image.jpg", // Ensure this image exists or is added
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Picasso Fusion Preview",
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Picasso Fusion | Digital Art Platform",
     description: "Unlock your creativity with our exclusive design membership.",
-    images: ["/twitter-image.jpg"], // Ensure this image exists or is added
+    images: ["/twitter-image.jpg"],
   },
   robots: {
     index: true,
@@ -81,8 +82,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Picasso Fusion",
-  url: "https://picassofusion.com",
-  logo: "https://picassofusion.com/logo.png",
+  url: "https://picasso-fusion.vercel.app",
+  logo: "https://picasso-fusion.vercel.app/logo.png",
   sameAs: [
     "https://twitter.com/picassofusion",
     "https://instagram.com/picassofusion",
@@ -104,6 +105,7 @@ export default function RootLayout({
           <CustomCursor />
           <Navbar />
           {children}
+          <FaqPage/>
           <Footer />
         </CursorProvider>
         <script

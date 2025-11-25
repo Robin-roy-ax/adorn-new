@@ -1,4 +1,4 @@
-// components/WorkSection/data.ts
+
 
 export interface Project {
     id: string;

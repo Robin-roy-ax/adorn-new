@@ -1,4 +1,4 @@
-// app/page.tsx (or wherever you want to use it)
+
 import FeaturedWork from "@/funnel/components/FeaturedWork/index";
 
 export default function Home() {

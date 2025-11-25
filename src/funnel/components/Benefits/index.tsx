@@ -10,7 +10,6 @@ export default function Benefits() {
   return (
     <section id="benefits" className={styles.section}>
       <div className={styles.container}>
-        {/* Header */}
         <motion.h2
           initial={{ opacity: 1, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +21,6 @@ export default function Benefits() {
           <span>benefits</span>
         </motion.h2>
 
-        {/* Description */}
         <motion.p
           initial={{ opacity: 1, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +32,6 @@ export default function Benefits() {
           Streamline your journey with expert designers delivering quality, flexibility, and results that elevate your brand.
         </motion.p>
 
-        {/* Services Grid */}
         <section>
           <motion.div
             className={styles.grid}
@@ -55,13 +52,11 @@ export default function Benefits() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className={styles.card}
               >
-                {/* Overlay */}
                 <div className={styles.overlay} />
 
-                {/* Image */}
                 <div
                   className={styles.cardImage}
-                  // style={{ transform: `rotate(${service.rotation}deg)` }}
+
                 >
                   <Image
                     src={service.image}
@@ -72,7 +67,6 @@ export default function Benefits() {
                   />
                 </div>
 
-                {/* Text */}
                 <motion.div
                   initial={{ opacity: 1, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}

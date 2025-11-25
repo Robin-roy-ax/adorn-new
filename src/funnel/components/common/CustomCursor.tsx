@@ -10,7 +10,6 @@ const CustomCursor = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Smooth spring motion for natural feel
   const smoothX = useSpring(mouseX, { stiffness: 300, damping: 20 });
   const smoothY = useSpring(mouseY, { stiffness: 300, damping: 20 });
 

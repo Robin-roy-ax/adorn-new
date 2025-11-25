@@ -14,7 +14,6 @@ export default function Process() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        {/* Header */}
         <div className={styles.header}>
           <h2 className={styles.title}>
             Smooth<span>{" "}</span>
@@ -35,9 +34,7 @@ export default function Process() {
           </p>
         </div>
 
-        {/* Grid Layout */}
         <div className={styles.gridContainer}>
-          {/* First Row - Cards 1 & 2 (Desktop: 3 cards, Tablet: 2 cards) */}
           <motion.div
             className={`${styles.grid} ${styles.firstRow}`}
             initial="hidden"
@@ -50,7 +47,6 @@ export default function Process() {
             ))}
           </motion.div>
 
-          {/* Second Row - Cards 4 & 5 (Desktop: 2 cards, Tablet: 1 card - Card 3) */}
           <motion.div
             className={`${styles.grid} ${styles.secondRow}`}
             initial="hidden"
@@ -85,7 +81,6 @@ function BenefitCard({
         index === 2 ? styles.thirdCard : ""
       }`}
     >
-      {/* Image */}
       <div
         className={styles.imageWrapper}
       >
@@ -98,7 +93,6 @@ function BenefitCard({
         />
       </div>
 
-      {/* Text */}
       <motion.div
         initial={{ opacity: 1, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +104,6 @@ function BenefitCard({
         <p className={styles.cardDesc}>{benefit.description}</p>
       </motion.div>
 
-      {/* Hover overlay */}
       <div className={styles.overlay} />
     </motion.div>
   );

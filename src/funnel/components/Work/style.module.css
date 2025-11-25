@@ -7,15 +7,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6rem 2rem;
+  padding: 4rem 2rem 2rem 2rem;
   background-color: #fff;
   color: #1f2937;
   overflow: hidden;
 }
 
+@media (min-width: 768px) {
+  .workSection {
+    padding: 5rem 2rem 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .workSection {
+    padding: 6rem 2rem 3rem 2rem;
+  }
+}
+
 .header {
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 0;
   margin-bottom: 4rem;
 }
 

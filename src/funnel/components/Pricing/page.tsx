@@ -1,4 +1,4 @@
-// app/pricing/page.tsx
+
 
 import Pricing from "./index";
 

@@ -9,8 +9,7 @@ import Link from "next/link";
 
 export default function HomeSection() {
 
-    // ---- Cal.com popup setup ----
-    useEffect(() => {
+  useEffect(() => {
       (async function () {
         const cal = await getCalApi({ namespace: "cal" });
         cal("ui", {
@@ -22,7 +21,6 @@ export default function HomeSection() {
 
   return (
     <main className={styles.main}>
-      {/* ===== HERO ===== */}
       <motion.div
         className={styles.hero}
         initial={{ opacity: 0 }}
@@ -52,10 +50,8 @@ export default function HomeSection() {
         </div>
       </motion.div>
 
-      {/* ===== FOOTER ===== */}
       <footer className={styles.footer}>
         <div className={styles.footerContainer}>
-          {/* LEFT: Newsletter */}
           <div className={styles.footerLeft}>
             <h3
               style={{
@@ -83,9 +79,7 @@ export default function HomeSection() {
             </div>
           </div>
 
-          {/* RIGHT: Menu + Social + Floating Button */}
           <div className={styles.footerRight}>
-            {/* MENU */}
             <div className={styles.footerMenu}>
               <h4 className={styles.footerTitle}>Menu</h4>
               <ul className="flex flex-col gap-3 items-start list-none m-0 p-0">
@@ -102,7 +96,6 @@ export default function HomeSection() {
               </ul>
             </div>
 
-            {/* SOCIAL */}
             <div className={styles.footerSocial}>
               <h4 className={styles.footerTitle}>Follow Us</h4>
               <ul className="flex flex-col gap-3 items-center list-none m-0 p-0">
@@ -119,7 +112,6 @@ export default function HomeSection() {
               </ul>
             </div>
 
-            {/* FLOATING BUTTON */}
             <div className={styles.footerButton}>
               <Link
                 href="/#hero"
@@ -143,7 +135,6 @@ export default function HomeSection() {
             </div>
           </div>
         </div>
-        {/* Bottom Bar */}
         <div className={styles.footerBottom}>
           <p>© Picasso Fusion 2024. All rights reserved</p>
           <p>Our Design, Your Vision</p>

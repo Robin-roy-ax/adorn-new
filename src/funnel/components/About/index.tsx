@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ABOUT_TEXT, ABOUT_BUTTON_TEXT, ABOUT_ANIMATIONS } from "./data";
 import styles from "./style.module.css";
@@ -7,7 +8,6 @@ import styles from "./style.module.css";
 export default function About() {
   return (
     <section className={styles.aboutSection}>
-      {/* Text Block */}
       <motion.div
         className={styles.aboutTextBlock}
         initial={ABOUT_ANIMATIONS.textBlock.initial}
@@ -31,7 +31,6 @@ export default function About() {
         </h1>
       </motion.div>
 
-      {/* Button */}
       <motion.div
         className={styles.aboutButtonContainer}
         initial={ABOUT_ANIMATIONS.button.initial}
@@ -41,9 +40,11 @@ export default function About() {
           duration: ABOUT_ANIMATIONS.button.duration
         }}
       >
-        <button className={styles.aboutButton}>
-          {ABOUT_BUTTON_TEXT}
-        </button>
+        <Link href="/about">
+          <button className={styles.aboutButton}>
+            {ABOUT_BUTTON_TEXT}
+          </button>
+        </Link>
       </motion.div>
     </section>
   );

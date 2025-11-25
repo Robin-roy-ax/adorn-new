@@ -31,13 +31,11 @@
   position: absolute;
   right: 1.25rem;
   top: 1.25rem;
-  background: linear-gradient(
-    325deg,
-    #fed6ff 7.3%,
-    #9b8cfa 38.4%,
-    #8fe1ff 77.5%,
-    #87ffe3 86.8%
-  );
+  background: linear-gradient(325deg,
+      #fed6ff 7.3%,
+      #9b8cfa 38.4%,
+      #8fe1ff 77.5%,
+      #87ffe3 86.8%);
   color: black;
   font-weight: bold;
   font-size: 0.75rem;
@@ -88,6 +86,7 @@
   color: black;
   box-shadow: inset 0 6px 12px rgba(255, 255, 255, 0.5);
 }
+
 .highlightPrimary:hover {
   background: #1d52e5;
   color: white;
@@ -99,6 +98,7 @@
   border: 1px solid #d1d5db;
   color: #1f2937;
 }
+
 .normalPrimary:hover {
   background: #e5e7eb;
 }
@@ -112,6 +112,7 @@
   text-underline-offset: 4px;
   color: #c7d2fe;
 }
+
 .highlightSecondary:hover {
   color: #e0e7ff;
 }
@@ -124,6 +125,7 @@
   text-underline-offset: 4px;
   color: #6b7280;
 }
+
 .normalSecondary:hover {
   color: #374151;
 }
@@ -133,6 +135,7 @@
   border-color: #d1d5db;
   margin: 1rem 0;
 }
+
 .hrHighlight {
   border-color: #6b7280;
   margin: 1rem 0;
@@ -160,9 +163,11 @@
   height: 1rem;
   flex-shrink: 0;
 }
+
 .iconHighlight {
   color: white;
 }
+
 .iconNormal {
   color: #1f2937;
 }
@@ -176,7 +181,7 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 1rem;
+  padding: 4rem 0rem 2rem 0rem;
   text-align: center;
   color: #394560;
 }
@@ -192,7 +197,7 @@
 
 /* Header Title */
 .pricingTitle {
-  margin-top: 6rem;
+  margin-top: 0;
   font-weight: 500;
   line-height: 1.1em;
   letter-spacing: -0.05em;
@@ -280,7 +285,7 @@
 /* Small screens (640px+) */
 @media (min-width: 640px) {
   .pricingSection {
-    padding: 4rem 1.5rem;
+    padding: 4rem 1.5rem 2rem 1.5rem;
   }
 
   .pricingContainer {
@@ -314,6 +319,10 @@
 
 /* Medium screens (768px+) */
 @media (min-width: 768px) {
+  .pricingSection {
+    padding: 5rem 2rem 2.5rem 2rem;
+  }
+
   .pricingTitle {
     font-size: 4rem;
   }
@@ -330,7 +339,7 @@
 /* Large screens (1024px+) */
 @media (min-width: 1024px) {
   .pricingSection {
-    padding: 5rem 2rem;
+    padding: 6rem 3rem 3rem 3rem;
   }
 
   .pricingContainer {

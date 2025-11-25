@@ -21,8 +21,6 @@ import styles from "./style.module.css";
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: ["400"] });
 
 export default function Hero() {
-
-  // ---- Cal.com popup setup ----
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({ namespace: "cal" });
@@ -41,14 +39,12 @@ export default function Hero() {
       transition={{ duration: HERO_ANIMATIONS.container.duration }}
       className={styles.heroSection}
     >
-      {/* Vertical divider lines */}
       <div className={styles.heroDividerLines}>
         <div className={`${styles.dividerLine} ${styles.dividerLineLeft}`} />
         <div className={`${styles.dividerLine} ${styles.dividerLineCenter}`} />
         <div className={`${styles.dividerLine} ${styles.dividerLineRight}`} />
       </div>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -58,7 +54,6 @@ export default function Hero() {
         {HERO_SUBTITLE}
       </motion.p>
 
-      {/* Main Heading */}
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -109,7 +104,6 @@ export default function Hero() {
         </span>
       </motion.h1>
 
-      {/* Description */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -122,7 +116,6 @@ export default function Hero() {
         {HERO_DESCRIPTION}
       </motion.p>
 
-      {/* Buttons */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -130,7 +123,6 @@ export default function Hero() {
         className="flex flex-col sm:flex-row gap-4 mt-8"
       >
 
-        {/* --- Cal.com Popup Button --- */}
         <motion.button
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,7 +145,6 @@ export default function Hero() {
         </motion.a>
       </motion.div>
 
-      {/* Avatars */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -189,7 +180,6 @@ export default function Hero() {
         </motion.p>
       </motion.div>
 
-      {/* Scroll Down */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

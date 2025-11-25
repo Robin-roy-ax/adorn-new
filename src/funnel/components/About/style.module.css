@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 2rem 1.5rem;
   background-color: white;
   color: rgb(17, 24, 39);
 }
@@ -23,7 +23,7 @@
 
 @media (min-width: 768px) {
   .aboutSection {
-    padding: 5rem 2rem;
+    padding: 5rem 2rem 2.5rem 2rem;
   }
   
   .aboutTextBlock {
@@ -34,7 +34,7 @@
 
 @media (min-width: 1024px) {
   .aboutSection {
-    padding: 6rem 3rem;
+    padding: 6rem 3rem 3rem 3rem;
   }
   
   .aboutTextBlock {

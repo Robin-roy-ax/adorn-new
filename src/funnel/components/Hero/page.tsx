@@ -1,4 +1,4 @@
-// Re-export the Hero component and related data for easy importing
+
 export { default as Hero } from "./index";
 export {
   HERO_SUBTITLE,

@@ -28,7 +28,6 @@ export const CLIENT_COUNT_TEXT = {
 
 export const SCROLL_DOWN_TEXT = "Scroll down to explore";
 
-// Animation delays and durations
 export const HERO_ANIMATIONS = {
   container: { duration: 1 },
   subtitle: { duration: 0.7 },
@@ -42,7 +41,6 @@ export const HERO_ANIMATIONS = {
   scrollText: { delay: 1 }
 };
 
-// CSS custom properties/tokens used in the component
 export const CSS_TOKENS = {
   primaryColor: "var(--token-bb3680e9-7fc2-4dd0-b6fe-fcde212acb17, #fff)",
   backgroundGradient: "radial-gradient(100%_100%_at_50%_0%,#0f1c3e_0%,#050915_100%)",

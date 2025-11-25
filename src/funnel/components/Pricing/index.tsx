@@ -22,7 +22,6 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
         viewport={{ once: true }}
         className={styles.pricingContainer}
       >
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +48,6 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
           )}
         </motion.h2>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

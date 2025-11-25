@@ -1,4 +1,3 @@
-// index.tsx
 "use client";
 
 import { motion, useInView } from "framer-motion";
@@ -8,7 +7,6 @@ import { stats, teamMembers, content } from "./data";
 import { Stat, TeamMember } from "./data";
 import styles from "./style.module.css";
 
-// =================== Counter Component ===================
 interface CounterProps {
   target: number;
   suffix?: string;
@@ -46,7 +44,6 @@ function Counter({ target, suffix }: CounterProps) {
   );
 }
 
-// =================== Hero Section ===================
 function HeroSection() {
   return (
     <motion.div
@@ -67,7 +64,6 @@ function HeroSection() {
   );
 }
 
-// =================== Hero Image ===================
 function HeroImage() {
   return (
     <motion.div
@@ -90,7 +86,6 @@ function HeroImage() {
   );
 }
 
-// =================== Overview Section ===================
 function OverviewSection() {
   return (
     <motion.div
@@ -104,7 +99,6 @@ function OverviewSection() {
   );
 }
 
-// =================== Section Row Component ===================
 interface SectionRowProps {
   title: string;
   description: string;
@@ -128,7 +122,6 @@ function SectionRow({ title, description }: SectionRowProps) {
   );
 }
 
-// =================== Numbers Section ===================
 function NumbersSection() {
   return (
     <motion.div
@@ -150,7 +143,6 @@ function NumbersSection() {
   );
 }
 
-// =================== Stat Item Component ===================
 interface StatItemProps {
   stat: Stat;
 }
@@ -164,7 +156,6 @@ function StatItem({ stat }: StatItemProps) {
   );
 }
 
-// =================== Team Section ===================
 function TeamSection() {
   return (
     <>
@@ -189,7 +180,6 @@ function TeamSection() {
   );
 }
 
-// =================== Team Grid ===================
 function TeamGrid() {
   return (
     <motion.div
@@ -205,7 +195,6 @@ function TeamGrid() {
   );
 }
 
-// =================== Team Card Component ===================
 interface TeamCardProps {
   member: TeamMember;
 }
@@ -236,7 +225,6 @@ function TeamCard({ member }: TeamCardProps) {
   );
 }
 
-// =================== Main Component ===================
 export default function AboutUs() {
   return (
     <section id="about" className={styles.section}>

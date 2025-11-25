@@ -16,7 +16,6 @@ export default function Navbar() {
   const isProjectPage = pathname.startsWith("/projects/");
 
   useEffect(() => {
-    // Check if we are on the home page
     const isHomePage = pathname === "/";
     
     if (!isHomePage) {
@@ -65,13 +64,9 @@ export default function Navbar() {
 
   const visibilityClass = navbarVisible ? styles.navbarVisible : styles.navbarHidden;
 
-  // Navigation logic replaced by Next.js Link
-  // sessionStorage logic removed as Next.js Link handles hash navigation
-
   return (
     <nav className={`${styles.navbar} ${navbarClass} ${visibilityClass} ${mobileOpen ? styles.navbarExpanded : ''}`}>
       <div className={styles.navbarTop}>
-        {/* Logo */}
         <Link
           href="/"
           onClick={() => {
@@ -82,7 +77,6 @@ export default function Navbar() {
           <Image src={LOGO_IMAGE} alt="Logo" width={100} height={100} />
         </Link>
 
-        {/* Desktop Menu */}
         <div className={styles.desktopMenu}>
           {MENU_ITEMS.map((item) => (
             <Link
@@ -96,7 +90,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right Section: CTA + Hamburger */}
         <div className={styles.rightSection}>
           <div
             className={`${styles.desktopButtonSection} ${
@@ -139,7 +132,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Expanded Content */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

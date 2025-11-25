@@ -1,4 +1,3 @@
-// index.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -23,7 +22,6 @@ export default function AuluxePage() {
   );
 }
 
-// =================== Hero Section ===================
 function HeroSection() {
   return (
     <motion.h1
@@ -38,7 +36,6 @@ function HeroSection() {
   );
 }
 
-// =================== Description Section ===================
 function DescriptionSection() {
   return (
     <motion.div
@@ -60,7 +57,6 @@ function DescriptionSection() {
   );
 }
 
-// =================== Section Renderer ===================
 type SectionType = 
   | { type: 'image'; image: string; alt: string; height: 'large' | 'medium'; objectPosition?: string }
   | { type: 'twoColumn'; heading: string; content: string }
@@ -90,7 +86,6 @@ function SectionRenderer({ section }: SectionRendererProps) {
   }
 }
 
-// =================== Image Section ===================
 interface ImageSectionProps {
   section: {
     image: string;
@@ -124,7 +119,6 @@ function ImageSection({ section }: ImageSectionProps) {
   );
 }
 
-// =================== Two Column Section ===================
 interface TwoColumnSectionProps {
   section: {
     heading: string;
@@ -151,7 +145,6 @@ function TwoColumnSection({ section }: TwoColumnSectionProps) {
   );
 }
 
-// =================== Two Images Section ===================
 interface TwoImagesSectionProps {
   section: {
     layout: 'landscapePortrait' | 'portraitLandscape';
@@ -193,7 +186,6 @@ function TwoImagesSection({ section }: TwoImagesSectionProps) {
   );
 }
 
-// =================== Implementation Section ===================
 interface ImplementationSectionProps {
   section: {
     heading: string;
@@ -231,7 +223,6 @@ function ImplementationSection({ section }: ImplementationSectionProps) {
   );
 }
 
-// =================== Results Section ===================
 interface ResultsSectionProps {
   section: {
     heading: string;

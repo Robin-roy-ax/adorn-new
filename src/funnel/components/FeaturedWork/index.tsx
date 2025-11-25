@@ -1,4 +1,3 @@
-// index.tsx
 'use client';
 
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
@@ -7,7 +6,7 @@ import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 import { Project, projects } from './data';
 import styles from './style.module.css';
-import ViewProjectCursor from "@/funnel/components/common/MousePointer"; // Adjust path as needed
+import ViewProjectCursor from "@/funnel/components/common/MousePointer";
 
 export default function FeaturedWork() {
   const [isMobile, setIsMobile] = useState(false);
@@ -61,7 +60,6 @@ export default function FeaturedWork() {
   );
 }
 
-// Desktop Version
 interface DesktopFeaturedWorkProps {
   projects: Project[];
   setCursorVisible: (visible: boolean) => void;
@@ -92,7 +90,6 @@ function DesktopFeaturedWork({ projects, setCursorVisible }: DesktopFeaturedWork
   );
 }
 
-// Mobile Version
 function MobileFeaturedWork({ projects }: { projects: Project[] }) {
   return (
     <section className={styles.mobileSection} id="work">
@@ -109,7 +106,6 @@ function MobileFeaturedWork({ projects }: { projects: Project[] }) {
   );
 }
 
-// Header Component
 function Header() {
   return (
     <motion.div
@@ -136,7 +132,6 @@ function Header() {
   );
 }
 
-// Mobile Header Component
 function MobileHeader() {
   return (
     <motion.div
@@ -155,14 +150,14 @@ function MobileHeader() {
       
       <div>
         <p className={styles.mobileDescription}>
-          
+          Dive into a world of creativity and inspiration with our portfolio.
+          Explore our work and imagine the possibilities for your brand.
         </p>
       </div>
     </motion.div>
   );
 }
 
-// Horizontal Scroll Component
 interface HorizontalScrollProps {
   scrollYProgress: MotionValue<number>;
   projects: Project[];
@@ -188,7 +183,6 @@ function HorizontalScroll({ scrollYProgress, projects, setCursorVisible }: Horiz
   );
 }
 
-// Desktop Project Card
 interface ProjectCardProps {
   project: Project;
   index: number;
@@ -266,7 +260,6 @@ function ProjectCard({ project, index, setCursorVisible }: ProjectCardProps) {
   );
 }
 
-// Mobile Project Card
 function MobileProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div 
@@ -314,7 +307,6 @@ function MobileProjectCard({ project, index }: ProjectCardProps) {
   );
 }
 
-// See More Button
 function SeeMoreButton() {
   return (
     <motion.div
@@ -331,7 +323,6 @@ function SeeMoreButton() {
   );
 }
 
-// Mobile See More Button
 function MobileSeeMoreButton() {
   const [isPressed, setIsPressed] = useState(false);
 

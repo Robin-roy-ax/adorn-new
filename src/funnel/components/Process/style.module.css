@@ -1,34 +1,33 @@
 .section {
   width: 100%;
   background-color: white;
-  padding: 0;
+  padding: 4rem 0 2rem 0;
   margin: 0;
   position: relative;
   z-index: 1;
-  padding-top: 6rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .section {
-    padding-top: 4rem;
+    padding: 5rem 0 2.5rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 6rem 0 3rem 0;
   }
 }
 
 .container {
   max-width: 1800px;
   margin: 0 auto;
-  padding: 6rem 2rem;
-}
-
-@media (max-width: 1024px) {
-  .container {
-    padding: 4rem 2rem 2rem 2rem;
-  }
+  padding: 0 2rem;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    padding: 0 1.5rem;
   }
 }
 
@@ -119,18 +118,18 @@
 }
 
 .gridContainer {
-  margin: 6rem 5rem 4rem;
+  margin: 6rem 5rem 0;
 }
 
 @media (max-width: 1024px) {
   .gridContainer {
-    margin: 6rem 5rem 3rem;
+    margin: 6rem 5rem 0;
   }
 }
 
 @media (max-width: 768px) {
   .gridContainer {
-    margin: 4rem 1.5rem 2rem;
+    margin: 4rem 1.5rem 0;
   }
 }
 

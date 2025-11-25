@@ -1,4 +1,3 @@
-// components/WorkSection/index.tsx
 "use client";
 
 import { useState, useEffect } from "react";
@@ -23,14 +22,12 @@ export default function WorkSection() {
 
   return (
     <section id="work" className={styles.workSection}>
-      {/* ✅ Custom Cursor */}
       <AnimatePresence>
         {cursorVisible && (
           <ViewProjectCursor visible={cursorVisible} mousePos={mousePos} />
         )}
       </AnimatePresence>
 
-      {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +45,6 @@ export default function WorkSection() {
         </p>
       </motion.div>
 
-      {/* Projects Grid */}
       <div className={styles.grid}>
         {projects.map((project, index) => (
           <motion.div

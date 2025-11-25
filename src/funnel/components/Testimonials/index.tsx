@@ -8,8 +8,8 @@ import {
   TESTIMONIALS_ANIMATIONS
 } from "./data";
 import styles from "./style.module.css";
+import { useHashNavigation } from "@/hooks/useHashNavigation";
 
-// Animation variant for cards
 const cardVariants: Variants = {
   hidden: { 
     opacity: TESTIMONIALS_ANIMATIONS.card.initial.opacity, 
@@ -27,10 +27,12 @@ const cardVariants: Variants = {
 };
 
 export default function Testimonials() {
+  const isHashNav = useHashNavigation("testimonials");
+  const sectionClass = isHashNav ? `${styles.testimonialsSection} ${styles.testimonialsHashNav}` : styles.testimonialsSection;
+
   return (
-    <section id="testimonials" className={styles.testimonialsSection}>
+    <section id="testimonials" className={sectionClass}>
       <div className={styles.testimonialsContainer}>
-        {/* Header */}
         <motion.div
           initial={TESTIMONIALS_ANIMATIONS.header.initial}
           whileInView={TESTIMONIALS_ANIMATIONS.header.animate}
@@ -58,14 +60,11 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
         <div className={styles.testimonialsGrid}>
           {TESTIMONIALS_DATA.map((testimonial, index) => {
-            // Determine column position for stagger timing
-            const column = index % 3; // 0 = left, 1 = center, 2 = right
+            const column = index % 3;
             let delay = 0;
 
-            // Left and right cards come first, center cards slightly delayed
             if (column === 1) delay = 0.3;
             else delay = 0.1;
 
