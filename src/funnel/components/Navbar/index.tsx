@@ -16,16 +16,19 @@ export default function Navbar() {
   const isProjectPage = pathname.startsWith("/projects/");
 
   useEffect(() => {
-    const isHomePage = pathname === "/";
+    const isSectionPage = ["/benefits", "/process", "/testimonials", "/pricing", "/"].includes(pathname);
     
-    if (!isHomePage) {
+    if (!isSectionPage) {
       setInHero(false);
       return;
     }
 
     const handleScroll = () => {
       const hero = document.getElementById("hero");
-      if (!hero) return;
+      if (!hero) {
+        setInHero(false);
+        return;
+      }
       setInHero(hero.getBoundingClientRect().bottom > 0);
 
       const workSection = document.getElementById("work");
@@ -64,14 +67,28 @@ export default function Navbar() {
 
   const visibilityClass = navbarVisible ? styles.navbarVisible : styles.navbarHidden;
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, id?: string) => {
+    setMobileOpen(false);
+    
+    if (pathname === href) {
+      e.preventDefault();
+      if (id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else if (href === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <nav className={`${styles.navbar} ${navbarClass} ${visibilityClass} ${mobileOpen ? styles.navbarExpanded : ''}`}>
       <div className={styles.navbarTop}>
         <Link
           href="/"
-          onClick={() => {
-            setMobileOpen(false);
-          }}
+          onClick={(e) => handleNavClick(e, "/")}
           className={`${styles.logoSection} ${logoClass}`}
         >
           <Image src={LOGO_IMAGE} alt="Logo" width={100} height={100} />
@@ -84,6 +101,7 @@ export default function Navbar() {
               href={item.href}
               className={styles.menuLink}
               style={{ color: menuColor }}
+              onClick={(e) => handleNavClick(e, item.href, item.id)}
             >
               {item.label}
             </Link>
@@ -153,9 +171,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    onClick={() => {
-                      setMobileOpen(false);
-                    }}
+                    onClick={(e) => handleNavClick(e, item.href, item.id)}
                     className={styles.mobileMenuItem}
                   >
                     {item.label}

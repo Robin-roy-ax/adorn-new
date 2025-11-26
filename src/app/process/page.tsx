@@ -1,14 +1,58 @@
-import type { Metadata } from "next";
-import Process from "@/funnel/components/Process/page";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Our Process",
-  description: "See how we bring your vision to life with our streamlined design process.",
-  alternates: {
-    canonical: "https://picasso-fusion.vercel.app/process",
-  },
-};
+import type { Metadata } from "next";
+import { useEffect } from "react";
+import Hero from "@/funnel/components/Hero/page";
+import About from "@/funnel/components/About/page";
+import FeaturedWork from "@/funnel/components/FeaturedWork/page";
+import Testimonials from "@/funnel/components/Testimonials/page";
+import Benefits from "@/funnel/components/Benefits/page";
+import Process from "@/funnel/components/Process/page";
+import Pricing from "@/funnel/components/Pricing/index";
 
 export default function ProcessPage() {
-  return <Process />;
+  useEffect(() => {
+    // Scroll to process section after page renders
+    const scrollToSection = () => {
+      const section = document.getElementById("process");
+      if (section) {
+        // Get header height for offset
+        const header = document.querySelector("header");
+        const headerHeight = header?.offsetHeight || 80;
+        
+        // Scroll with offset for header
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        return true;
+      }
+      return false;
+    };
+
+    // Try after a short delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      if (!scrollToSection()) {
+        // Retry if element not found
+        setTimeout(scrollToSection, 200);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <Hero />
+      <About />
+      <FeaturedWork />
+      <Benefits />
+      <Process />
+      <Testimonials />
+      <Pricing />
+    </>
+  );
 }

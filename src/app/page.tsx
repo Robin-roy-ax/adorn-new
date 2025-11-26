@@ -7,6 +7,7 @@ import Service from "@/funnel/components/Benefits/page";
 import Benefit from "@/funnel/components/Process/page";
 import Pricing from "@/funnel/components/Pricing/index";
 import FaqPage from "@/funnel/components/FaqPage/page";
+// import Dribble from "@/funnel/components/Dribbble/Dribble";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -26,6 +27,7 @@ export default function Home() {
       <Benefit />
       <Testimonials />
       <Pricing />
+      {/* <Dribble /> */}
     </>
   );
 }

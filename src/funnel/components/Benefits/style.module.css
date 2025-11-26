@@ -3,6 +3,7 @@
   padding: 4rem 0 2rem 0;
   background-color: white;
   position: relative;
+  margin: 0;
   z-index: 2;
 
 }
@@ -28,6 +29,12 @@
 @media (min-width: 1024px) {
   .container {
     padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
   }
 }
 

@@ -1,14 +1,59 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect } from "react";
+import Hero from "@/funnel/components/Hero/page";
+import About from "@/funnel/components/About/page";
+import FeaturedWork from "@/funnel/components/FeaturedWork/page";
+import Testimonials from "@/funnel/components/Testimonials/page";
 import Benefits from "@/funnel/components/Benefits/page";
+import Process from "@/funnel/components/Process/page";
+import Pricing from "@/funnel/components/Pricing/index";
 
-export const metadata: Metadata = {
-  title: "Benefits",
-  description: "Discover the exclusive benefits of a Picasso Fusion design membership.",
-  alternates: {
-    canonical: "https://picasso-fusion.vercel.app/benefits",
-  },
-};
+export default function BenefitsPage() {
+  useEffect(() => {
+    // Scroll to benefits section after page renders
+    const scrollToSection = () => {
+      const section = document.getElementById("benefits");
+      if (section) {
+        // Get header height for offset
+        const header = document.querySelector("header");
+        const headerHeight = header?.offsetHeight || 80;
+        
+        // Scroll with offset for header
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
-export default function ServicesPage() {
-  return <Benefits />;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        return true;
+      }
+      return false;
+    };
+
+    // Try after a short delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      if (!scrollToSection()) {
+        // Retry if element not found
+        setTimeout(scrollToSection, 200);
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <Hero />
+      <About />
+      <FeaturedWork />
+      <div className="bg-[white] pt-20 md:pt-24">
+        <Benefits />
+      </div>
+      <Process />
+      <Testimonials />
+      <Pricing />
+    </>
+  );
 }

@@ -2,7 +2,7 @@ import type { Variants } from "framer-motion";
 import image from "@/funnel/components/Navbar/Picassofusion Logo-12.png"
 // Menu items with section IDs (for smooth navigation)
 export const MENU_ITEMS = [
-  { label: "Work", href: "/work", id: "work" },
+  // { label: "Work", href: "/work", id: "work" },
   { label: "Benefits", href: "/benefits", id: "benefits" },
   { label: "Process", href: "/process", id: "process" },
   { label: "Testimonials", href: "/testimonials", id: "testimonials" },

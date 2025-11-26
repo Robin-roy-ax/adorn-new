@@ -37,11 +37,8 @@ export default function HomeSection() {
               From concept to final design, we collaborate closely to bring your vision to life with clarity, creativity, and purpose.
             </p>
             <a
-              href="https://cal.com/robin-roy-ax/30min"
               data-cal-link="robin-roy-ax/30min"
               data-cal-config='{"layout":"month_view"}'
-              target="_blank"
-              rel="noopener noreferrer"
               className={styles.heroButton}
             >
               Schedule a call
@@ -103,6 +100,8 @@ export default function HomeSection() {
                   <li key={idx}>
                     <Link
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-[#8592b1] hover:text-[#bababaed] transition-all duration-200 text-[16px]"
                     >
                       {social.label}
