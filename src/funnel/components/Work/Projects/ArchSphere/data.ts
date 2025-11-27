@@ -53,7 +53,7 @@ export const projectData = {
       type: 'twoColumn' as const,
       heading: 'Problem Statement',
       content:
-        "Despite its reputation for architectural brilliance, ArchSphere™'s current digital presence lacks cohesion and fails to capture the essence of its brand effectively. The existing website lacks visual appeal and does not showcase the firm's portfolio in a manner befitting its stature, resulting in missed opportunities to engage potential clients.",
+        "Despite its reputation for architectural brilliance, ArchSphere™'s current digital presence lacks cohesion and fails to capture the essence of its brand effectively. The existing website lacks visual appeal and does not showcase the firm's Dribble in a manner befitting its stature, resulting in missed opportunities to engage potential clients.",
     },
     {
       type: 'image' as const,
@@ -95,7 +95,7 @@ export const projectData = {
         {
           title: 'Website Redesign and Development',
           description:
-            "Picasso Fusion redesigns and develops ArchSphere™'s website with a focus on showcasing its portfolio of architectural marvels. The new website features sleek design elements, intuitive navigation, and high-resolution imagery to provide visitors with an immersive journey through the firm's projects.",
+            "Picasso Fusion redesigns and develops ArchSphere™'s website with a focus on showcasing its Dribble of architectural marvels. The new website features sleek design elements, intuitive navigation, and high-resolution imagery to provide visitors with an immersive journey through the firm's projects.",
         },
       ],
     },
@@ -117,12 +117,12 @@ export const projectData = {
         {
           title: 'Enhanced User Experience',
           description:
-            "The new website, characterized by its intuitive design and captivating visuals, engages visitors and enables them to explore ArchSphere™'s portfolio with ease, fostering a deeper appreciation for the firm's architectural prowess.",
+            "The new website, characterized by its intuitive design and captivating visuals, engages visitors and enables them to explore ArchSphere™'s Dribble with ease, fostering a deeper appreciation for the firm's architectural prowess.",
         },
         {
           title: 'Increased Client Engagement',
           description:
-            "By effectively showcasing its portfolio of architectural marvels, ArchSphere™ attracts increased interest from potential clients, leading to heightened engagement and inquiries about the firm's services.",
+            "By effectively showcasing its Dribble of architectural marvels, ArchSphere™ attracts increased interest from potential clients, leading to heightened engagement and inquiries about the firm's services.",
         },
       ],
     },

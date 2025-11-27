@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem 1.5rem 2rem 1.5rem;
+  padding-top: 4rem;
   background-color: white;
   color: rgb(17, 24, 39);
 }
@@ -23,9 +23,9 @@
 
 @media (min-width: 768px) {
   .aboutSection {
-    padding: 5rem 2rem 2.5rem 2rem;
+    padding: 5rem 0rem 0rem 0rem;
   }
-  
+
   .aboutTextBlock {
     max-width: 85%;
     margin: 0 auto 3.5rem auto;
@@ -34,9 +34,10 @@
 
 @media (min-width: 1024px) {
   .aboutSection {
-    padding: 6rem 3rem 3rem 3rem;
+    padding-top: 6rem;
+    padding-bottom: 0rem;
   }
-  
+
   .aboutTextBlock {
     max-width: 1200px;
     margin: 0 auto 4rem auto;
@@ -96,7 +97,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+/* 
 .aboutButtonContainer {
   margin: 0;
 }
@@ -131,4 +132,4 @@
   background-color: rgb(229, 231, 235);
   transform: translateY(-2px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} */

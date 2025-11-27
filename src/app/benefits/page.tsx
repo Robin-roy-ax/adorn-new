@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Hero from "@/funnel/components/Hero/page";
 import About from "@/funnel/components/About/page";
-import FeaturedWork from "@/funnel/components/FeaturedWork/page";
+import Dribbble from "@/funnel/components/Dribbble/Dribble";
 import Testimonials from "@/funnel/components/Testimonials/page";
 import Benefits from "@/funnel/components/Benefits/page";
 import Process from "@/funnel/components/Process/page";
@@ -47,7 +47,7 @@ export default function BenefitsPage() {
     <>
       <Hero />
       <About />
-      <FeaturedWork />
+      <Dribbble />
       <div className="bg-[white] pt-20 md:pt-24">
         <Benefits />
       </div>

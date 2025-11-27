@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ABOUT_TEXT, ABOUT_BUTTON_TEXT, ABOUT_ANIMATIONS } from "./data";
 import styles from "./style.module.css";
+import GlassCTAButton from "../common/GlassCTAButton";
 
 export default function About() {
   return (
@@ -32,7 +33,6 @@ export default function About() {
       </motion.div>
 
       <motion.div
-        className={styles.aboutButtonContainer}
         initial={ABOUT_ANIMATIONS.button.initial}
         animate={ABOUT_ANIMATIONS.button.animate}
         transition={{
@@ -41,9 +41,7 @@ export default function About() {
         }}
       >
         <Link href="/about">
-          <button className={styles.aboutButton}>
-            {ABOUT_BUTTON_TEXT}
-          </button>
+          <GlassCTAButton href="/about" text={ABOUT_BUTTON_TEXT} />
         </Link>
       </motion.div>
     </section>

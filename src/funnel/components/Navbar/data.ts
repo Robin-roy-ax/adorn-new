@@ -3,6 +3,7 @@ import image from "@/funnel/components/Navbar/Picassofusion Logo-12.png"
 // Menu items with section IDs (for smooth navigation)
 export const MENU_ITEMS = [
   // { label: "Work", href: "/work", id: "work" },
+  { label: "Dribbble", href: "/dribbble", id: "dribbble" },
   { label: "Benefits", href: "/benefits", id: "benefits" },
   { label: "Process", href: "/process", id: "process" },
   { label: "Testimonials", href: "/testimonials", id: "testimonials" },

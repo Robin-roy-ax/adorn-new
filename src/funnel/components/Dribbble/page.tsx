@@ -1,9 +1,9 @@
-import PortfolioCarousel from "./Dribble";
+import Dribbble from "./Dribble";
 
-export default function Home() {
+export default function DribbblePage() {
   return (
     <main className="min-h-screen bg-white">
-      <PortfolioCarousel />
+      <Dribbble/>
     </main>
   );
 }

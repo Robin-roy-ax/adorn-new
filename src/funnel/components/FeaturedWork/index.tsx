@@ -124,7 +124,7 @@ function Header() {
       
       <div className={styles.headerRight}>
         <p className={styles.description}>
-          Dive into a world of creativity and inspiration with our portfolio.
+          Dive into a world of creativity and inspiration with our Dribble.
           Explore our work and imagine the possibilities for your brand.
         </p>
       </div>
@@ -150,7 +150,7 @@ function MobileHeader() {
       
       <div>
         <p className={styles.mobileDescription}>
-          Dive into a world of creativity and inspiration with our portfolio.
+          Dive into a world of creativity and inspiration with our Dribble.
           Explore our work and imagine the possibilities for your brand.
         </p>
       </div>

@@ -16,7 +16,7 @@ export default function Navbar() {
   const isProjectPage = pathname.startsWith("/projects/");
 
   useEffect(() => {
-    const isSectionPage = ["/benefits", "/process", "/testimonials", "/pricing", "/"].includes(pathname);
+    const isSectionPage = ["/benefits", "/process", "/testimonials", "/pricing", "/dribbble", "/"].includes(pathname);
     
     if (!isSectionPage) {
       setInHero(false);
@@ -31,7 +31,7 @@ export default function Navbar() {
       }
       setInHero(hero.getBoundingClientRect().bottom > 0);
 
-      const workSection = document.getElementById("work");
+      const workSection = document.getElementById("dribbble");
       const footerSection = document.querySelector("footer");
 
       let shouldHide = false;
