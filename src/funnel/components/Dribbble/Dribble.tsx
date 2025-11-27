@@ -307,7 +307,7 @@ export const Dribble: React.FC<DribbleProps> = ({
       </div>
 
       {/* Button Section */}
-      <div className="flex justify-center pt-10">
+      <div className="flex justify-center pt-10 pb-1">
         <GlassCTAButton href={ctaHref} text={ctaText} />
       </div>
     </section>

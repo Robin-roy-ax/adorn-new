@@ -51,12 +51,12 @@ const GlassCTAButton: React.FC<{
         className="relative flex items-center gap-2 sm:gap-3 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full overflow-hidden"
         style={{
           background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
           border: "1px solid rgba(0, 0, 0, 0.25)",
-          boxShadow: isHovered
-            ? "0 8px 32px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.1)"
-            : "0 4px 16px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
+        //   boxShadow: isHovered
+        //     ? "0 8px 32px rgba(0, 0, 0, 0.12), inset 0 0 0 1px rgba(255, 255, 255, 0.1)"
+        //     : "0 4px 16px rgba(0, 0, 0, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.05)",
         }}
         animate={{
           scale: isHovered ? 1.02 : 1,
@@ -189,11 +189,11 @@ const GlassCTAButton: React.FC<{
       {/* Outer Glow on Hover */}
       <motion.div
         className="absolute inset-0 rounded-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)",
-          filter: "blur(20px)",
-        }}
+        // style={{
+        //   background:
+        //     "radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%)",
+        //   filter: "blur(20px)",
+        // }}
         animate={{
           opacity: isHovered ? 1 : 0,
           scale: isHovered ? 1.5 : 1,
