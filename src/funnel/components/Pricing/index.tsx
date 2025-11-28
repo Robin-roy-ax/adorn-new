@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import PricingCard from "./PricingCard";
-import { pricingPlans } from "./data";
+import { fetchPricingPlans, PricingPlan } from "./data";
 import styles from "./style.module.css";
 
 interface PricingSectionProps {
@@ -10,6 +11,27 @@ interface PricingSectionProps {
 }
 
 export default function PricingSection({ variant = "default" }: PricingSectionProps) {
+  const [pricingPlans, setPricingPlans] = useState<PricingPlan[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+
+  useEffect(() => {
+    async function loadPlans() {
+      const plans = await fetchPricingPlans();
+      setPricingPlans(plans);
+      setLoading(false);
+    }
+    loadPlans();
+  }, []);
+
+  const handleToggleExpand = (index: number) => {
+    setExpandedCards(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index) // Close if already open
+        : [...prev, index] // Add to open cards without closing others
+    );
+  };
+
   const headerTitle =
     variant === "compare" ? "Compare & Choose Your Plan" : "Transparent Pricing";
 
@@ -65,11 +87,26 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className={styles.pricingGrid}
+        className={`${styles.pricingGrid} !items-start`}
       >
-        {pricingPlans.map((plan, idx) => (
-          <PricingCard key={idx} {...plan} />
-        ))}
+        {loading ? (
+          <div className="col-span-full text-center py-12">
+            <p className="text-lg text-gray-600">Loading pricing plans...</p>
+          </div>
+        ) : pricingPlans.length === 0 ? (
+          <div className="col-span-full text-center py-12">
+            <p className="text-lg text-gray-600">No pricing plans available</p>
+          </div>
+        ) : (
+          pricingPlans.map((plan, idx) => (
+            <PricingCard
+              key={idx}
+              {...plan}
+              isExpanded={expandedCards.includes(idx)}
+              onToggleExpand={() => handleToggleExpand(idx)}
+            />
+          ))
+        )}
       </motion.div>
     </section>
   );

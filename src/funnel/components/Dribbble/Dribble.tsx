@@ -250,7 +250,7 @@ export const Dribble: React.FC<DribbleProps> = ({
   return (
     <section id="dribbble" className={`w-full bg-white ${className}`}>
       {/* Header Section */}
-      <div className="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-2 flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto px-6 pt-12 md:pt-16 pb-2 md:pb-4 flex flex-col items-center text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -307,7 +307,7 @@ export const Dribble: React.FC<DribbleProps> = ({
       </div>
 
       {/* Button Section */}
-      <div className="flex justify-center pt-10 pb-1">
+      <div className="flex justify-center pt-10 pb-6">
         <GlassCTAButton href={ctaHref} text={ctaText} />
       </div>
     </section>

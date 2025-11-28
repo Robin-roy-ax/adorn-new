@@ -181,7 +181,7 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0rem 2rem 0rem;
+  padding: 4rem 0 2rem 0;
   text-align: center;
   color: #394560;
 }
@@ -285,7 +285,7 @@
 /* Small screens (640px+) */
 @media (min-width: 640px) {
   .pricingSection {
-    padding: 4rem 1.5rem 2rem 1.5rem;
+    padding: 4rem 0 2rem 0;
   }
 
   .pricingContainer {
@@ -320,7 +320,7 @@
 /* Medium screens (768px+) */
 @media (min-width: 768px) {
   .pricingSection {
-    padding: 5rem 2rem 2.5rem 2rem;
+    padding: 5rem 0 2.5rem 0;
   }
 
   .pricingTitle {
@@ -339,7 +339,7 @@
 /* Large screens (1024px+) */
 @media (min-width: 1024px) {
   .pricingSection {
-    padding: 6rem 3rem 3rem 3rem;
+    padding: 6rem 0 3rem 0;
   }
 
   .pricingContainer {
