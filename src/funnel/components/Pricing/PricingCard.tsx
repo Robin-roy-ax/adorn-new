@@ -3,9 +3,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, ChevronDown } from "lucide-react";
 import { SubFeatures } from "./data";
-import GlassToggleButton from "../common/GlassButton";
-import Link from "next/link";
+import GlassToggleButton from "../common/GlassToogleButton";
 
+import Link from "next/link";
 
 type PricingCardProps = {
   title: string;
