@@ -90,6 +90,7 @@ export default function Navbar() {
           href="/"
           onClick={(e) => handleNavClick(e, "/")}
           className={`${styles.logoSection} ${logoClass}`}
+          scroll={pathname !== "/"}
         >
           <Image src={LOGO_IMAGE} alt="Logo" width={100} height={100} />
         </Link>
@@ -102,6 +103,7 @@ export default function Navbar() {
               className={styles.menuLink}
               style={{ color: menuColor }}
               onClick={(e) => handleNavClick(e, item.href, item.id)}
+              scroll={item.href === "/about"}
             >
               {item.label}
             </Link>
@@ -173,6 +175,7 @@ export default function Navbar() {
                     href={item.href}
                     onClick={(e) => handleNavClick(e, item.href, item.id)}
                     className={styles.mobileMenuItem}
+                    scroll={item.href === "/about"}
                   >
                     {item.label}
                   </Link>

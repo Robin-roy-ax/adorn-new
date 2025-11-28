@@ -174,7 +174,7 @@ const DribbleCard: React.FC<{
 export const Dribble: React.FC<DribbleProps> = ({
   items = defaultItems,
   heading = "Our Creative Showcase",
-  ctaText = "View Shots",
+  ctaText = "Explore Visuals",
   ctaHref = "https://dribbble.com/PicassoFusion",
   autoScrollSpeed = 80,
   className = "",
@@ -274,7 +274,7 @@ export const Dribble: React.FC<DribbleProps> = ({
           viewport={{ once: true }}
           className="text-[#6f80a8] text-lg leading-7 max-w-3xl mx-auto mb-6"
         >
-          lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+          See how we transform imagination into visuals through design and creativity.
         </motion.p>
 
 
