@@ -6,6 +6,7 @@ import { SubFeatures } from "./data";
 import GlassToggleButton from "../common/GlassToogleButton";
 
 import Link from "next/link";
+import GlassCTAButton from "../common/GlassCTAButton";
 
 type PricingCardProps = {
   title: string;
@@ -47,13 +48,19 @@ export default function PricingCard({
     <motion.div
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200 }}
-      className={`relative flex w-full flex-col overflow-hidden rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
-        p-6 sm:p-8 text-left
+      className={`group relative flex w-full flex-col overflow-hidden rounded-2xl shadow-[0_4px_10px_-2px_#64718f60]
+        p-6 sm:p-8 text-left transition-shadow duration-700 ease-in-out
         ${highlight
-          ? "bg-[radial-gradient(150%_100%_at_100%_0%,_#1e387b_0%,_#0a1329_100%)] text-white z-30"
-          : "bg-gray-100 text-slate-800 border-slate-200 z-20"
+          ? "bg-[radial-gradient(150%_100%_at_100%_0,_#1e387b_0%,_#0a1329_100%)] text-white z-30 hover:shadow-[0_25px_50px_rgba(0,0,0,0.5)] border border-indigo-500/20"
+          : "bg-[radial-gradient(100%_75%_at_0_0,_#94a1b5_0%,_#f5f6fa_100%)] text-slate-800 border-slate-200 z-20 hover:shadow-[0_25px_50px_rgba(0,0,0,0.3)]"
         }`}
     >
+
+      <div className={`absolute inset-0 bg-gradient-to-tr opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100 pointer-events-none ${
+        highlight 
+          ? "from-indigo-400/20 to-transparent" 
+          : "from-blue-600/10 to-transparent"
+      }`} />
 
       <div>
         <div className="flex items-start justify-between gap-3 mb-2">
@@ -80,17 +87,18 @@ export default function PricingCard({
       </div>
 
       <div className="mt-6 sm:mt-8">
-        <Link href="https://app.picassofusion.com/login?_gl=1*18t62o4*_ga*OTE2MzM2MzI1LjE3NjI0MDgyNzg.*_ga_8S104JGWHM*czE3NjM3MDI3MzAkbzgkZzAkdDE3NjM3MDI3MzAkajYwJGwwJGgw"
-           target="_blank"
-           rel="noopener noreferrer"
-           className={`block text-center w-full rounded-full py-3 text-base font-semibold transition-all duration-300 sm:py-3.5 sm:text-lg
-            ${highlight
-              ? "bg-white hover:bg-[#1d52e5] hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)] relative overflow-hidden text-black hover:text-white shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)] rounded-full"
-              : "bg-gray-100 hover:bg-gray-300 text-slate-800 border-gray-300 border"
-            }`}
-        >
-          {buttonLabel}
-        </Link>
+        <div className="w-full flex justify-center">
+          <GlassCTAButton
+            href="https://app.picassofusion.com/login?_gl=1*18t62o4*_ga*OTE2MzM2MzI1LjE3NjI0MDgyNzg.*_ga_8S104JGWHM*czE3NjM3MDI3MzAkbzgkZzAkdDE3NjM3MDI3MzAkajYwJGwwJGgw"
+            text={buttonLabel}
+            rootClassName="w-full"
+            className="w-full justify-between !py-1 sm:!py-2 !text-base sm:!text-lg"
+            initialBgColor={highlight ? "white" : undefined}
+            hoverBgColor={highlight ? "#1d52e5" : undefined}
+            initialTextColor={highlight ? "black" : undefined}
+            hoverTextColor={highlight ? "white" : undefined}
+          />
+        </div>
 
         <a
           data-cal-link="robin-roy-ax/30min"

@@ -7,7 +7,24 @@ import { ArrowUpRight } from "lucide-react";
 const GlassCTAButton: React.FC<{
   href: string;
   text: string;
-}> = ({ href, text }) => {
+  className?: string;
+  style?: React.CSSProperties;
+  hoverBgColor?: string;
+  initialBgColor?: string;
+  initialTextColor?: string;
+  hoverTextColor?: string;
+  rootClassName?: string;
+}> = ({ 
+  href, 
+  text, 
+  className, 
+  style,
+  hoverBgColor = "rgba(0, 0, 0, 0.85)",
+  initialBgColor = "rgba(255,255,255,0.12)",
+  initialTextColor = "#000000ff",
+  hoverTextColor = "#ffffffff",
+  rootClassName
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -15,7 +32,7 @@ const GlassCTAButton: React.FC<{
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative inline-flex items-center cursor-pointer select-none"
+      className={`relative inline-flex items-center cursor-pointer select-none ${rootClassName}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       initial={{ opacity: 0, y: 15 }}
@@ -24,15 +41,16 @@ const GlassCTAButton: React.FC<{
     >
       {/* Button Container */}
       <motion.div
-        className="relative flex items-center gap-3 px-5 py-2.5 rounded-full overflow-hidden"
+        className={`relative flex items-center gap-3 px-5 py-2.5 rounded-full overflow-hidden ${className}`}
         style={{
-          background: "rgba(255,255,255,0.12)",
+          background: initialBgColor,
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
           border: "1px solid rgba(0, 0, 0, 0.25)",
           boxShadow: isHovered
             ? "0 8px 24px rgba(0,0,0,0.15)"
             : "0 4px 12px rgba(0,0,0,0.08)",
+          ...style,
         }}
         animate={{
           scale: isHovered ? 1.03 : 1,
@@ -49,7 +67,7 @@ const GlassCTAButton: React.FC<{
             ease: [0.23, 1, 0.32, 1],
           }}
           style={{
-            background: "rgba(0, 0, 0, 0.85)", // subtle dark fill
+            background: hoverBgColor,
           }}
         />
 
@@ -57,7 +75,7 @@ const GlassCTAButton: React.FC<{
         <span
           className="relative z-10 font-medium text-base tracking-wide whitespace-nowrap"
           style={{
-            color: isHovered ? "#ffffffff" : "#000000ff",
+            color: isHovered ? hoverTextColor : initialTextColor,
             transition: "color 0.35s ease",
           }}
         >
@@ -84,7 +102,7 @@ const GlassCTAButton: React.FC<{
         >
           <ArrowUpRight
             className="w-5 h-5 transition-colors duration-300"
-            style={{ color: isHovered ? "#000000ff" : "#ffffffff" }}
+            style={{ color: isHovered ? initialTextColor : hoverTextColor }}
           />
         </motion.span>
       </motion.div>
