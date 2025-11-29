@@ -54,25 +54,21 @@ export default function PricingCard({
           : "bg-gray-100 text-slate-800 border-slate-200 z-20"
         }`}
     >
-      {highlight && badge && (
-        <span className="absolute font-bold right-4 sm:right-5 top-4 sm:top-5 text-[0.688rem] sm:text-xs px-2.5 sm:px-3 py-1 rounded-full shadow-[0_.796192px_.796192px_-.9375px_#cda9ffba,0_2.41451px_2.41451px_-1.875px_#cda9ffb0,0_6.38265px_6.38265px_-2.8125px_#cda9ff96,0_20px_20px_-3.75px_#cda9ff40]"
-          style={{
-            background: 'linear-gradient(325deg, #fed6ff 7.34456%, #9b8cfa 38.4923%, #8fe1ff 77.5623%, #87ffe3 86.824%)',
-            color: 'black'
-          }}
-        >
-          {badge}
-        </span>
-      )}
 
       <div>
         <div className="flex items-start justify-between gap-3 mb-2">
           <h3 className="text-lg font-semibold sm:text-xl">{title}</h3>
-          <div className={`px-3 py-1 rounded-full text-xs font-bold ${
-            highlight 
-              ? "bg-white/20 text-white" 
-              : "bg-slate-800 text-white"
-          }`}>
+          <div 
+            className={`px-3 py-1 rounded-full text-xs font-bold ${
+              highlight 
+                ? "text-black" 
+                : "bg-slate-800 text-white"
+            }`}
+            style={highlight ? {
+              background: "linear-gradient(325deg, rgb(254, 214, 255) 7.34456%, rgb(155, 140, 250) 38.4923%, rgb(143, 225, 255) 77.5623%, rgb(135, 255, 227) 86.824%)",
+              boxShadow: "rgba(205, 169, 255, 0.73) 0px 0.796192px 0.796192px -0.9375px, rgba(205, 169, 255, 0.69) 0px 2.41451px 2.41451px -1.875px, rgba(205, 169, 255, 0.592) 0px 6.38265px 6.38265px -2.8125px, rgba(205, 169, 255, 0.25) 0px 20px 20px -3.75px"
+            } : undefined}
+          >
             {credits} Credits
           </div>
         </div>
@@ -96,19 +92,18 @@ export default function PricingCard({
           {buttonLabel}
         </Link>
 
-        
-
-        {/* <a href="https://app.picassofusion.com/login?_gl=1*18t62o4*_ga*OTE2MzM2MzI1LjE3NjI0MDgyNzg.*_ga_8S104JGWHM*czE3NjM3MDI3MzAkbzgkZzAkdDE3NjM3MDI3MzAkajYwJGwwJGgw"
-           target="_blank"
-           rel="noopener noreferrer"
-           className={`block text-center w-full rounded-full py-3 text-base font-semibold transition-all duration-300 sm:py-3.5 sm:text-lg
-            ${highlight
-              ? "bg-white hover:bg-[#1d52e5] hover:shadow-[0_8px_15px_rgba(29,82,229,0.4)] relative overflow-hidden text-black hover:text-white shadow-[inset_0_6px_12px_rgba(255,255,255,0.5)]"
-              : "bg-gray-100 hover:bg-gray-300 text-slate-800 border-gray-300 border"
-            }`}
+        <a
+          data-cal-link="robin-roy-ax/30min"
+          data-cal-config='{"layout":"month_view"}'
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`mt-3 w-full py-2 text-sm underline underline-offset-4 transition sm:text-base cursor-pointer block text-center
+            ${highlight ? "font-bold text-indigo-200 hover:text-indigo-100" : "font-bold text-slate-500 hover:text-slate-700"}
+          `}
         >
           {secondaryButton}
-        </a> */}
+        </a>
+
       </div>
 
       <hr

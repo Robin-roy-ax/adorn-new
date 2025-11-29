@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import PricingCard from "./PricingCard";
+import PricingCardSkeleton from "./PricingCardSkeleton";
 import { fetchPricingPlans, PricingPlan } from "./data";
 import styles from "./style.module.css";
+import { getCalApi } from "@calcom/embed-react";
 
 interface PricingSectionProps {
   variant?: "default" | "compare";
@@ -22,6 +24,16 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
       setLoading(false);
     }
     loadPlans();
+  }, []);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "cal" });
+      cal("ui", {
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
   }, []);
 
   const handleToggleExpand = (index: number) => {
@@ -90,9 +102,11 @@ export default function PricingSection({ variant = "default" }: PricingSectionPr
         className={`${styles.pricingGrid} !items-start`}
       >
         {loading ? (
-          <div className="col-span-full text-center py-12">
-            <p className="text-lg text-gray-600">Loading pricing plans...</p>
-          </div>
+          <>
+            <PricingCardSkeleton />
+            <PricingCardSkeleton />
+            <PricingCardSkeleton />
+          </>
         ) : pricingPlans.length === 0 ? (
           <div className="col-span-full text-center py-12">
             <p className="text-lg text-gray-600">No pricing plans available</p>

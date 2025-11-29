@@ -52,7 +52,6 @@ export async function fetchPricingPlans(): Promise<PricingPlan[]> {
       buttonLabel: "Get Started",
       secondaryButton: "Book a call",
       highlight: index === 1,
-      // badge: index === 1 ? "Most Popular" : undefined,
     }));
   } catch (error) {
     console.error('Failed to fetch pricing plans:', error);
